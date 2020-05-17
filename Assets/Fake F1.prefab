@@ -1,0 +1,739 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3212318325934143892
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 101516, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_Name
+      value: Fake F1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470896, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 470896, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470896, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470896, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470896, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470896, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470896, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470896, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470896, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470896, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470896, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 494466, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 494466, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470778, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470778, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 420554, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420554, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 413950, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413950, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492134, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5987212e-14
+      objectReference: {fileID: 0}
+    - target: {fileID: 492134, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 492134, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00000002980232
+      objectReference: {fileID: 0}
+    - target: {fileID: 484830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5987212e-14
+      objectReference: {fileID: 0}
+    - target: {fileID: 484830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 484830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00000002980232
+      objectReference: {fileID: 0}
+    - target: {fileID: 453258, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.0658141e-14
+      objectReference: {fileID: 0}
+    - target: {fileID: 453258, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 453258, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000000029802322
+      objectReference: {fileID: 0}
+    - target: {fileID: 430404, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.0658141e-14
+      objectReference: {fileID: 0}
+    - target: {fileID: 430404, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 430404, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000000029802322
+      objectReference: {fileID: 0}
+    - target: {fileID: 2394562, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 595a27f2174a0e24f881c44bdabc7434, type: 2}
+    - target: {fileID: 2381456, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 595a27f2174a0e24f881c44bdabc7434, type: 2}
+    - target: {fileID: 2377408, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 595a27f2174a0e24f881c44bdabc7434, type: 2}
+    - target: {fileID: 2345352, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 595a27f2174a0e24f881c44bdabc7434, type: 2}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: feedbackRpmBias
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFriction
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: sidewaysFriction
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFrictionCurve.m_Curve.Array.data[2].time
+      value: 0.45276314
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: sidewaysFrictionCurve.m_Curve.Array.data[2].value
+      value: 1.1278032
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: sidewaysFrictionCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: tireRadius
+      value: 0.284
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimRadius
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: tireWidth
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimWidth
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimGlow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: impactSnd
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: detachForce
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: mass
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: tireMeshLoose
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimMeshLoose
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: detachedTireMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439830, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: detachedRimMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: feedbackRpmBias
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFriction
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: sidewaysFriction
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFrictionCurve.m_Curve.Array.data[0].inSlope
+      value: 8.809789
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFrictionCurve.m_Curve.Array.data[0].outSlope
+      value: 8.809789
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFrictionCurve.m_Curve.Array.data[1].time
+      value: 0.20130093
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFrictionCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: sidewaysFrictionCurve.m_Curve.Array.data[1].time
+      value: 0.1117569
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: sidewaysFrictionCurve.m_Curve.Array.data[1].value
+      value: 2.0020394
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: tireRadius
+      value: 0.284
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimRadius
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: tireWidth
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimWidth
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimGlow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: impactSnd
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: detachForce
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: mass
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: tireMeshLoose
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimMeshLoose
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: detachedTireMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489920, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: detachedRimMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: feedbackRpmBias
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFriction
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: sidewaysFriction
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFrictionCurve.m_Curve.Array.data[2].time
+      value: 0.45276314
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: sidewaysFrictionCurve.m_Curve.Array.data[2].value
+      value: 1.1278032
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: sidewaysFrictionCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: tireRadius
+      value: 0.284
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimRadius
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: tireWidth
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimWidth
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimGlow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: impactSnd
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: detachForce
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: mass
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: tireMeshLoose
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimMeshLoose
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: detachedTireMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448012, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: detachedRimMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: feedbackRpmBias
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFriction
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: sidewaysFriction
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFrictionCurve.m_Curve.Array.data[0].inSlope
+      value: 8.809789
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFrictionCurve.m_Curve.Array.data[0].outSlope
+      value: 8.809789
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFrictionCurve.m_Curve.Array.data[1].time
+      value: 0.20130093
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: forwardFrictionCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: sidewaysFrictionCurve.m_Curve.Array.data[1].time
+      value: 0.1117569
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: sidewaysFrictionCurve.m_Curve.Array.data[1].value
+      value: 2.0020394
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: tireRadius
+      value: 0.284
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimRadius
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: tireWidth
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimWidth
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimGlow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: impactSnd
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: detachForce
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: mass
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: tireMeshLoose
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: rimMeshLoose
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: detachedTireMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424912, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: detachedRimMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: steerRangeMin
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: steerRangeMax
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: pivotOffset
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: springForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: springExponent
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: hardContactForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: damagePivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: damagePivot.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475362, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: jamForce
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: pivotOffset
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: springForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: springExponent
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: hardContactForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: damagePivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: damagePivot.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453416, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: jamForce
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: steerRangeMin
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: steerRangeMax
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: pivotOffset
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: springForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: springExponent
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: hardContactForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: damagePivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: damagePivot.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426692, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: jamForce
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: camberCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: pivotOffset
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: springForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: springExponent
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: hardContactForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: damagePivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: damagePivot.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406278, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: jamForce
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 3379614, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300012, guid: b81676d17244a1d4d82ab98d3f1a4321, type: 3}
+    - target: {fileID: 3305890, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300012, guid: b81676d17244a1d4d82ab98d3f1a4321, type: 3}
+    - target: {fileID: 3331930, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300012, guid: b81676d17244a1d4d82ab98d3f1a4321, type: 3}
+    - target: {fileID: 3399916, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300012, guid: b81676d17244a1d4d82ab98d3f1a4321, type: 3}
+    - target: {fileID: 3349828, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300010, guid: b81676d17244a1d4d82ab98d3f1a4321, type: 3}
+    - target: {fileID: 3352960, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300010, guid: b81676d17244a1d4d82ab98d3f1a4321, type: 3}
+    - target: {fileID: 3349050, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300010, guid: b81676d17244a1d4d82ab98d3f1a4321, type: 3}
+    - target: {fileID: 3301314, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300010, guid: b81676d17244a1d4d82ab98d3f1a4321, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8709d84233fe94e4e896ff9a06c9d335, type: 3}

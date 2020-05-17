@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b8506ac4bc356408480656fffe6a94, type: 3}
+  m_Name: Kocmocraft Database
+  m_EditorClassIdentifier: 
+  kocmocraft:
+  - {fileID: 11400000, guid: e80579f2832669d45b2bde2078750115, type: 2}
+  - {fileID: 11400000, guid: 10b4be383babb0a4b8054f4ded7d81ab, type: 2}
+  - {fileID: 11400000, guid: 130ba8fb4c948f94d86a9991c16c65b3, type: 2}
+  - {fileID: 11400000, guid: f98b90b741cc6b447a861129f56a797a, type: 2}
+  - {fileID: 11400000, guid: c6d311a4817ddd04c8e6299b371944fc, type: 2}
+  - {fileID: 11400000, guid: 74304f9292ef43c4aafb9497fb36dd8f, type: 2}
+  - {fileID: 11400000, guid: 54ca84b4658ff1a4fa3283f2b078d978, type: 2}
+  - {fileID: 11400000, guid: 5b44d61928fb1b84db4b604df4aaac41, type: 2}
+  - {fileID: 11400000, guid: 6b3d5ca8afaabfe43aca7d50fdd466e9, type: 2}
+  - {fileID: 11400000, guid: 504ec1f08d3fd514ebf4f153e3613131, type: 2}
+  - {fileID: 11400000, guid: 71232ec056e15134191a78a080f67fd2, type: 2}
+  - {fileID: 11400000, guid: 70163bfc7a4cca14cb509e5143395997, type: 2}
+  - {fileID: 11400000, guid: 54da08f657693454890064be0f07de61, type: 2}
+  - {fileID: 11400000, guid: cadec101c0cad2743a989eef6d910684, type: 2}
+  - {fileID: 11400000, guid: e0f11aa0d26d3ce49b2bb39d1294c408, type: 2}
+  - {fileID: 11400000, guid: 16bf5988f270d3b4d89059241168c267, type: 2}
+  - {fileID: 11400000, guid: 249d158c38529924e87448bb252b0af8, type: 2}
+  - {fileID: 11400000, guid: 9aab185331fe36e4287e2499753ed138, type: 2}
+  - {fileID: 11400000, guid: c1b1afc9402884745ae8fe0715987b2d, type: 2}
+  - {fileID: 11400000, guid: cf75c3458adceba41b987faa595adc92, type: 2}
+  Types:
+  - Name: New State
+    HitColor: {r: 0, g: 0, b: 0, a: 0}
+  - Name: New State
+    HitColor: {r: 0, g: 0, b: 0, a: 0}
+  typeName: 
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 0
