@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[041]Progne'
       objectReference: {fileID: 0}
+    - target: {fileID: 2753965219480372676, guid: 485ab9a581706e44a8154ef53d9e26d1,
+        type: 3}
+      propertyPath: m_Heading.m_Bias
+      value: -30
+      objectReference: {fileID: 0}
     - target: {fileID: 3115508790066108042, guid: 485ab9a581706e44a8154ef53d9e26d1,
         type: 3}
       propertyPath: m_LocalPosition.x

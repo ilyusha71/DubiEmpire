@@ -131,10 +131,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8253121413412684091, guid: 707c0118c699add46a488e6ec280b0e7,
+        type: 3}
+      propertyPath: m_Heading.m_Bias
+      value: 76
+      objectReference: {fileID: 0}
     - target: {fileID: 9032494723184236445, guid: 707c0118c699add46a488e6ec280b0e7,
         type: 3}
       propertyPath: m_Name
-      value: '[021]Putin Variant'
+      value: '[021]Putin'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 707c0118c699add46a488e6ec280b0e7, type: 3}

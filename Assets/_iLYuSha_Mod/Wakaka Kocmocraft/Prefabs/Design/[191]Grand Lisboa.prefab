@@ -134,7 +134,12 @@ PrefabInstance:
     - target: {fileID: 3975458916225564553, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
       propertyPath: m_Name
-      value: '[190]Grand Lisboa'
+      value: '[191]Grand Lisboa'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867211694588676874, guid: 1e1f416e56327f34e909c5f614390a60,
+        type: 3}
+      propertyPath: m_Heading.m_Bias
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1f416e56327f34e909c5f614390a60, type: 3}

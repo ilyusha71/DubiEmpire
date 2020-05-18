@@ -166,6 +166,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b2e83094d155df24dac153d5e0b165ff, type: 2}
+    - target: {fileID: 1636721867594489731, guid: 507ea839b8ffd804d919f37af444850b,
+        type: 3}
+      propertyPath: m_Heading.m_Bias
+      value: -83
+      objectReference: {fileID: 0}
     - target: {fileID: 5312497556322079466, guid: 507ea839b8ffd804d919f37af444850b,
         type: 3}
       propertyPath: m_Name
@@ -220,7 +225,7 @@ PrefabInstance:
         type: 3}
       propertyPath: mesh
       value: 
-      objectReference: {fileID: 4300000, guid: f95cc39e84da5d2439485ad5d40a136d, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8417778527409789578, guid: 507ea839b8ffd804d919f37af444850b,
         type: 3}
       propertyPath: centre.z

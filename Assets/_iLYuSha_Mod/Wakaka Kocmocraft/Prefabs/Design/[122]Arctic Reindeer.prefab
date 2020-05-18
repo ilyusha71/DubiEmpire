@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5152199938439957565, guid: f0eba9d39cb8ccd48bebeb8d8450dca2,
+        type: 3}
+      propertyPath: m_Heading.m_Bias
+      value: 44
+      objectReference: {fileID: 0}
     - target: {fileID: 7584931185993242413, guid: f0eba9d39cb8ccd48bebeb8d8450dca2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -70,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 8276772382423686417, guid: f0eba9d39cb8ccd48bebeb8d8450dca2,
         type: 3}
       propertyPath: m_Name
-      value: '[121]Arctic Reindeer'
+      value: '[122]Arctic Reindeer'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0eba9d39cb8ccd48bebeb8d8450dca2, type: 3}

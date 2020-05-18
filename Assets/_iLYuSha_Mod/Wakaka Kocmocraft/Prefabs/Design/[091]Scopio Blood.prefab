@@ -65,7 +65,12 @@ PrefabInstance:
     - target: {fileID: 8898195020495550461, guid: c91173cdeea56fb4b81207a85d28fd17,
         type: 3}
       propertyPath: m_Name
-      value: '[091]Scopio Blood Variant'
+      value: '[091]Scopio Blood'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9199096502068821443, guid: c91173cdeea56fb4b81207a85d28fd17,
+        type: 3}
+      propertyPath: m_Heading.m_Bias
+      value: 72
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c91173cdeea56fb4b81207a85d28fd17, type: 3}

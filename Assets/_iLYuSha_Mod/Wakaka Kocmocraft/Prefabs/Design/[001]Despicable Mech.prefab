@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6857618966812507650, guid: 72801f90bbf94794683b230c8eda94fe,
         type: 3}
       propertyPath: m_Name
-      value: '[001]Despicable Mech Variant'
+      value: '[001]Despicable Mech'
       objectReference: {fileID: 0}
     - target: {fileID: 6857618966812507653, guid: 72801f90bbf94794683b230c8eda94fe,
         type: 3}
@@ -66,6 +66,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784087965073092953, guid: 72801f90bbf94794683b230c8eda94fe,
+        type: 3}
+      propertyPath: m_Heading.m_Bias
+      value: -124
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72801f90bbf94794683b230c8eda94fe, type: 3}
