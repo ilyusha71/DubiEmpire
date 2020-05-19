@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9086167750705867683}
   - component: {fileID: 3036422933653324715}
   - component: {fileID: 3929413401690948138}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Dubi - Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -65,6 +66,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -88,7 +90,7 @@ GameObject:
   - component: {fileID: 1018751835886896418}
   - component: {fileID: 3225822069413844142}
   - component: {fileID: 2926203096890101714}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Dubi - Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,6 +133,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -142,6 +145,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -164,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6808528932311267213}
   - component: {fileID: 590418653390264515}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Dubi
   m_TagString: Untagged
   m_Icon: {fileID: 0}

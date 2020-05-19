@@ -27,10 +27,55 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.259
       objectReference: {fileID: 0}
-    - target: {fileID: 8759071196061111909, guid: 446ea75210419a0498149817f3205fd3,
+    - target: {fileID: 881496587570566608, guid: 446ea75210419a0498149817f3205fd3,
         type: 3}
-      propertyPath: m_Name
-      value: Dubi - Mini Dora
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea4cd5c15a6735a4b8b2fd0a07fa1a05, type: 2}
+    - target: {fileID: 1308391229564016680, guid: 446ea75210419a0498149817f3205fd3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 76b29848689254049abac0e4c8b8100b, type: 2}
+    - target: {fileID: 3787797453214765784, guid: 446ea75210419a0498149817f3205fd3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787797453214765784, guid: 446ea75210419a0498149817f3205fd3,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787797453214765784, guid: 446ea75210419a0498149817f3205fd3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787797453214765784, guid: 446ea75210419a0498149817f3205fd3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.672
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948098914457812057, guid: 446ea75210419a0498149817f3205fd3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.259
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948098914457812057, guid: 446ea75210419a0498149817f3205fd3,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.259
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948098914457812057, guid: 446ea75210419a0498149817f3205fd3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.462
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948098914457812057, guid: 446ea75210419a0498149817f3205fd3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.511
       objectReference: {fileID: 0}
     - target: {fileID: 7264130479065915511, guid: 446ea75210419a0498149817f3205fd3,
         type: 3}
@@ -87,55 +132,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3787797453214765784, guid: 446ea75210419a0498149817f3205fd3,
+    - target: {fileID: 8759071196061111909, guid: 446ea75210419a0498149817f3205fd3,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7
+      propertyPath: m_Name
+      value: Dubi - Mini Dora
       objectReference: {fileID: 0}
-    - target: {fileID: 3787797453214765784, guid: 446ea75210419a0498149817f3205fd3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3787797453214765784, guid: 446ea75210419a0498149817f3205fd3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3787797453214765784, guid: 446ea75210419a0498149817f3205fd3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.672
-      objectReference: {fileID: 0}
-    - target: {fileID: 1308391229564016680, guid: 446ea75210419a0498149817f3205fd3,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 76b29848689254049abac0e4c8b8100b, type: 2}
-    - target: {fileID: 4948098914457812057, guid: 446ea75210419a0498149817f3205fd3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.259
-      objectReference: {fileID: 0}
-    - target: {fileID: 4948098914457812057, guid: 446ea75210419a0498149817f3205fd3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.259
-      objectReference: {fileID: 0}
-    - target: {fileID: 4948098914457812057, guid: 446ea75210419a0498149817f3205fd3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.462
-      objectReference: {fileID: 0}
-    - target: {fileID: 4948098914457812057, guid: 446ea75210419a0498149817f3205fd3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.511
-      objectReference: {fileID: 0}
-    - target: {fileID: 881496587570566608, guid: 446ea75210419a0498149817f3205fd3,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ea4cd5c15a6735a4b8b2fd0a07fa1a05, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 446ea75210419a0498149817f3205fd3, type: 3}

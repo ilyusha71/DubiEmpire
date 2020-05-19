@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3517700517117275753}
   - component: {fileID: 9170282262877256227}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Dubi - Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 6252988082461747038}
   - component: {fileID: 5100535819105361826}
   - component: {fileID: 6006456872657042769}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -116,6 +117,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

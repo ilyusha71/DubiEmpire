@@ -12,6 +12,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dubi - Mao Xiong
       objectReference: {fileID: 0}
+    - target: {fileID: 781379007651172676, guid: e3c081d28b131f648958322f4e289d5f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4ce7d6bebe2593443808aa5a1e08888d, type: 2}
+    - target: {fileID: 1135032215320134874, guid: e3c081d28b131f648958322f4e289d5f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 89fbccd08cfe2a848be6cb9ccb58b235, type: 2}
+    - target: {fileID: 1284532310929213730, guid: e3c081d28b131f648958322f4e289d5f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7ba67d8eb53df484a9433e4b0849e470, type: 2}
     - target: {fileID: 3631991907964671739, guid: e3c081d28b131f648958322f4e289d5f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,35 +82,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7020293849771913919, guid: e3c081d28b131f648958322f4e289d5f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7ba67d8eb53df484a9433e4b0849e470, type: 2}
     - target: {fileID: 3764478776350105290, guid: e3c081d28b131f648958322f4e289d5f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 89fbccd08cfe2a848be6cb9ccb58b235, type: 2}
-    - target: {fileID: 781379007651172676, guid: e3c081d28b131f648958322f4e289d5f,
+    - target: {fileID: 7020293849771913919, guid: e3c081d28b131f648958322f4e289d5f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ce7d6bebe2593443808aa5a1e08888d, type: 2}
+      objectReference: {fileID: 2100000, guid: 7ba67d8eb53df484a9433e4b0849e470, type: 2}
     - target: {fileID: 8824167303529678703, guid: e3c081d28b131f648958322f4e289d5f,
         type: 3}
       propertyPath: m_Name
       value: Dubi - Mao Xiong
       objectReference: {fileID: 0}
-    - target: {fileID: 1284532310929213730, guid: e3c081d28b131f648958322f4e289d5f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7ba67d8eb53df484a9433e4b0849e470, type: 2}
-    - target: {fileID: 1135032215320134874, guid: e3c081d28b131f648958322f4e289d5f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 89fbccd08cfe2a848be6cb9ccb58b235, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c081d28b131f648958322f4e289d5f, type: 3}

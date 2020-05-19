@@ -7,11 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7057514842292068253, guid: 2e3e2357590c46843a808776056a5a1d,
-        type: 3}
-      propertyPath: m_Name
-      value: Dubi - Mole
-      objectReference: {fileID: 0}
     - target: {fileID: 3517700517117275753, guid: 2e3e2357590c46843a808776056a5a1d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -72,5 +67,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ca6d22632c146ff43b4e971d38113b70, type: 2}
+    - target: {fileID: 7057514842292068253, guid: 2e3e2357590c46843a808776056a5a1d,
+        type: 3}
+      propertyPath: m_Name
+      value: Dubi - Mole
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e3e2357590c46843a808776056a5a1d, type: 3}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5672858574860612697}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dubi - Robot Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 5672858574860612699}
   - component: {fileID: 5672858574861907059}
   - component: {fileID: 5672858574863038131}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,6 +86,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -97,6 +98,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -116,10 +118,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5672858574860612697}
     m_Modifications:
+    - target: {fileID: 320856454964819034, guid: 95d1dcf0e5dba294e81dddd9e04af109,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2341021401342224728, guid: 95d1dcf0e5dba294e81dddd9e04af109,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3805470316795608495, guid: 95d1dcf0e5dba294e81dddd9e04af109,
         type: 3}
       propertyPath: m_Name
       value: Helmet
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805470316795608495, guid: 95d1dcf0e5dba294e81dddd9e04af109,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3965660747930460075, guid: 95d1dcf0e5dba294e81dddd9e04af109,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534956048977297281, guid: 95d1dcf0e5dba294e81dddd9e04af109,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5244796341704218556, guid: 95d1dcf0e5dba294e81dddd9e04af109,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336114815668994772, guid: 95d1dcf0e5dba294e81dddd9e04af109,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337438355408196876, guid: 95d1dcf0e5dba294e81dddd9e04af109,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8808691004401897631, guid: 95d1dcf0e5dba294e81dddd9e04af109,
         type: 3}

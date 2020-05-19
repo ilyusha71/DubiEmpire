@@ -986,6 +986,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Creature
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7254da40d0645804e9c0895237153a22, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 7254da40d0645804e9c0895237153a22, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7254da40d0645804e9c0895237153a22, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -903,9 +903,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6694940247954584969}
     m_Modifications:
+    - target: {fileID: 100000, guid: 354926ecf27b5ad4a8b9d919efd2327a, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 354926ecf27b5ad4a8b9d919efd2327a, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 354926ecf27b5ad4a8b9d919efd2327a, type: 3}
       propertyPath: m_Name
       value: snoopy
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 354926ecf27b5ad4a8b9d919efd2327a, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 354926ecf27b5ad4a8b9d919efd2327a, type: 3}
       propertyPath: m_LocalPosition.x

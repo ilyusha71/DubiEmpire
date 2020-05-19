@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4391925670859534}
   - component: {fileID: 33616147821716014}
   - component: {fileID: 23146875339592700}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpongeBob - Side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -65,6 +66,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -88,7 +90,7 @@ GameObject:
   - component: {fileID: 4885294328724430}
   - component: {fileID: 33362351150147834}
   - component: {fileID: 23696982208339754}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpongeBob - Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,6 +136,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -145,6 +148,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -166,7 +170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4279304707719072}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dubi - SpongeBob Old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +203,7 @@ GameObject:
   - component: {fileID: 4202760033748566}
   - component: {fileID: 33890790204690472}
   - component: {fileID: 23393878385042438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpongeBob - Side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,6 +246,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -253,6 +258,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -276,7 +282,7 @@ GameObject:
   - component: {fileID: 4115813933587304}
   - component: {fileID: 33759669477396948}
   - component: {fileID: 23462593448282414}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpongeBob - Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,6 +325,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -330,6 +337,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

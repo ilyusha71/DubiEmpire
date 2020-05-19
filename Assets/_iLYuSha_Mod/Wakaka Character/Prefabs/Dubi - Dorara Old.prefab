@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8978506467959509578}
   - component: {fileID: 6687202368367288562}
   - component: {fileID: 547336752134619419}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dorara - Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -65,6 +66,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -86,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7753047004367040579}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dubi - Dorara Old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +123,7 @@ GameObject:
   - component: {fileID: 7301971415796194616}
   - component: {fileID: 8473583429133751173}
   - component: {fileID: 1710188089099354003}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dorara - Ding-Dong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,6 +166,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -175,6 +178,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -198,7 +202,7 @@ GameObject:
   - component: {fileID: 1675325884294654095}
   - component: {fileID: 185145785905194345}
   - component: {fileID: 7565280566142335255}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dorara - Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,6 +245,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -252,6 +257,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1269981726498936, guid: 0c1ad2f37b518c44796cecc0f11d3337, type: 3}
       propertyPath: m_Name
-      value: Dubi - Awesom-O 7000 Variant
+      value: Dubi - Awesom-O 666
       objectReference: {fileID: 0}
     - target: {fileID: 4201157743704120, guid: 0c1ad2f37b518c44796cecc0f11d3337, type: 3}
       propertyPath: m_LocalPosition.x
