@@ -35,7 +35,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cf75c3458adceba41b987faa595adc92, type: 2}
   Types:
   - Name: New State
-    HitColor: {r: 0, g: 0, b: 0, a: 0}
+    HitColor: {r: 1, g: 0.7783019, b: 0.7783019, a: 0}
   - Name: New State
     HitColor: {r: 0, g: 0, b: 0, a: 0}
   typeName: 

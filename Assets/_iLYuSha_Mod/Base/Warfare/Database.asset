@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdcade22937d93e4e8946e0c489f1a19, type: 3}
   m_Name: Database
   m_EditorClassIdentifier: 
+  keyList: 6a0400003804000060040000
+  valueList:
+  - {fileID: 11400000, guid: 82bb786a1606bd14d924f416ee44ab5c, type: 2}
+  - {fileID: 11400000, guid: a67ab83c0f0f1294bad63b1cd3e8af5a, type: 2}
+  - {fileID: 11400000, guid: 6b6fa9e2c4ccff449a51e3488b8824e2, type: 2}
   typeName: 
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2

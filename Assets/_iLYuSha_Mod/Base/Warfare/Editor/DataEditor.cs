@@ -16,7 +16,6 @@ namespace Warfare.Unit
                 foreach (var script in scripts)
                 {
                     script.JoinDatabase ();
-                    Debug.Log ("<color=lime>" + script.name + "</color> has been Joined.");
                     EditorUtility.SetDirty (script);
                     AssetDatabase.SaveAssets ();
                 }

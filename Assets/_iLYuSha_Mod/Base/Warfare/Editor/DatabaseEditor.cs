@@ -1,92 +1,138 @@
 ﻿using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace Warfare
 {
-
     // [CanEditMultipleObjects]
     // [CustomEditor (typeof (KocmocraftDatabase))]
     public class DatabaseEditor : EditorWindow
     {
-        Vector2 scrollPos;
+        private Unit.Data source;
+        private Vector2 scrollPos;
         private Editor editor;
         private Database database;
-        // Add menu named "My Window" to the Window menu
-        [MenuItem ("Warfare/Warfare Database _g")]
-        static void ShowDatabaseWindow ()
+        
+        [MenuItem("Warfare/Warfare Database #F7")]
+        public static void ShowDatabaseWindow()
         {
-            // EditorWindow.GetWindow(typeof(KocmocraftDatabaseEditor));
-            var window = EditorWindow.GetWindow<DatabaseEditor> (false, "Warfare Database", true);
-            window.database = UnityEditor.AssetDatabase.LoadAssetAtPath<Database> ("Assets/_iLYuSha_Mod/Base/Warfare/Database.asset");
-            // 直接根据ScriptableObject构造一个Editor
-            window.editor = Editor.CreateEditor (window.database);
+            var window = EditorWindow.GetWindow<DatabaseEditor>(false, "Warfare Database", true);
+            window.database = UnityEditor.AssetDatabase.LoadAssetAtPath<Database>("Assets/_iLYuSha_Mod/Base/Warfare/Database.asset");
+            window.editor = Editor.CreateEditor(window.database);
         }
-        // public void OnGUI ()
-        // {
-        //     EditorGUILayout.BeginVertical (GUILayout.MinHeight (position.height));
-        //     scrollPos = EditorGUILayout.BeginScrollView (scrollPos);
+        public void OnGUI()
+        {
+            if (!editor)
+                ShowDatabaseWindow();
+            EditorGUILayout.BeginVertical(GUILayout.MinHeight(position.height));
+            scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
 
-        //     // 直接调用Inspector的绘制显示
-        //     this.editor.OnInspectorGUI ();
-        //     // DrawTypesInspector ();
-        //     // DrawKocmocraftInspector ();
+            //     // 直接调用Inspector的绘制显示
+            // this.editor.OnInspectorGUI();
+            //     // DrawTypesInspector ();
+            DrawKocmocraftInspector();
 
-        //     EditorGUILayout.EndScrollView ();
-        //     EditorGUILayout.EndVertical ();
-        // }
+            EditorGUILayout.EndScrollView();
+            EditorGUILayout.EndVertical();
+        }
 
-        // void DrawKocmocraftInspector ()
-        // {
-        //     // GUILayout.Space (5);
-        //     GUILayout.BeginHorizontal ();
-        //     GUILayout.Label ("Kocmocraft", EditorStyles.boldLabel, GUILayout.Width (163));
-        //     GUILayout.Label ("Radar", EditorStyles.boldLabel, GUILayout.Width (163));
-        //     GUILayout.Label ("Turret", EditorStyles.boldLabel, GUILayout.Width (163));
-        //     GUILayout.Label ("Hardpoint", EditorStyles.boldLabel, GUILayout.Width (163));
-        //     GUILayout.Label ("Kocmomech", EditorStyles.boldLabel, GUILayout.Width (163));
-        //     GUILayout.EndHorizontal ();
-        //     // for (int i = 0; i < database.kocmocraft.Count; i++)
-        //     // {
-        //     //     DrawKocmoraft (i);
-        //     // }
+        void DrawKocmocraftInspector()
+        {
+            GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+            GUI.skin.label.fontStyle = FontStyle.Bold;
+            GUI.skin.label.fontSize = 21;
+            GUILayout.Label("Warfare Database");
 
-        //     // DrawAddTypeButton ();
-        // }
+            GUILayout.Space(5);
+            GUILayout.BeginHorizontal();
+            GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+            GUI.skin.label.fontStyle = FontStyle.Normal;
+            GUI.skin.label.fontSize = 18;
+            GUILayout.Label("Total: ", GUILayout.Width(57));
+            GUI.skin.label.fontStyle = FontStyle.Bold;
+            GUI.contentColor = Color.yellow;
+            GUILayout.Label(database.units.Count.ToString());
+            GUILayout.EndHorizontal();
 
-        // void DrawKocmoraft (int index)
+            GUILayout.Space(5);
+            GUI.skin.label.fontSize = 16;
+            GUI.contentColor = Color.green;
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Warfare Unit", GUILayout.Width(163));
+            GUI.contentColor = Color.white;
+            GUILayout.Label("Data", GUILayout.Width(100));
+            GUILayout.Label("", GUILayout.Width(66));
+            GUI.contentColor = Color.green;
+            GUILayout.Label("HP", GUILayout.Width(50));
+            GUILayout.Label("Stack", GUILayout.Width(50));
+            GUILayout.EndHorizontal();
+
+            GUILayout.Space(5);
+            GUI.skin.label.fontSize = 14;
+            foreach (KeyValuePair<Unit.Type, Unit.Data> unit in database.units.ToList())
+            {
+                EditorGUI.BeginChangeCheck();
+                GUILayout.BeginHorizontal();
+
+                GUI.skin.label.fontStyle = FontStyle.Bold;
+                GUI.contentColor = Color.white;
+                GUILayout.Label(unit.Key.ToString(), GUILayout.Width(163));
+
+                GUI.skin.label.fontStyle = FontStyle.Normal;
+                GUI.contentColor = Color.white;
+                GUI.backgroundColor = Color.gray;
+                source = EditorGUILayout.ObjectField(unit.Value, typeof(Unit.Data), true, GUILayout.Width(100)) as Unit.Data;
+                // GUILayout.Label(unit.Value.ToString(), GUILayout.Width(163));
+                GUI.backgroundColor = Color.red;
+                if (GUILayout.Button("Remove", GUILayout.Width(66)))
+                {
+                    Debug.Log("<color=yellow>" + unit.Key.ToString() + "</color> has been <color=#fdb4ca>removed.</color>");
+                    database.DeleteKey(unit.Key);
+                }
+                GUILayout.EndHorizontal();
+            }
+            // for (int i = 0; i < database.units.Count; i++)
+            // {
+            //     DrawKocmoraft (i);
+            // }
+
+            // DrawAddTypeButton ();
+        }
+
+        // void DrawKocmoraft(int index)
         // {
         //     if (index < 0 || index >= database.kocmocraft.Count)
         //         return;
         //     // BeginChangeCheck() 用來檢查在 BeginChangeCheck() 和 EndChangeCheck() 之間是否有 Inspector 變數改變
-        //     EditorGUI.BeginChangeCheck ();
-        //     GUILayout.BeginHorizontal ();
+        //     EditorGUI.BeginChangeCheck();
+        //     GUILayout.BeginHorizontal();
         //     {
-        //         GUILayout.Label (database.kocmocraft[index].design.code.ToString (), GUILayout.Width (163));
-        //         database.kocmocraft[index].type = (Kocmoca.Type) EditorGUILayout.EnumPopup (database.kocmocraft[index].type, GUILayout.Width (163));
-        //         database.kocmocraft[index].turretOption = (TurretOption) EditorGUILayout.EnumPopup (database.kocmocraft[index].turretOption, GUILayout.Width (163));
-        //         database.kocmocraft[index].type = (Kocmoca.Type) EditorGUILayout.EnumPopup (database.kocmocraft[index].type, GUILayout.Width (163));
-        //         database.kocmocraft[index].type = (Kocmoca.Type) EditorGUILayout.EnumPopup (database.kocmocraft[index].type, GUILayout.Width (163));
+        //         GUILayout.Label(database.kocmocraft[index].design.code.ToString(), GUILayout.Width(163));
+        //         database.kocmocraft[index].type = (Kocmoca.Type)EditorGUILayout.EnumPopup(database.kocmocraft[index].type, GUILayout.Width(163));
+        //         database.kocmocraft[index].turretOption = (TurretOption)EditorGUILayout.EnumPopup(database.kocmocraft[index].turretOption, GUILayout.Width(163));
+        //         database.kocmocraft[index].type = (Kocmoca.Type)EditorGUILayout.EnumPopup(database.kocmocraft[index].type, GUILayout.Width(163));
+        //         database.kocmocraft[index].type = (Kocmoca.Type)EditorGUILayout.EnumPopup(database.kocmocraft[index].type, GUILayout.Width(163));
 
         //         // 如果 Inspector 變數有改變，EndChangeCheck() 會回傳 True，才有必要去做變數存取
-        //         if (EditorGUI.EndChangeCheck ())
+        //         if (EditorGUI.EndChangeCheck())
         //         {
         //             // 在修改之前建立 Undo/Redo 記錄步驟
-        //             Undo.RecordObject (database, "Modify Types");
+        //             Undo.RecordObject(database, "Modify Types");
 
         //             // database.Types[index].Name = newName;
         //             // database.Types[index].HitColor = newColor;
 
         //             // 每當直接修改 Inspector 變數，而不是使用 serializedObject 修改時，必須要告訴 Unity 這個 Compoent 已經修改過了
         //             // 在下一次存檔時，必須要儲存這個變數
-        //             EditorUtility.SetDirty (database);
+        //             EditorUtility.SetDirty(database);
         //         }
         //         // if (GUILayout.Button ("Remove"))
         //         // {
 
         //         // }
         //     }
-        //     GUILayout.EndHorizontal ();
+        //     GUILayout.EndHorizontal();
         // }
 
         // void DrawTypesInspector ()
@@ -160,6 +206,6 @@ namespace Warfare
         //         EditorUtility.SetDirty (database);
         //     }
         // }
-    
+
     }
 }
