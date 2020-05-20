@@ -24,9 +24,10 @@ public class ArmyManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast (ray, out hit))
             {
+                hit.transform.GetComponent<Warfare.GridManager>().Deploy();
                 // the object identified by hit.transform was clicked
                 // do whatever you want
-                Debug.Log(hit.transform.name);
+                // Debug.Log(hit.transform.name);
             }
         }
     }

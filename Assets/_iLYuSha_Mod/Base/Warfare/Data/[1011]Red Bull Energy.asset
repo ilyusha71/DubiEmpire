@@ -16,4 +16,6 @@ MonoBehaviour:
     type: 3}
   m_type: 1011
   m_hp: 10
-  m_formation: []
+  m_formation:
+  - {x: 2, y: 0, z: 2}
+  - {x: -2, y: 0, z: -2}

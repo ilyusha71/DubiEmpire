@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: SculptMaterial
   m_Shader: {fileID: 4800000, guid: f5d01bbba3dd4e94a9d60ae9526d5186, type: 3}
   m_ShaderKeywords: 
@@ -47,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatCap:
-        m_Texture: {fileID: 2800000, guid: 64431a9ecc1476841b530ce05d8d2ed4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2033eb08410c03748933623624028420, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:

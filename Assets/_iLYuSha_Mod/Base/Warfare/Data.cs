@@ -4,17 +4,41 @@ using UnityEngine;
 
 namespace Warfare.Unit
 {
-    [CreateAssetMenu (fileName = "Data", menuName = "Warfare/Unit/Create Warfare Unit Data")]
+    [CreateAssetMenu(fileName = "Data", menuName = "Warfare/Unit/Create Warfare Unit Data")]
     public class Data : ScriptableObject
     {
         public GameObject m_instance;
         public Type m_type;
         public int m_hp;
+        public Square m_square;
         public Vector3[] m_formation;
 
-        public void SetType ()
+        public void SetType()
         {
-            m_type = (Type) int.Parse (m_instance.name.Split (new char[2] { '[', ']' }) [1]);
+            m_type = (Type)int.Parse(m_instance.name.Split(new char[2] { '[', ']' })[1]);
+        }
+        public void SetFormation()
+        {
+            if (m_square == Square.None) return;
+            float height = 0;
+            int side = (int)m_square;
+            float offset = 12.0f / (side + 1.0f);
+            m_formation = new Vector3[side * side];
+            for (int i = 0; i < side; i++)
+            {
+                for (int j = 0; j < side; j++)
+                {
+                    m_formation[i * side + j] = new Vector3(-6 + (j + 1) * offset, height, 6 - (i + 1) * offset);
+                }
+            }
+        }
+        public GameObject GetWarfareUnit(Vector3 cantre, int index)
+        {
+            return Instantiate(m_instance, cantre + m_formation[index] * 1, Quaternion.identity);
+        }
+        public int GetStackCount(float hp)
+        {
+            return Mathf.CeilToInt(hp * m_formation.Length / m_hp);
         }
     }
     public enum Type
@@ -95,5 +119,14 @@ namespace Warfare.Unit
         IndianStan = 2181,
         Stan = 2182,
         AngryMan = 2191,
+    }
+    public enum Square
+    {
+        None = 0,
+        _3x3 = 3,
+        _4x4 = 4,
+        _5x5 = 5,
+        _6x6 = 6,
+        _7x7 = 7,
     }
 }

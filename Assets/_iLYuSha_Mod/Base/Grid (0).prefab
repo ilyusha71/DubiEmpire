@@ -187,6 +187,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8510199343989192841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeeb3dc5f07090842ad47ebe177bcbd8, type: 3}
+  m_Script: {fileID: 11500000, guid: ccb86e804c783ac4f9578a74242cd5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  database: {fileID: 11400000, guid: d2fc735c6d01abb4d86da345927ec285, type: 2}
+  enter:
+    serializedVersion: 2
+    rgba: 4278210531
+  exit:
+    serializedVersion: 2
+    rgba: 4284572001
+  listUnits: []
