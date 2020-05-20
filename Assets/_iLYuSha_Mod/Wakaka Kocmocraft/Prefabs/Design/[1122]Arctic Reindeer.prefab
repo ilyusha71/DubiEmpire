@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 5152199938439957565, guid: f0eba9d39cb8ccd48bebeb8d8450dca2,
         type: 3}
       propertyPath: m_Heading.m_Bias
-      value: 44
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7584931185993242413, guid: f0eba9d39cb8ccd48bebeb8d8450dca2,
         type: 3}
@@ -20,17 +20,17 @@ PrefabInstance:
     - target: {fileID: 8276772382423686416, guid: f0eba9d39cb8ccd48bebeb8d8450dca2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.66
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8276772382423686416, guid: f0eba9d39cb8ccd48bebeb8d8450dca2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.130638
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8276772382423686416, guid: f0eba9d39cb8ccd48bebeb8d8450dca2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.208656
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8276772382423686416, guid: f0eba9d39cb8ccd48bebeb8d8450dca2,
         type: 3}
@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 8276772382423686417, guid: f0eba9d39cb8ccd48bebeb8d8450dca2,
         type: 3}
       propertyPath: m_Name
-      value: '[122]Arctic Reindeer'
+      value: '[1122]Arctic Reindeer'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0eba9d39cb8ccd48bebeb8d8450dca2, type: 3}

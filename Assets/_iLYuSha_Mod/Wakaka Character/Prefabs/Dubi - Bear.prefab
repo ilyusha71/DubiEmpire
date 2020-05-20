@@ -101,6 +101,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dubi - Bear
       objectReference: {fileID: 0}
+    - target: {fileID: 4845266314806821279, guid: 475532e215e3d7746ba345461bb5fbb2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bear
+      objectReference: {fileID: 0}
     - target: {fileID: 6808528932311267213, guid: 475532e215e3d7746ba345461bb5fbb2,
         type: 3}
       propertyPath: m_LocalPosition.x

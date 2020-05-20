@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3565676943249673594}
   - component: {fileID: 735571979917632102}
   m_Layer: 9
-  m_Name: '[030]Paper Aeroplane'
+  m_Name: '[1031]Paper Aeroplane'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894128289693973274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 999.31805, y: 1005.4495, z: 994.725}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2455648506494531449}
@@ -158,7 +158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2921841093552896630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.8131104, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4868958347959449983}
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Heading:
     m_Definition: 2
     m_VelocityFilterStrength: 4
-    m_Bias: 4
+    m_Bias: -101
   m_RecenterToTargetHeading:
     m_enabled: 0
     m_WaitTime: 1

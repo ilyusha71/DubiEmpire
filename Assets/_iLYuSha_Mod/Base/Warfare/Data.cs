@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Warfare.Unit
 {
-    [CreateAssetMenu(fileName = "Warfare Unit Model", menuName = "Warfare/Unit/Create Warfare Unit Model")]
+    [CreateAssetMenu (fileName = "Data", menuName = "Warfare/Unit/Create Warfare Unit Data")]
     public class Data : ScriptableObject
     {
         public GameObject m_instance;
@@ -12,26 +12,14 @@ namespace Warfare.Unit
         public int m_hp;
         public Vector3[] m_formation;
 
-        public void JoinDatabase()
+        public void SetType ()
         {
-#if UNITY_EDITOR
-            Database database = UnityEditor.AssetDatabase.LoadAssetAtPath<Database>("Assets/_iLYuSha_Mod/Base/Warfare/Database.asset");
-            if (!database.units.ContainsKey(m_type))
-            {
-                database.units.Add(m_type, this);
-                Debug.Log("<color=yellow>" + m_type.ToString() + "</color> has been <color=lime>Joined</color>.");
-            }
-            else
-            {
-                database.units[m_type] = this;
-                Debug.Log("<color=yellow>" + m_type.ToString() + "</color> has been <color=cyan>Updated</color>.");
-            }
-            UnityEditor.AssetDatabase.SaveAssets();
-#endif
+            m_type = (Type) int.Parse (m_instance.name.Split (new char[2] { '[', ']' }) [1]);
         }
     }
     public enum Type
     {
+        None = 0,
         Mech = 1000,
         DespicableMech = 1001,
         EvilMech = 1002,
@@ -104,7 +92,8 @@ namespace Warfare.Unit
         PinkSpongeBob = 2142,
         Kenny = 2151,
         Kyle = 2171,
-        Stan = 2181,
+        IndianStan = 2181,
+        Stan = 2182,
         AngryMan = 2191,
     }
 }

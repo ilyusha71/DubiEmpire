@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 1751991046905988796}
   - component: {fileID: 5710916175363419574}
   m_Layer: 9
-  m_Name: '[180]Inuit Scout'
+  m_Name: '[1181]Inuit Scout'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -779,7 +779,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9189504330064631289}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.8839656, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5501394057373073278}
@@ -875,7 +875,7 @@ MonoBehaviour:
   m_Heading:
     m_Definition: 2
     m_VelocityFilterStrength: 4
-    m_Bias: -133
+    m_Bias: -109
   m_RecenterToTargetHeading:
     m_enabled: 0
     m_WaitTime: 1

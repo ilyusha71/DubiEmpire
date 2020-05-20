@@ -79,27 +79,32 @@ PrefabInstance:
     - target: {fileID: 1784657817258643323, guid: 5cf8522f65ac6754195b5cc2b47aeb80,
         type: 3}
       propertyPath: m_Heading.m_Bias
-      value: -21
+      value: -160
       objectReference: {fileID: 0}
     - target: {fileID: 3623247591640224591, guid: 5cf8522f65ac6754195b5cc2b47aeb80,
         type: 3}
       propertyPath: m_Name
-      value: '[051]Bullet Bill'
+      value: '[1051]Bullet Bill'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869240142707872867, guid: 5cf8522f65ac6754195b5cc2b47aeb80,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213633850966524594, guid: 5cf8522f65ac6754195b5cc2b47aeb80,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 417.0822
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213633850966524594, guid: 5cf8522f65ac6754195b5cc2b47aeb80,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1549.2258
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213633850966524594, guid: 5cf8522f65ac6754195b5cc2b47aeb80,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1474.3549
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213633850966524594, guid: 5cf8522f65ac6754195b5cc2b47aeb80,
         type: 3}
@@ -140,6 +145,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102590797117418253, guid: 5cf8522f65ac6754195b5cc2b47aeb80,
+        type: 3}
+      propertyPath: xy
+      value: 8.767338
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102590797117418253, guid: 5cf8522f65ac6754195b5cc2b47aeb80,
+        type: 3}
+      propertyPath: dhRate
+      value: 2.2463198
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102590797117418253, guid: 5cf8522f65ac6754195b5cc2b47aeb80,
+        type: 3}
+      propertyPath: hRate
+      value: 3.501666
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cf8522f65ac6754195b5cc2b47aeb80, type: 3}

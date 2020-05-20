@@ -139,12 +139,12 @@ PrefabInstance:
     - target: {fileID: 8253121413412684091, guid: 707c0118c699add46a488e6ec280b0e7,
         type: 3}
       propertyPath: m_Heading.m_Bias
-      value: -162
+      value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 9032494723184236445, guid: 707c0118c699add46a488e6ec280b0e7,
         type: 3}
       propertyPath: m_Name
-      value: '[022]Kells'
+      value: '[1022]Kells'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 707c0118c699add46a488e6ec280b0e7, type: 3}

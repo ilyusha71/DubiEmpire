@@ -7,25 +7,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3766383918272054793, guid: c91173cdeea56fb4b81207a85d28fd17,
+        type: 3}
+      propertyPath: xy
+      value: 14.556509
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766383918272054793, guid: c91173cdeea56fb4b81207a85d28fd17,
+        type: 3}
+      propertyPath: dhRate
+      value: 2.6643748
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766383918272054793, guid: c91173cdeea56fb4b81207a85d28fd17,
+        type: 3}
+      propertyPath: hRate
+      value: 4.1533494
+      objectReference: {fileID: 0}
     - target: {fileID: 4754319915061552303, guid: c91173cdeea56fb4b81207a85d28fd17,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 07a6b8c9afbe7f8488d05e64bcbb4001, type: 2}
+    - target: {fileID: 7545928376989369810, guid: c91173cdeea56fb4b81207a85d28fd17,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8898195020495550460, guid: c91173cdeea56fb4b81207a85d28fd17,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8898195020495550460, guid: c91173cdeea56fb4b81207a85d28fd17,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.130638
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8898195020495550460, guid: c91173cdeea56fb4b81207a85d28fd17,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.208656
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8898195020495550460, guid: c91173cdeea56fb4b81207a85d28fd17,
         type: 3}
@@ -70,12 +90,12 @@ PrefabInstance:
     - target: {fileID: 8898195020495550461, guid: c91173cdeea56fb4b81207a85d28fd17,
         type: 3}
       propertyPath: m_Name
-      value: '[092]Scopio Firmament'
+      value: '[1092]Scopio Firmament'
       objectReference: {fileID: 0}
     - target: {fileID: 9199096502068821443, guid: c91173cdeea56fb4b81207a85d28fd17,
         type: 3}
       propertyPath: m_Heading.m_Bias
-      value: -90
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c91173cdeea56fb4b81207a85d28fd17, type: 3}

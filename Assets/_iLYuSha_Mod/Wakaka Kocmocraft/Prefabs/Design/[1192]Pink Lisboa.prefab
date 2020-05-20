@@ -79,17 +79,17 @@ PrefabInstance:
     - target: {fileID: 504562294108810029, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 394.1673
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 504562294108810029, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1634.5051
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 504562294108810029, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1576.0043
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 504562294108810029, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
@@ -131,6 +131,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2734366686836328713, guid: 1e1f416e56327f34e909c5f614390a60,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3787370101180247732, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -139,12 +144,27 @@ PrefabInstance:
     - target: {fileID: 3975458916225564553, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
       propertyPath: m_Name
-      value: '[192]Pink Lisboa'
+      value: '[1192]Pink Lisboa'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484685008111399657, guid: 1e1f416e56327f34e909c5f614390a60,
+        type: 3}
+      propertyPath: xy
+      value: 13.168658
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484685008111399657, guid: 1e1f416e56327f34e909c5f614390a60,
+        type: 3}
+      propertyPath: dhRate
+      value: 2.6201031
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484685008111399657, guid: 1e1f416e56327f34e909c5f614390a60,
+        type: 3}
+      propertyPath: hRate
+      value: 4.0843368
       objectReference: {fileID: 0}
     - target: {fileID: 6867211694588676874, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
       propertyPath: m_Heading.m_Bias
-      value: 169
+      value: 37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1f416e56327f34e909c5f614390a60, type: 3}

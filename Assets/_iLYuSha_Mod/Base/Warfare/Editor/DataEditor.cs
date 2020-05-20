@@ -15,8 +15,23 @@ namespace Warfare.Unit
             {
                 foreach (var script in scripts)
                 {
-                    script.JoinDatabase ();
+                    if (!script.m_instance)
+                        return;
+                    script.SetType ();
+                    Database database = AssetDatabase.LoadAssetAtPath<Database> ("Assets/_iLYuSha_Mod/Base/Warfare/Database.asset");
+                    if (!database.units.ContainsKey (script.m_type))
+                    {
+                        database.units.Add (script.m_type, script);
+                        Debug.Log ("<color=yellow>" + script.m_type.ToString () + "</color> has been <color=lime>Joined</color>.");
+                        AssetDatabase.RenameAsset (AssetDatabase.GetAssetPath (script), script.m_instance.name);
+                    }
+                    else
+                    {
+                        database.units[script.m_type] = script;
+                        Debug.Log ("<color=yellow>" + script.m_type.ToString () + "</color> has been <color=cyan>Updated</color>.");
+                    }
                     EditorUtility.SetDirty (script);
+                    EditorUtility.SetDirty (database);
                     AssetDatabase.SaveAssets ();
                 }
             }

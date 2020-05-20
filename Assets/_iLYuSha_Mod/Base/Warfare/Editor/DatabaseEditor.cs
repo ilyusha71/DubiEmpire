@@ -1,7 +1,7 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using System.Collections.Generic;
 
 namespace Warfare
 {
@@ -13,91 +13,119 @@ namespace Warfare
         private Vector2 scrollPos;
         private Editor editor;
         private Database database;
-        
-        [MenuItem("Warfare/Warfare Database #F7")]
-        public static void ShowDatabaseWindow()
+
+        [MenuItem ("Warfare/Warfare Database #F7")]
+        public static void ShowDatabaseWindow ()
         {
-            var window = EditorWindow.GetWindow<DatabaseEditor>(false, "Warfare Database", true);
-            window.database = UnityEditor.AssetDatabase.LoadAssetAtPath<Database>("Assets/_iLYuSha_Mod/Base/Warfare/Database.asset");
-            window.editor = Editor.CreateEditor(window.database);
+            var window = EditorWindow.GetWindow<DatabaseEditor> (false, "Warfare Database", true);
+            window.database = UnityEditor.AssetDatabase.LoadAssetAtPath<Database> ("Assets/_iLYuSha_Mod/Base/Warfare/Database.asset");
+            window.editor = Editor.CreateEditor (window.database);
         }
-        public void OnGUI()
+        public void OnGUI ()
         {
             if (!editor)
-                ShowDatabaseWindow();
-            EditorGUILayout.BeginVertical(GUILayout.MinHeight(position.height));
-            scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
+                ShowDatabaseWindow ();
+            EditorGUILayout.BeginVertical (GUILayout.MinHeight (position.height));
+            scrollPos = EditorGUILayout.BeginScrollView (scrollPos);
 
-            //     // 直接调用Inspector的绘制显示
             // this.editor.OnInspectorGUI();
-            //     // DrawTypesInspector ();
-            DrawKocmocraftInspector();
+            DrawDatabaseInspector ();
 
-            EditorGUILayout.EndScrollView();
-            EditorGUILayout.EndVertical();
+            EditorGUILayout.EndScrollView ();
+            EditorGUILayout.EndVertical ();
         }
 
-        void DrawKocmocraftInspector()
+        void DrawDatabaseInspector ()
         {
             GUI.skin.label.alignment = TextAnchor.MiddleCenter;
             GUI.skin.label.fontStyle = FontStyle.Bold;
             GUI.skin.label.fontSize = 21;
-            GUILayout.Label("Warfare Database");
+            GUILayout.Label ("Warfare Database");
 
-            GUILayout.Space(5);
-            GUILayout.BeginHorizontal();
+            GUILayout.Space (5);
+            GUILayout.BeginHorizontal ();
             GUI.skin.label.alignment = TextAnchor.MiddleLeft;
             GUI.skin.label.fontStyle = FontStyle.Normal;
             GUI.skin.label.fontSize = 18;
-            GUILayout.Label("Total: ", GUILayout.Width(57));
+            GUILayout.Label ("Total: ", GUILayout.Width (57));
+
             GUI.skin.label.fontStyle = FontStyle.Bold;
             GUI.contentColor = Color.yellow;
-            GUILayout.Label(database.units.Count.ToString());
-            GUILayout.EndHorizontal();
+            GUILayout.Label (database.units.Count.ToString (), GUILayout.Width (27));
 
-            GUILayout.Space(5);
+            GUI.backgroundColor = Color.white;
+            GUI.contentColor = Color.white;
+            EditorGUI.BeginChangeCheck ();
+            if (GUILayout.Button ("Sort", GUILayout.Width (66)))
+                database.Sort ();
+            if (EditorGUI.EndChangeCheck ())
+            {
+                Undo.RecordObject (database, "Modify Types");
+                EditorUtility.SetDirty (database);
+            }
+
+            GUILayout.EndHorizontal ();
+
+            GUILayout.Space (5);
             GUI.skin.label.fontSize = 16;
             GUI.contentColor = Color.green;
-            GUILayout.BeginHorizontal();
-            GUILayout.Label("Warfare Unit", GUILayout.Width(163));
+            GUILayout.BeginHorizontal ();
+            GUILayout.Label ("Warfare Unit", GUILayout.Width (200));
+            GUILayout.Label ("HP", GUILayout.Width (50));
+            GUILayout.Space (10);
+            GUILayout.Label ("Stack", GUILayout.Width (50));
+            GUILayout.Space (10);
             GUI.contentColor = Color.white;
-            GUILayout.Label("Data", GUILayout.Width(100));
-            GUILayout.Label("", GUILayout.Width(66));
-            GUI.contentColor = Color.green;
-            GUILayout.Label("HP", GUILayout.Width(50));
-            GUILayout.Label("Stack", GUILayout.Width(50));
-            GUILayout.EndHorizontal();
+            GUILayout.Label ("Data", GUILayout.Width (100));
+            GUILayout.EndHorizontal ();
 
-            GUILayout.Space(5);
-            GUI.skin.label.fontSize = 14;
-            foreach (KeyValuePair<Unit.Type, Unit.Data> unit in database.units.ToList())
+            GUILayout.Space (5);
+            foreach (KeyValuePair<Unit.Type, Unit.Data> unit in database.units.ToList ())
             {
-                EditorGUI.BeginChangeCheck();
-                GUILayout.BeginHorizontal();
+                GUILayout.BeginHorizontal ();
 
+                GUI.skin.label.fontSize = 12;
                 GUI.skin.label.fontStyle = FontStyle.Bold;
-                GUI.contentColor = Color.white;
-                GUILayout.Label(unit.Key.ToString(), GUILayout.Width(163));
+                GUI.contentColor = Color.yellow;
+                GUILayout.Label (((int) unit.Key).ToString (), GUILayout.Width (37));
 
+                GUI.skin.label.fontSize = 14;
+                GUI.contentColor = Color.white;
+                GUILayout.Label (unit.Key.ToString (), GUILayout.Width (163));
+
+                GUI.skin.label.fontSize = 12;
                 GUI.skin.label.fontStyle = FontStyle.Normal;
                 GUI.contentColor = Color.white;
-                GUI.backgroundColor = Color.gray;
-                source = EditorGUILayout.ObjectField(unit.Value, typeof(Unit.Data), true, GUILayout.Width(100)) as Unit.Data;
-                // GUILayout.Label(unit.Value.ToString(), GUILayout.Width(163));
-                GUI.backgroundColor = Color.red;
-                if (GUILayout.Button("Remove", GUILayout.Width(66)))
+                GUI.backgroundColor = Color.white;
+                EditorGUI.BeginChangeCheck ();
+                unit.Value.m_hp = EditorGUILayout.IntField (unit.Value.m_hp, GUILayout.Width (50));
+                if (EditorGUI.EndChangeCheck ())
                 {
-                    Debug.Log("<color=yellow>" + unit.Key.ToString() + "</color> has been <color=#fdb4ca>removed.</color>");
-                    database.DeleteKey(unit.Key);
+                    Undo.RecordObject (unit.Value, "Modify Types");
+                    EditorUtility.SetDirty (unit.Value);
                 }
-                GUILayout.EndHorizontal();
-            }
-            // for (int i = 0; i < database.units.Count; i++)
-            // {
-            //     DrawKocmoraft (i);
-            // }
 
-            // DrawAddTypeButton ();
+                GUILayout.Space (10);
+                GUILayout.Label (unit.Value.m_formation.Length.ToString (), GUILayout.Width (50));
+
+                GUILayout.Space (10);
+                source = EditorGUILayout.ObjectField (unit.Value, typeof (Unit.Data), true, GUILayout.Width (100)) as Unit.Data;
+
+                GUI.backgroundColor = Color.red;
+                EditorGUI.BeginChangeCheck ();
+                if (GUILayout.Button ("Remove", GUILayout.Width (66)))
+                {
+                    Debug.Log ("<color=yellow>" + unit.Key.ToString () + "</color> has been <color=#fdb4ca>removed.</color>");
+                    database.DeleteKey (unit.Key);
+                }
+                if (EditorGUI.EndChangeCheck ())
+                {
+                    Undo.RecordObject (database, "Modify Types");
+                    EditorUtility.SetDirty (database);
+                }
+                GUILayout.EndHorizontal ();
+            }
+            GUILayout.Space (15);
         }
 
         // void DrawKocmoraft(int index)

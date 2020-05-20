@@ -10,22 +10,47 @@ PrefabInstance:
     - target: {fileID: 3345242553503708541, guid: 0e0de7679ca3aa24396834e403a59c67,
         type: 3}
       propertyPath: m_Heading.m_Bias
-      value: -12
+      value: -162
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323349620557009876, guid: 0e0de7679ca3aa24396834e403a59c67,
+        type: 3}
+      propertyPath: mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 56817133d542fb94880b6ffdddcf5b1f, type: 2}
+    - target: {fileID: 5323349620557009876, guid: 0e0de7679ca3aa24396834e403a59c67,
+        type: 3}
+      propertyPath: size.x
+      value: 5.6165094
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323349620557009876, guid: 0e0de7679ca3aa24396834e403a59c67,
+        type: 3}
+      propertyPath: xy
+      value: 8.080922
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323349620557009876, guid: 0e0de7679ca3aa24396834e403a59c67,
+        type: 3}
+      propertyPath: dhRate
+      value: 2.1850286
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323349620557009876, guid: 0e0de7679ca3aa24396834e403a59c67,
+        type: 3}
+      propertyPath: hRate
+      value: 3.4061227
       objectReference: {fileID: 0}
     - target: {fileID: 5411442551531209614, guid: 0e0de7679ca3aa24396834e403a59c67,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 482.87085
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5411442551531209614, guid: 0e0de7679ca3aa24396834e403a59c67,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1499.3419
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5411442551531209614, guid: 0e0de7679ca3aa24396834e403a59c67,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1498.2113
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5411442551531209614, guid: 0e0de7679ca3aa24396834e403a59c67,
         type: 3}
@@ -70,7 +95,22 @@ PrefabInstance:
     - target: {fileID: 5411442551531209615, guid: 0e0de7679ca3aa24396834e403a59c67,
         type: 3}
       propertyPath: m_Name
-      value: '[011]Red Bull Energy'
+      value: '[1011]Red Bull Energy'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516146449552272952, guid: 0e0de7679ca3aa24396834e403a59c67,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516146449552272952, guid: 0e0de7679ca3aa24396834e403a59c67,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516146449552272952, guid: 0e0de7679ca3aa24396834e403a59c67,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7833086242939036625, guid: 0e0de7679ca3aa24396834e403a59c67,
         type: 3}

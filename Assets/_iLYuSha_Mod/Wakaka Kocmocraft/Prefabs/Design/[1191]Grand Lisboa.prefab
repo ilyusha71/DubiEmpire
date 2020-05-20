@@ -79,17 +79,17 @@ PrefabInstance:
     - target: {fileID: 504562294108810029, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 385.74142
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 504562294108810029, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1627.874
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 504562294108810029, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1542.1166
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 504562294108810029, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
@@ -134,12 +134,12 @@ PrefabInstance:
     - target: {fileID: 3975458916225564553, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
       propertyPath: m_Name
-      value: '[191]Grand Lisboa'
+      value: '[1191]Grand Lisboa'
       objectReference: {fileID: 0}
     - target: {fileID: 6867211694588676874, guid: 1e1f416e56327f34e909c5f614390a60,
         type: 3}
       propertyPath: m_Heading.m_Bias
-      value: 64
+      value: -113
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1f416e56327f34e909c5f614390a60, type: 3}

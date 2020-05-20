@@ -7,25 +7,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1800471522530604633, guid: 8dea69179c3b8e140a1887b329e0dfca,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2808750346541997685, guid: 8dea69179c3b8e140a1887b329e0dfca,
         type: 3}
       propertyPath: m_Name
-      value: '[132]Yogurt Express'
+      value: '[1132]Yogurt Express'
       objectReference: {fileID: 0}
     - target: {fileID: 5559383907602833441, guid: 8dea69179c3b8e140a1887b329e0dfca,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 386.67795
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5559383907602833441, guid: 8dea69179c3b8e140a1887b329e0dfca,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1610.17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5559383907602833441, guid: 8dea69179c3b8e140a1887b329e0dfca,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1505.398
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5559383907602833441, guid: 8dea69179c3b8e140a1887b329e0dfca,
         type: 3}
@@ -75,7 +80,22 @@ PrefabInstance:
     - target: {fileID: 7066049465819229022, guid: 8dea69179c3b8e140a1887b329e0dfca,
         type: 3}
       propertyPath: m_Heading.m_Bias
-      value: 92
+      value: 138
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486437216086576852, guid: 8dea69179c3b8e140a1887b329e0dfca,
+        type: 3}
+      propertyPath: xy
+      value: 13.758366
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486437216086576852, guid: 8dea69179c3b8e140a1887b329e0dfca,
+        type: 3}
+      propertyPath: dhRate
+      value: 2.326777
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486437216086576852, guid: 8dea69179c3b8e140a1887b329e0dfca,
+        type: 3}
+      propertyPath: hRate
+      value: 3.6270864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dea69179c3b8e140a1887b329e0dfca, type: 3}

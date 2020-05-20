@@ -109,22 +109,22 @@ PrefabInstance:
     - target: {fileID: 3905013555585368399, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}
       propertyPath: m_Heading.m_Bias
-      value: 165
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 4193499503857329928, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 406.47586
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4193499503857329928, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1556.7605
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4193499503857329928, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1470.1616
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4193499503857329928, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}
@@ -169,7 +169,7 @@ PrefabInstance:
     - target: {fileID: 4193499503857329929, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}
       propertyPath: m_Name
-      value: '[061]Time Machine MK.I'
+      value: '[1061]Time Machine MK.I'
       objectReference: {fileID: 0}
     - target: {fileID: 6759579818760596540, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}

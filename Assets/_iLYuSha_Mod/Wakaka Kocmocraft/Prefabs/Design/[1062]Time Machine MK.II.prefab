@@ -81,6 +81,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fa1a1767580c397448e2d31e0dd46859, type: 2}
+    - target: {fileID: 3246014690445444440, guid: dece1d408fee10d4182b29085a18d359,
+        type: 3}
+      propertyPath: xy
+      value: 4.76726
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246014690445444440, guid: dece1d408fee10d4182b29085a18d359,
+        type: 3}
+      propertyPath: dhRate
+      value: 2.018649
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246014690445444440, guid: dece1d408fee10d4182b29085a18d359,
+        type: 3}
+      propertyPath: hRate
+      value: 3.1467624
+      objectReference: {fileID: 0}
     - target: {fileID: 3431193960205764863, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -114,22 +129,27 @@ PrefabInstance:
     - target: {fileID: 3905013555585368399, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}
       propertyPath: m_Heading.m_Bias
-      value: 14
+      value: -130
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135727517854533830, guid: dece1d408fee10d4182b29085a18d359,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4193499503857329928, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 396.49973
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4193499503857329928, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1643.5775
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4193499503857329928, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1554.8407
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4193499503857329928, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}
@@ -174,7 +194,7 @@ PrefabInstance:
     - target: {fileID: 4193499503857329929, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}
       propertyPath: m_Name
-      value: '[062]Time Machine MK.II'
+      value: '[1062]Time Machine MK.II'
       objectReference: {fileID: 0}
     - target: {fileID: 6759579818760596540, guid: dece1d408fee10d4182b29085a18d359,
         type: 3}

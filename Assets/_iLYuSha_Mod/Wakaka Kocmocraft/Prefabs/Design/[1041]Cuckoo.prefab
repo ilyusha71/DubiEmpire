@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 3115508790066108042}
   - component: {fileID: 873835494365349042}
   m_Layer: 9
-  m_Name: '[040]Cuckoo'
+  m_Name: '[1041]Cuckoo'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2569641713012488748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 999.31805, y: 1005.4495, z: 994.725}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7285071135265273228}
@@ -172,11 +172,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesh: {fileID: 4300000, guid: 4e120648b6287d641b6ea240cf506d90, type: 2}
-  centre: {x: 0, y: 0.23748028, z: -0.4639244}
-  size: {x: 10.38089, y: 5.1483126, z: 9.296647}
+  centre: {x: 0, y: 0.23748481, z: -0.4639244}
+  size: {x: 10.38089, y: 5.148322, z: 9.296647}
   xy: 13.9352255
-  dhRate: 2.7067559
-  hRate: 4.219415
+  dhRate: 2.7067509
+  hRate: 4.219407
 --- !u!1 &2763098016951436530
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3779874678185139480}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5741577, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3771113849356408315}
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Heading:
     m_Definition: 2
     m_VelocityFilterStrength: 4
-    m_Bias: 15
+    m_Bias: -84
   m_RecenterToTargetHeading:
     m_enabled: 0
     m_WaitTime: 1

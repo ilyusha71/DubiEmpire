@@ -19,24 +19,60 @@ namespace Kocmoca
 
         public void Reset ()
         {
+            Vector3 now = transform.position;
+            transform.position = Vector3.zero;
             // 若模型有子物件，生成一個合併的Mesh，並用於後續計算使用
             Transform model = transform.GetChild (0); // 2 = Painting I
-            if (model.childCount > 0)
+            MeshFilter[] mfs = model.GetComponentsInChildren<MeshFilter> ();
+            if (mfs.Length > 1)
+            {
+
                 mesh = CombineMesh (model.gameObject);
-            // else if (model.childCount == 1)
-            //     mesh = model.GetComponentInChildren<MeshFilter> ().sharedMesh;
+                centre = mesh.bounds.center;
+                size = mesh.bounds.size;
+            }
             else
-                mesh = model.GetComponent<MeshFilter> ().sharedMesh;
-            centre = mesh.bounds.center;
-            size = mesh.bounds.size;
+            {
+                mesh = model.GetComponentInChildren<MeshFilter> ().sharedMesh;
+                if (model.childCount > 0) // 適用已修正錨點在基底的單一物件，例如Capsule、Box
+                {
+                    size = new Vector3 (
+                        mesh.bounds.size.x * mfs[0].transform.localScale.x,
+                        mesh.bounds.size.y * mfs[0].transform.localScale.y,
+                        mesh.bounds.size.z * mfs[0].transform.localScale.z);
+                    centre = new Vector3 (0, 0.5f * size.y, 0);
+                }
+                else
+                {
+                    centre = mesh.bounds.center;
+                    size = mesh.bounds.size;
+                }
+            }
             AlignBase ();
             Debug.Log ("<color=lime>" + name + " data has been preset.</color>");
+            transform.position = now;
         }
 
         /* 網格合併 */
         public Mesh CombineMesh (GameObject obj)
         {
             string MESH_PATH = "Assets/_iLYuSha_Mod/Wakaka Kocmocraft/Meshes/";
+            string tempPath = MESH_PATH + obj.name + "_mesh.asset";
+            if (obj.tag == "Dubi")
+            {
+                Mesh dubi = AssetDatabase.LoadAssetAtPath<Mesh> (MESH_PATH + "dubi_mesh.asset");
+                return dubi;
+            }
+            else if (obj.tag == "Bear")
+            {
+                Mesh bear = AssetDatabase.LoadAssetAtPath<Mesh> (MESH_PATH + "bear_mesh.asset");
+                return bear;
+            }
+
+            Mesh source = AssetDatabase.LoadAssetAtPath<Mesh> (tempPath);
+            if (source)
+                return source;
+
             if (obj.GetComponent<MeshRenderer> () == null)
             {
                 obj.AddComponent<MeshRenderer> ();
@@ -87,12 +123,11 @@ namespace Kocmoca
             {
                 collider.sharedMesh = mesh;
             }
-            string tempPath = MESH_PATH + obj.name + "_mesh.asset";
             AssetDatabase.CreateAsset (meshFilter.sharedMesh, tempPath);
             //PrefabUtility.DisconnectPrefabInstance(obj);
             Mesh target = meshFilter.sharedMesh;
-            DestroyImmediate (obj.GetComponent<MeshFilter> ());
-            DestroyImmediate (obj.GetComponent<MeshRenderer> ());
+            DestroyImmediate (obj.GetComponent<MeshFilter> (), true);
+            DestroyImmediate (obj.GetComponent<MeshRenderer> (), true);
             return target;
         }
         /* 對齊質心 */
@@ -165,6 +200,44 @@ namespace Kocmoca
             cmFreeLook.m_YAxis.m_InvertInput = true;
             cmFreeLook.enabled = false;
         }
+        public void FreeLookSetting (CinemachineFreeLook cinemachine)
+        {
+            float wingspan = size.x;
+            float length = size.z;
+            float height = size.y;
+            float max = wingspan > length ? (wingspan > height ? wingspan : height) : (length > height ? length : height);
+            float wingspanScale = wingspan / max;
+            float lengthScale = length / max;
+            float heightScale = height / max;
+            float orthoSize = max * 0.5f;
+            float near = orthoSize + 2.7f;
+            float far = orthoSize + 19.3f;
+
+            float xyMax = Mathf.Sqrt (wingspan * wingspan + length * length);
+            float radius = xyMax * 1.35f;
+            float top = radius / Mathf.Sqrt (3);
+            xy = xyMax;
+            dhRate = xy / height;
+            hRate = top / (height * 0.5f);
+
+            cinemachine.enabled = true;
+            cinemachine.Follow = transform;
+            cinemachine.LookAt = transform;
+            cinemachine.m_Lens.FieldOfView = 60;
+            cinemachine.m_BindingMode = CinemachineTransposer.BindingMode.LockToTarget;
+            cinemachine.m_Orbits[0].m_Height = top; // orthoSize + 3; //sizeView.Height * 0.5f + 5;
+            cinemachine.m_Orbits[1].m_Height = 0;
+            cinemachine.m_Orbits[2].m_Height = -orthoSize - 3; //-sizeView.Height;
+            cinemachine.m_Orbits[0].m_Radius = radius; //11; //sizeView.NearView + 2;
+            cinemachine.m_Orbits[1].m_Radius = 11; //sizeView.HalfSize + 15;
+            cinemachine.m_Orbits[2].m_Radius = 11; //sizeView.NearView + 1;
+            cinemachine.m_Heading.m_Bias = Random.Range (-180, 180);
+            cinemachine.m_YAxis.Value = 1.0f;
+            cinemachine.m_XAxis.m_InputAxisName = string.Empty;
+            cinemachine.m_YAxis.m_InputAxisName = string.Empty;
+            cinemachine.m_XAxis.m_InvertInput = false;
+            cinemachine.m_YAxis.m_InvertInput = true;
+        }
         public float GetScalePower ()
         {
             // float max = Mathf.Max(0, size.x);
@@ -186,6 +259,13 @@ namespace Kocmoca
             DrawDefaultInspector ();
 
             var scripts = targets.OfType<Protodesign> ();
+            if (GUILayout.Button ("Rebuild"))
+                foreach (var script in scripts)
+                {
+                    script.Reset ();
+                    script.FreeLookSetting ();
+                }
+
             if (GUILayout.Button ("Align Centre"))
                 foreach (var script in scripts)
                     script.AlignCentre ();
