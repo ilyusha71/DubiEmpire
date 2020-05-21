@@ -6,7 +6,7 @@ namespace Warfare
 {
     public class GridManager : MonoBehaviour
     {
-        public Database database;
+        public Unit.Database database;
         public Color32 enter = new Color32 (227, 79, 0, 255);
         public Color32 exit = new Color32 (97, 97, 97, 255);
         public Unit.Model m_unit;

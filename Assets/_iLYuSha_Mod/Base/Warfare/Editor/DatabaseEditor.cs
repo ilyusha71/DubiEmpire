@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Warfare
+namespace Warfare.Unit
 {
     // [CanEditMultipleObjects]
     // [CustomEditor (typeof (KocmocraftDatabase))]
