@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbba39eaad241747b645ed3ecbb89ce, type: 3}
+  m_Name: 1205
+  m_EditorClassIdentifier: 
+  m_index: 1205
+  m_faction: 12
+  m_legion: 5
+  m_squadron:
+  - m_texture: {fileID: 2800000, guid: 18b6f2f363c0daa4289927215b34e3a2, type: 3}
+    m_percent: 1
+    m_type: 0
+    m_hp: 0
+  - m_texture: {fileID: 2800000, guid: 656fe4d97c1940e499a967c9972f25c8, type: 3}
+    m_percent: 1
+    m_type: 0
+    m_hp: 0
+  - m_texture: {fileID: 2800000, guid: ddf738eeefd802347a713d9b37270c6c, type: 3}
+    m_percent: 1
+    m_type: 0
+    m_hp: 0
+  - m_texture: {fileID: 2800000, guid: f35678f0ca6f0b04ea02069293705204, type: 3}
+    m_percent: 1
+    m_type: 0
+    m_hp: 0
+  - m_texture: {fileID: 2800000, guid: 28727fd838704a64585a70e48ac7dca0, type: 3}
+    m_percent: 1
+    m_type: 0
+    m_hp: 0
+  - m_texture: {fileID: 2800000, guid: b6ba67fb59519b8468de0c66d5613f81, type: 3}
+    m_percent: 1
+    m_type: 0
+    m_hp: 0
+  - m_texture: {fileID: 0}
+    m_percent: 1
+    m_type: 0
+    m_hp: 0
+  - m_texture: {fileID: 2800000, guid: 50744bb4712f71349affdcfd078425fb, type: 3}
+    m_percent: 1
+    m_type: 0
+    m_hp: 0
+  - m_texture: {fileID: 0}
+    m_percent: 1
+    m_type: 0
+    m_hp: 0
+  - m_texture: {fileID: 2800000, guid: c30fbc6d837cdca4dade43f6a294abf1, type: 3}
+    m_percent: 1
+    m_type: 0
+    m_hp: 0
+  - m_texture: {fileID: 0}
+    m_percent: 1
+    m_type: 0
+    m_hp: 0
+  - m_texture: {fileID: 0}
+    m_percent: 1
+    m_type: 0
+    m_hp: 0
+  - m_texture: {fileID: 2800000, guid: 3fa45da4c38017a4eb03a284e66cc435, type: 3}
+    m_percent: 1
+    m_type: 0
+    m_hp: 0

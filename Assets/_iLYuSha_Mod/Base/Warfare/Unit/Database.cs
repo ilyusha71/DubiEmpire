@@ -21,7 +21,6 @@ namespace Warfare.Unit
         {
             Dictionary<Unit.Type, Unit.Data> dic1Asc = units.OrderBy (o => o.Key).ToDictionary (o => o.Key, p => p.Value);
             units = dic1Asc;
-
         }
         public void OnBeforeSerialize ()
         {
@@ -47,10 +46,6 @@ namespace Warfare.Unit
 #if UNITY_EDITOR
         public void SaveDatabase ()
         {
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    UnityEditor.AssetDatabase.RenameAsset("Assets/_iLYuSha Wakaka Setting/ScriptableObject/Kocmocraft Module " + i + ".asset", index.kocmocraft[i + 20].name + ".asset");
-            //}
             Debug.Log ("<color=yellow>Database has been updated!</color>");
             UnityEditor.AssetDatabase.SaveAssets ();
         }

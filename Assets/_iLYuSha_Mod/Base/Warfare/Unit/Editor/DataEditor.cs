@@ -19,7 +19,7 @@ namespace Warfare.Unit
                         return;
                     script.SetType();
                     script.SetFormation();
-                    Database database = AssetDatabase.LoadAssetAtPath<Database>("Assets/_iLYuSha_Mod/Base/Warfare/Database.asset");
+                    Database database = AssetDatabase.LoadAssetAtPath<Database>("Assets/_iLYuSha_Mod/Base/Warfare/Unit/Database.asset");
                     if (!database.units.ContainsKey(script.m_type))
                     {
                         database.units.Add(script.m_type, script);
@@ -36,14 +36,6 @@ namespace Warfare.Unit
                     AssetDatabase.SaveAssets();
                 }
             }
-            /* 以下無法觸發多項目批量編輯 */
-            //var myTarget = (KocmocraftModule)target;
-            //if (GUILayout.Button("Save Database"))
-            //{
-            //    Debug.Log(myTarget.name);
-            //    EditorUtility.SetDirty(myTarget);
-            //    AssetDatabase.SaveAssets();
-            //}
             DrawDefaultInspector();
         }
     }

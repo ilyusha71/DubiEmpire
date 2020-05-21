@@ -5,8 +5,6 @@ using UnityEngine;
 
 namespace Warfare.Unit
 {
-    // [CanEditMultipleObjects]
-    // [CustomEditor (typeof (KocmocraftDatabase))]
     public class DatabaseEditor : EditorWindow
     {
         private Unit.Data source;
@@ -14,11 +12,11 @@ namespace Warfare.Unit
         private Editor editor;
         private Database database;
 
-        [MenuItem ("Warfare/Warfare Database #F7")]
+        [MenuItem ("Warfare/Unit Database #F7")]
         public static void ShowDatabaseWindow ()
         {
-            var window = EditorWindow.GetWindow<DatabaseEditor> (false, "Warfare Database", true);
-            window.database = UnityEditor.AssetDatabase.LoadAssetAtPath<Database> ("Assets/_iLYuSha_Mod/Base/Warfare/Database.asset");
+            var window = EditorWindow.GetWindow<DatabaseEditor> (false, "Unit Database", true);
+            window.database = UnityEditor.AssetDatabase.LoadAssetAtPath<Database> ("Assets/_iLYuSha_Mod/Base/Warfare/Unit/Database.asset");
             window.editor = Editor.CreateEditor (window.database);
         }
         public void OnGUI ()
@@ -40,7 +38,7 @@ namespace Warfare.Unit
             GUI.skin.label.alignment = TextAnchor.MiddleCenter;
             GUI.skin.label.fontStyle = FontStyle.Bold;
             GUI.skin.label.fontSize = 21;
-            GUILayout.Label ("Warfare Database");
+            GUILayout.Label ("Warfare Unit Database");
 
             GUILayout.Space (5);
             GUILayout.BeginHorizontal ();

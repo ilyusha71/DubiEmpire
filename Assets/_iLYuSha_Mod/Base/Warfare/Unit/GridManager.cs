@@ -72,4 +72,14 @@ namespace Warfare
             new Vector3 (-2, 0, -2),
         };
     }
+
+    public enum Faction
+    {
+        Wakaka = 10,
+        NO1 = 11,
+        NO2 = 12,
+        NO3 = 13,
+        NO4 = 14,
+        NO5 = 15,
+    }
 }
