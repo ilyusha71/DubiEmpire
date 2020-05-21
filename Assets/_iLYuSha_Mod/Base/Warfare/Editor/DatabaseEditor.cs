@@ -71,9 +71,17 @@ namespace Warfare
             GUI.contentColor = Color.green;
             GUILayout.BeginHorizontal ();
             GUILayout.Label ("Warfare Unit", GUILayout.Width (200));
+            GUILayout.Label ("N", GUILayout.Width (20));
+            GUILayout.Space (5);
+            GUILayout.Label ("Hr", GUILayout.Width (37));
+            GUILayout.Space (5);
+            GUILayout.Label ("Price", GUILayout.Width (63));
+            GUILayout.Space (5);
+            GUILayout.Label ("Total", GUILayout.Width (52));
+            GUILayout.Space (5);
             GUILayout.Label ("HP", GUILayout.Width (50));
             GUILayout.Space (10);
-            GUILayout.Label ("Stack", GUILayout.Width (50));
+            GUILayout.Label ("Sur.", GUILayout.Width (60));
             GUILayout.Space (10);
             GUI.contentColor = Color.white;
             GUILayout.Label ("Data", GUILayout.Width (100));
@@ -98,15 +106,22 @@ namespace Warfare
                 GUI.contentColor = Color.white;
                 GUI.backgroundColor = Color.white;
                 EditorGUI.BeginChangeCheck ();
+                GUILayout.Label (unit.Value.m_formation.Length.ToString (), GUILayout.Width (20));
+                GUILayout.Space (5);
+                unit.Value.m_Hour = EditorGUILayout.IntField (unit.Value.m_Hour, GUILayout.Width (37));
+                GUILayout.Space (5);
+                unit.Value.m_price = EditorGUILayout.IntField (unit.Value.m_price, GUILayout.Width (63));
+                GUILayout.Space (5);
+                GUILayout.Label ((unit.Value.m_price * unit.Value.m_formation.Length).ToString (), GUILayout.Width (52));
+                GUILayout.Space (5);
                 unit.Value.m_hp = EditorGUILayout.IntField (unit.Value.m_hp, GUILayout.Width (50));
+                GUILayout.Space (10);
+                GUILayout.Label ((unit.Value.m_hp * unit.Value.m_formation.Length).ToString (), GUILayout.Width (35));
                 if (EditorGUI.EndChangeCheck ())
                 {
                     Undo.RecordObject (unit.Value, "Modify Types");
                     EditorUtility.SetDirty (unit.Value);
                 }
-
-                GUILayout.Space (10);
-                GUILayout.Label (unit.Value.m_formation.Length.ToString (), GUILayout.Width (50));
 
                 GUILayout.Space (10);
                 source = EditorGUILayout.ObjectField (unit.Value, typeof (Unit.Data), true, GUILayout.Width (100)) as Unit.Data;

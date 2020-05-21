@@ -15,7 +15,9 @@ MonoBehaviour:
   m_instance: {fileID: 6378813905033005612, guid: f957a36a1e36d70438fd86bf99663a4c,
     type: 3}
   m_type: 1001
-  m_hp: 0
+  m_price: 335000
+  m_Hour: 297
+  m_hp: 990
+  m_square: 0
   m_formation:
-  - {x: 2, y: 0, z: 2}
-  - {x: -2, y: 0, z: -2}
+  - {x: 0, y: 0, z: 0}

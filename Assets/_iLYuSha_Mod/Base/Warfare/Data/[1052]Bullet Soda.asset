@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[1052]Bullet Soda'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 550990086556231646, guid: 6e2850d48b075524d95b372a01468010,
+  m_instance: {fileID: 5395263456777291154, guid: 2ce6955d3ea9d7b49bee83b8ab68eb54,
     type: 3}
   m_type: 1052
-  m_hp: 0
-  m_formation: []
+  m_price: 0
+  m_Hour: 0
+  m_hp: 1310
+  m_square: 0
+  m_formation:
+  - {x: 0, y: 0, z: 0}

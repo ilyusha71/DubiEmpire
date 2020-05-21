@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
-  m_Name: '[2061]Dorara'
+  m_Name: '[2191]Angry Man'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 584133226609042062, guid: 6daeadce61bc44a46888766782ef0aca,
+  m_instance: {fileID: 3063549977839604269, guid: 78d566bcf15d0e847bf9d6bb6b8dd0f2,
     type: 3}
-  m_type: 2061
-  m_price: 770
-  m_Hour: 16
-  m_hp: 37
+  m_type: 2191
+  m_price: 1000
+  m_Hour: 30
+  m_hp: 39
   m_square: 6
   m_formation:
   - {x: -4.285714, y: 0, z: 4.285714}
