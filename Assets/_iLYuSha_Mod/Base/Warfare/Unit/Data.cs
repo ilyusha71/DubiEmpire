@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Warfare.Unit
 {
-    [CreateAssetMenu (fileName = "Data", menuName = "Warfare/Unit/Create Warfare Unit Data")]
+    [CreateAssetMenu(fileName = "Data", menuName = "Warfare/Unit/Create Warfare Unit Data")]
     public class Data : ScriptableObject
     {
         public GameObject m_instance;
+        public Sprite m_sprite;
         public Type m_type;
         public int m_price;
         public int m_Hour;
@@ -15,35 +17,45 @@ namespace Warfare.Unit
         public Square m_square;
         public Vector3[] m_formation;
 
-        public void SetType ()
+        public void SetType()
         {
-            m_type = (Type) int.Parse (m_instance.name.Split (new char[2] { '[', ']' }) [1]);
+            m_type = (Type)int.Parse(m_instance.name.Split(new char[2] { '[', ']' })[1]);
         }
-        public void SetFormation ()
+        public void SetFormation()
         {
             if (m_formation.Length == 0)
                 m_formation = new Vector3[1] { Vector3.zero };
             if (m_square == Square.None) return;
             float height = 0;
-            int side = (int) m_square;
+            int side = (int)m_square;
             float offset = 12.0f / (side + 1.0f);
             m_formation = new Vector3[side * side];
             for (int i = 0; i < side; i++)
             {
                 for (int j = 0; j < side; j++)
                 {
-                    m_formation[i * side + j] = new Vector3 (-6 + (j + 1) * offset, height, 6 - (i + 1) * offset);
+                    m_formation[i * side + j] = new Vector3(-6 + (j + 1) * offset, height, 6 - (i + 1) * offset);
                 }
             }
         }
-        public GameObject GetWarfareUnit (Vector3 cantre, int index)
+        public int GetStackCount(float hp)
         {
-            return Instantiate (m_instance, cantre + m_formation[index] * 1, Quaternion.identity);
+            return Mathf.CeilToInt(hp / m_hp);
         }
-        public int GetStackCount (float hp)
+        public GameObject GetWarfareUnit(int index, Vector3 cantre)
         {
-            return Mathf.CeilToInt (hp * m_formation.Length / m_hp);
+            return Instantiate(m_instance, cantre + m_formation[index] * 1, Quaternion.identity);
         }
+        public GameObject GetWarfareUnit(int index, Vector3 cantre, float degree)
+        {
+            return Instantiate(m_instance, cantre + m_formation[index] * 1, Quaternion.Euler(0, degree, 0));
+        }
+    }
+    [System.Serializable]
+    public class Model
+    {
+        public Type type;
+        public int hp, stack, level, exp;
     }
     public enum Type
     {

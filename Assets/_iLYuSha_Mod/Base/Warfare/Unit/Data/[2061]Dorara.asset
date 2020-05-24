@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_instance: {fileID: 584133226609042062, guid: 6daeadce61bc44a46888766782ef0aca,
     type: 3}
+  m_sprite: {fileID: 21300000, guid: 5401312380d2ffe4aa125485e6cd5083, type: 3}
   m_type: 2061
   m_price: 770
   m_Hour: 16

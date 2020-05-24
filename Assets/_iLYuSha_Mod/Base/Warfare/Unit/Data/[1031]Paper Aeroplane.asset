@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_instance: {fileID: 894128289693973274, guid: 79798221c6e31914985732a657acbc9c,
     type: 3}
+  m_sprite: {fileID: 21300000, guid: 0282c2232f3d45641813cbc71f399634, type: 3}
   m_type: 1031
-  m_price: 0
-  m_Hour: 0
+  m_price: 1201
+  m_Hour: 60
   m_hp: 1010
   m_square: 0
   m_formation:

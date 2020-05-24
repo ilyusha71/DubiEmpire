@@ -19,6 +19,7 @@ namespace Warfare.Unit
                         return;
                     script.SetType();
                     script.SetFormation();
+                    script.m_sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/_iLYuSha_Mod/Base/Warfare/Icon/" + script.m_instance.name + ".png");
                     Database database = AssetDatabase.LoadAssetAtPath<Database>("Assets/_iLYuSha_Mod/Base/Warfare/Unit/Database.asset");
                     if (!database.units.ContainsKey(script.m_type))
                     {
@@ -28,8 +29,12 @@ namespace Warfare.Unit
                     }
                     else
                     {
-                        database.units[script.m_type] = script;
-                        Debug.Log("<color=yellow>" + script.m_type.ToString() + "</color> has been <color=cyan>Updated</color>.");
+                        if (database.units[script.m_type].name != script.m_instance.name)
+                        {
+                            database.units[script.m_type] = script;
+                            Debug.Log("<color=yellow>" + script.m_type.ToString() + "</color> has been <color=cyan>Updated</color>.");
+                            AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(script), script.m_instance.name);
+                        }
                     }
                     EditorUtility.SetDirty(script);
                     EditorUtility.SetDirty(database);

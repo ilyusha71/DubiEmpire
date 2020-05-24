@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbba39eaad241747b645ed3ecbb89ce, type: 3}
+  m_Name: '[9900]Reserve Legion 1'
+  m_EditorClassIdentifier: 
+  m_index: 9900
+  m_faction: 99
+  m_legion: 0
+  m_squadron:
+  - m_texture: {fileID: 2800000, guid: 3c6cf63f9b42efa4a98fa717a7201683, type: 3}
+    type: 1051
+    data: {fileID: 11400000, guid: 0e808addbae77b44b8ba0ab2c505ea89, type: 2}
+    m_percent: 1
+  - m_texture: {fileID: 2800000, guid: ddf738eeefd802347a713d9b37270c6c, type: 3}
+    type: 1061
+    data: {fileID: 11400000, guid: a2d512511d3d6df44b42a6a4c848d9a3, type: 2}
+    m_percent: 0.2
+  - m_texture: {fileID: 2800000, guid: 7966314454db6124e88e91a03b791530, type: 3}
+    type: 1062
+    data: {fileID: 11400000, guid: a236f6265dea7dc4a8de2820cfcc2149, type: 2}
+    m_percent: 0.2
+  - m_texture: {fileID: 2800000, guid: 857fc1be070a11c46adb0d2ab28dc061, type: 3}
+    type: 1071
+    data: {fileID: 11400000, guid: 0364fb8df5cea224cb94ce65c80213f9, type: 2}
+    m_percent: 0.2
+  - m_texture: {fileID: 2800000, guid: 3834a3d9cf119ff4c87b3403fc2be392, type: 3}
+    type: 1081
+    data: {fileID: 11400000, guid: 3ca1d1c829d45004bb695dbc80dbe9c9, type: 2}
+    m_percent: 0.25
+  - m_texture: {fileID: 2800000, guid: a65642f1176bd2e488bffe6341713c4c, type: 3}
+    type: 1111
+    data: {fileID: 11400000, guid: 7eb017036c239c240ad41f34ff14cfdb, type: 2}
+    m_percent: 1
+  - m_texture: {fileID: 2800000, guid: f74598c3f7f3c9942b06cfd962321ddd, type: 3}
+    type: 1171
+    data: {fileID: 11400000, guid: 6f88e4a56bdd55d4cb12b7e1d67f7dc7, type: 2}
+    m_percent: 1
+  - m_texture: {fileID: 2800000, guid: 4b4f9d8c7e981ad43a81d887062bdfb0, type: 3}
+    type: 1142
+    data: {fileID: 11400000, guid: 854046e85cb497c4fa51144c3c5a8599, type: 2}
+    m_percent: 1
+  - m_texture: {fileID: 2800000, guid: 42280b26167b08f4ab0412e22d6e26a0, type: 3}
+    type: 1141
+    data: {fileID: 11400000, guid: 0969bbc982fe79b42afb093f2c64886b, type: 2}
+    m_percent: 1
+  - m_texture: {fileID: 2800000, guid: 147491fdb4e16364faf90257de727cb7, type: 3}
+    type: 2131
+    data: {fileID: 11400000, guid: b813f16813378f64a98a3d9a498ec639, type: 2}
+    m_percent: 1
+  - m_texture: {fileID: 2800000, guid: f35678f0ca6f0b04ea02069293705204, type: 3}
+    type: 2091
+    data: {fileID: 11400000, guid: 62550fab2b545004ea19f481c105a1d7, type: 2}
+    m_percent: 1
+  - m_texture: {fileID: 2800000, guid: bd2c6b05e1d3b9b418f68a92aeef31ba, type: 3}
+    type: 1122
+    data: {fileID: 11400000, guid: e37907ad667f3984e904e82326a82de6, type: 2}
+    m_percent: 1
+  - m_texture: {fileID: 2800000, guid: 41b8942c4d87a054f8dede7a992e5583, type: 3}
+    type: 1132
+    data: {fileID: 11400000, guid: 6b6fa9e2c4ccff449a51e3488b8824e2, type: 2}
+    m_percent: 1
