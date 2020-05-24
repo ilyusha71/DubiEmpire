@@ -15,11 +15,17 @@ namespace Warfare.Unit
             {
                 foreach (var script in scripts)
                 {
-                    if (!script.m_instance)
+                    if (!script.m_instance && !script.m_sprite)
                         return;
                     script.SetType();
                     script.SetFormation();
-                    script.m_sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/_iLYuSha_Mod/Base/Warfare/Icon/" + script.m_instance.name + ".png");
+                    if (script.m_instance)
+                        script.m_sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/_iLYuSha_Mod/Base/Warfare/Icon/" + script.m_instance.name + ".png");
+                    else if (script.m_sprite)
+                    {
+                        string path = (int)script.m_type < 2000 ? "Assets/_iLYuSha_Mod/Wakaka Kocmocraft/Prefabs/Design/" : "Assets/_iLYuSha_Mod/Wakaka Character/Prefabs/Design/";
+                        script.m_instance = AssetDatabase.LoadAssetAtPath<GameObject>(path + script.m_sprite.name + ".prefab");
+                    }
                     Database database = AssetDatabase.LoadAssetAtPath<Database>("Assets/_iLYuSha_Mod/Base/Warfare/Unit/Database.asset");
                     if (!database.units.ContainsKey(script.m_type))
                     {

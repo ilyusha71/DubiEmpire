@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[2181]Indian Stan'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 7593658640019619397, guid: d0000a0e689da9140ad6de41a1d7f166,
+  m_instance: {fileID: 7645731457340055198, guid: d0000a0e689da9140ad6de41a1d7f166,
     type: 3}
   m_sprite: {fileID: 21300000, guid: 945f88fbf87330a40ab65ec6970bad46, type: 3}
   m_type: 2181

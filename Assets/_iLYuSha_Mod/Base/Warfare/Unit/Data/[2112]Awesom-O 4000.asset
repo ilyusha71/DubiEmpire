@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[2112]Awesom-O 4000'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 6164594533637188093, guid: 69e523e617a2bd346acb69bf7095311b,
+  m_instance: {fileID: 3661711400438135662, guid: 69e523e617a2bd346acb69bf7095311b,
     type: 3}
   m_sprite: {fileID: 21300000, guid: d3ffef2578d80e74b83130c616b79446, type: 3}
   m_type: 2112

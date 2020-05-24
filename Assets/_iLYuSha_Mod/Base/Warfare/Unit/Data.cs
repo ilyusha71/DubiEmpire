@@ -14,12 +14,20 @@ namespace Warfare.Unit
         public int m_price;
         public int m_Hour;
         public int m_hp;
+        public int m_fire;
+        public int m_atk;
+        public Base m_base;
+        public Anti m_anti;
+        public Range m_range;
         public Square m_square;
         public Vector3[] m_formation;
 
         public void SetType()
         {
-            m_type = (Type)int.Parse(m_instance.name.Split(new char[2] { '[', ']' })[1]);
+            if (m_instance)
+                m_type = (Type)int.Parse(m_instance.name.Split(new char[2] { '[', ']' })[1]);
+            else if (m_sprite)
+                m_type = (Type)int.Parse(m_sprite.name.Split(new char[2] { '[', ']' })[1]);
         }
         public void SetFormation()
         {
@@ -55,7 +63,17 @@ namespace Warfare.Unit
     public class Model
     {
         public Type type;
-        public int hp, stack, level, exp;
+        public int hp, stack, level, exp, fire, atk;
+
+        public Model()
+        {
+
+        }
+
+        public int TotalDamage
+        {
+            get { return stack * atk; }
+        }
     }
     public enum Type
     {
@@ -144,5 +162,25 @@ namespace Warfare.Unit
         _5x5 = 5,
         _6x6 = 6,
         _7x7 = 7,
+    }
+    public enum Base
+    {
+        None = 0,
+        Air = 3,
+        Mech = 5,
+        Dubi = 7,
+    }
+    public enum Anti
+    {
+        Normal = 0,
+        Air = 3,
+        Mech = 5,
+        Dubi = 7,
+    }
+    public enum Range
+    {
+        Near = 0,
+        Medium = 1,
+        Far = 2,
     }
 }

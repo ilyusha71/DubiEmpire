@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Warfare
@@ -7,9 +8,12 @@ namespace Warfare
     public class GridManager : MonoBehaviour
     {
         public GridState state;
+        [HeaderAttribute("Battle")]
+        public GridManager target;
+        public Unit.Model attacker;
         [HeaderAttribute("Unit")]
         public Unit.Model unit;
-        public List<GameObject> listStack = new List<GameObject>();
+        public Dictionary<int, GameObject> listStack = new Dictionary<int, GameObject>();
 
         [HeaderAttribute("Base")]
         public Unit.Database database;
@@ -59,11 +63,13 @@ namespace Warfare
             {
                 int lotteryIndex = ((int)unit.type < 2000) ? j : GetLotteryIndex(array2);
                 if (state == GridState.Foe)
-                    listStack.Add(data.GetWarfareUnit(lotteryIndex, transform.position, 180));
+                    listStack.Add(lotteryIndex, data.GetWarfareUnit(lotteryIndex, transform.position, 180));
                 else
-                    listStack.Add(data.GetWarfareUnit(lotteryIndex, transform.position));
+                    listStack.Add(lotteryIndex, data.GetWarfareUnit(lotteryIndex, transform.position));
                 array2[lotteryIndex] = 0; // 抽中後將權重改為0
             }
+            Dictionary<int, GameObject> dic1Asc = listStack.OrderBy(o => o.Key).ToDictionary(o => o.Key, p => p.Value);
+            listStack = dic1Asc;
             return true;
         }
         public static int GetLotteryIndex(int[] rates)
@@ -90,13 +96,13 @@ namespace Warfare
         }
         public void Disarmament()
         {
-            for (int i = listStack.Count - 1; i >= 0; i--)
+            List<GameObject> list = listStack.Values.ToList();
+            listStack.Clear();
+            for (int i = list.Count - 1; i >= 0; i--)
             {
-                GameObject go = listStack[i];
-                listStack.Remove(go);
+                GameObject go = list[i];
                 Destroy(go);
             }
-            listStack.Clear();
             unit = null;
         }
         // void OnMouseDown ()
@@ -118,10 +124,40 @@ namespace Warfare
             if (state == GridState.Disable) return;
             gridSprite.color = exitColor;
         }
-        private Vector3[] formation101 = {
-            new Vector3 (2, 0, 2),
-            new Vector3 (-2, 0, -2),
-        };
+
+        public void Fire(int timer)
+        {
+            if (listStack.Count == 0) return;
+            if (timer % unit.fire != 0) return;
+            target.attacker = unit;
+            List<GameObject> list = listStack.Values.ToList();
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (listStack[i].GetComponentInChildren<EffectController>())
+                    listStack[i].GetComponentInChildren<EffectController>().Fire();
+            }
+        }
+        public void Hit()
+        {
+            if (attacker == null) return;
+            List<GameObject> list = listStack.Values.ToList();
+
+
+            int countByDamge = Mathf.CeilToInt((float)attacker.TotalDamage / (unit.hp * unit.stack));
+            unit.hp -= attacker.TotalDamage;
+            // int countByStack = unit.
+
+
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                if(i<countByDamge)
+                
+                if (listStack[i].GetComponentInChildren<EffectController>())
+                    listStack[i].GetComponentInChildren<EffectController>().Hit();
+            }
+            attacker = null;
+        }
     }
     public enum GridState
     {

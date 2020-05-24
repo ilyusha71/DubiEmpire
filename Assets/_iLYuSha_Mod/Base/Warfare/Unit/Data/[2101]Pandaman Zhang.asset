@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[2101]Pandaman Zhang'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 8113699199777402442, guid: 504452e999f29894c9d4d2963a0d9d30,
+  m_instance: {fileID: 3425152622248898118, guid: 504452e999f29894c9d4d2963a0d9d30,
     type: 3}
   m_sprite: {fileID: 21300000, guid: cb821f0f89bd1c447b5157c0b7b52850, type: 3}
   m_type: 2101

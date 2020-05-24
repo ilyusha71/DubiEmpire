@@ -187,10 +187,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8510199343989192841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccb86e804c783ac4f9578a74242cd5fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 25433cc6030527e4aac56bc7c3a3b91e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: -1
+  state: 0
   unit:
     type: 0
     hp: 0

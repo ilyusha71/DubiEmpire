@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[2141]SpongeBob'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 7181485964484730397, guid: 85a838c5164a5e645a6157b3a63383a2,
+  m_instance: {fileID: 3038294111023955043, guid: 85a838c5164a5e645a6157b3a63383a2,
     type: 3}
   m_sprite: {fileID: 21300000, guid: 6ddb35c0ade95cb44a3139c15dee7e6a, type: 3}
   m_type: 2141

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[2182]Stan Marsh'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 6079057637012538790, guid: 6353fb9d30dfe7348ba3c785b19b9919,
+  m_instance: {fileID: 3483022307478961974, guid: 6353fb9d30dfe7348ba3c785b19b9919,
     type: 3}
   m_sprite: {fileID: 21300000, guid: 657f0ddcebd06924b950a3c7b1298d35, type: 3}
   m_type: 2182

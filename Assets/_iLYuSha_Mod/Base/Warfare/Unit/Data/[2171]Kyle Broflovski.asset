@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[2171]Kyle Broflovski'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 974167637228400251, guid: 12602bd74989eb94eb49f86ccf478c7a,
+  m_instance: {fileID: 4156244461429259285, guid: 12602bd74989eb94eb49f86ccf478c7a,
     type: 3}
   m_sprite: {fileID: 21300000, guid: 3f5d63866e5d6dd4eacd45da1e578654, type: 3}
   m_type: 2171

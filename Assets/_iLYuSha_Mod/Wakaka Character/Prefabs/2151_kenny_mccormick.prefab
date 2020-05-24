@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33292527859141468}
   - component: {fileID: 23945292465096956}
   m_Layer: 10
-  m_Name: Dubi - Kenny McCormick
+  m_Name: 2151_kenny_mccormick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701431995415994}
-  m_LocalRotation: {x: 0, y: -0.6794413, z: 0, w: 0.7337299}
-  m_LocalPosition: {x: 13.83, y: -0.9, z: -4.27}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -85.6, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33292527859141468
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[2012]Wang Ni Ma'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 3003780029128354391, guid: 9d25cdc7cebacec46b0e154905d1dbec,
+  m_instance: {fileID: 3160597773513301599, guid: 9d25cdc7cebacec46b0e154905d1dbec,
     type: 3}
   m_sprite: {fileID: 21300000, guid: 5ac06b255b831834692d980ce1389bd9, type: 3}
   m_type: 2012
