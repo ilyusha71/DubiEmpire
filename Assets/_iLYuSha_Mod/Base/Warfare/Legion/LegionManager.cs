@@ -20,7 +20,7 @@ namespace Warfare.Legion
         public GameObject prefabUnitButton;
         public List<Toggle> listReadyUnit = new List<Toggle>();
         public Toggle btnSelected;
-        public Unit.Model unitSelected;
+        public Unit.Squadron unitSelected;
 
         RectTransform rectTransform;
         GridLayoutGroup gridLayout;
@@ -46,10 +46,9 @@ namespace Warfare.Legion
                     if (type == Unit.Type.None)
                         continue;
                     Unit.Data data = warfare.unitDB.units[type];
-                    Unit.Model unit = new Unit.Model();
-                    unit.type = type;
+                    Unit.Squadron unit = new Unit.Squadron();
+                    unit.model = data.model;
                     unit.hp = listData[j].m_squadron[i].HP;
-                    unit.stack = data.GetStackCount(unit.hp);
 
                     if (listData[j].m_index < 9900)
                         warfare.playerData.squadrons.Add(listData[j].m_index * 100 + i, unit);
@@ -161,7 +160,7 @@ namespace Warfare.Legion
                 int key = 100000 + index * 100 + i;
                 if (warfare.playerData.squadrons.ContainsKey(key))
                 {
-                    Unit.Model unit = warfare.playerData.squadrons[key];
+                    Unit.Squadron unit = warfare.playerData.squadrons[key];
                     if (unit == null)
                         continue;
                     grids[i].Deploy(unit);
@@ -181,28 +180,28 @@ namespace Warfare.Legion
             count = warfare.playerData.units.Count;
             for (int i = 0; i < count; i++)
             {
-                if (warfare.playerData.units[i].type == Unit.Type.None)
+                if (warfare.playerData.units[i].model.m_type == Unit.Type.None)
                     Debug.LogWarning(i + " is Type None");
                 else
                     RegisterReserveUnit(warfare.playerData.units[i]);
             }
         }
 
-        public void RegisterReserveUnit(Unit.Model unit)
+        public void RegisterReserveUnit(Unit.Squadron unit)
         {
             Toggle btn = Instantiate(prefabUnitButton, reserveGroup).GetComponent<Toggle>();
-            btn.gameObject.name = unit.type.ToString();
+            btn.gameObject.name = unit.model.m_type.ToString();
             btn.group = btn.GetComponentInParent<ToggleGroup>();
             try
             {
-                btn.GetComponent<Image>().sprite = warfare.unitDB.units[unit.type].m_sprite;
+                btn.GetComponent<Image>().sprite = warfare.unitDB.units[unit.model.m_type].m_sprite;
 
             }
             catch
             {
-                Debug.Log(unit.type);
+                Debug.Log(unit.model.m_type);
             }
-            btn.GetComponentsInChildren<TextMeshProUGUI>()[0].text = (int)unit.type < 2000 ? unit.hp.ToString() : unit.stack.ToString();
+            btn.GetComponentsInChildren<TextMeshProUGUI>()[0].text = unit.model.m_base == Unit.Base.Dubi ? "x " + unit.stack.ToString() : unit.hp.ToString();
             listReadyUnit.Add(btn);
             btn.onValueChanged.AddListener(isOn =>
            {

@@ -22,7 +22,7 @@ namespace Warfare
         [Header("Ready")]
         public Transform readyListGroup;
         public GameObject prefabUnitButton;
-        public Warfare.Unit.Model modelSelection;
+        public Warfare.Unit.Squadron modelSelection;
 
         // Start is called before the first frame update
         void Start()
@@ -46,7 +46,7 @@ namespace Warfare
         //  }
 
         // Model to Button List
-        public void RegisterReserveUnit(Warfare.Unit.Model unit)
+        public void RegisterReserveUnit(Warfare.Unit.Squadron unit)
         {
             Button btn = Instantiate(prefabUnitButton, readyListGroup).GetComponent<Button>();
             listReadyUnit.Add(btn);

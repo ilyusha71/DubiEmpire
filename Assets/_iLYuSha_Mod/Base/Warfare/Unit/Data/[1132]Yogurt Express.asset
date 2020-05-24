@@ -15,10 +15,20 @@ MonoBehaviour:
   m_instance: {fileID: 3240478247132748031, guid: df5b7332b771fc94dbb6900e4edb8696,
     type: 3}
   m_sprite: {fileID: 21300000, guid: 41b8942c4d87a054f8dede7a992e5583, type: 3}
-  m_type: 1132
-  m_price: 0
-  m_Hour: 0
-  m_hp: 1710
-  m_square: 0
-  m_formation:
-  - {x: 0, y: 0, z: 0}
+  model:
+    m_type: 1132
+    m_price: 0
+    m_Hour: 0
+    m_hp: 1710
+    m_fire: 0
+    m_atk: 0
+    m_base: 0
+    m_anti: 0
+    m_range: 0
+    m_square: 0
+    m_formation:
+    - {x: 0, y: 0, z: 0}
+    mddd:
+    - x: 0
+      y: 0
+      z: 0

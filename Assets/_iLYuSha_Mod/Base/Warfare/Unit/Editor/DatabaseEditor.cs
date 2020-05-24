@@ -108,17 +108,17 @@ namespace Warfare.Unit
                     GUI.skin.label.fontStyle = FontStyle.Normal;
                     GUI.contentColor = Color.white;
 
-                    GUILayout.Label(unit.Value.m_formation.Length.ToString(), GUILayout.Width(20));
+                    GUILayout.Label(unit.Value.model.m_formation.Length.ToString(), GUILayout.Width(20));
                     GUILayout.Space(5);
-                    unit.Value.m_Hour = EditorGUILayout.IntField(unit.Value.m_Hour, GUILayout.Width(37));
+                    unit.Value.model.m_Hour = EditorGUILayout.IntField(unit.Value.model.m_Hour, GUILayout.Width(37));
                     GUILayout.Space(5);
-                    unit.Value.m_price = EditorGUILayout.IntField(unit.Value.m_price, GUILayout.Width(63));
+                    unit.Value.model.m_price = EditorGUILayout.IntField(unit.Value.model.m_price, GUILayout.Width(63));
                     GUILayout.Space(5);
-                    GUILayout.Label((unit.Value.m_price * unit.Value.m_formation.Length).ToString(), GUILayout.Width(52));
+                    GUILayout.Label((unit.Value.model.m_price * unit.Value.model.m_formation.Length).ToString(), GUILayout.Width(52));
                     GUILayout.Space(5);
-                    unit.Value.m_hp = EditorGUILayout.IntField(unit.Value.m_hp, GUILayout.Width(50));
+                    unit.Value.model.m_hp = EditorGUILayout.IntField(unit.Value.model.m_hp, GUILayout.Width(50));
                     GUILayout.Space(10);
-                    GUILayout.Label((unit.Value.m_hp * unit.Value.m_formation.Length).ToString(), GUILayout.Width(35));
+                    GUILayout.Label((unit.Value.model.m_hp * unit.Value.model.m_formation.Length).ToString(), GUILayout.Width(35));
                     GUILayout.Space(10);
                     source = EditorGUILayout.ObjectField(unit.Value, typeof(Unit.Data), true, GUILayout.Width(100)) as Unit.Data;
 

@@ -28,7 +28,7 @@ namespace Warfare.Legion
             for (int i = 0; i < squadrons.Length; i++)
             {
                 squadrons[i].type = m_squadron[i].type;
-                squadrons[i].hp = m_squadron[i].Stack * m_squadron[i].data.m_hp;
+                squadrons[i].hp = m_squadron[i].Stack * m_squadron[i].data.model.m_hp;
             }
             return squadrons;
         }
@@ -61,18 +61,18 @@ namespace Warfare.Legion
         {
             get
             {
-                return type == 0 ? 0 : Mathf.Max(1, Mathf.CeilToInt(data.m_formation.Length * m_percent));
+                return type == 0 ? 0 : Mathf.Max(1, Mathf.CeilToInt(data.model.m_formation.Length * m_percent));
             }
             set
             {
-                m_percent = type == 0 ? 0 : Mathf.Clamp01((float)value / data.m_formation.Length);
+                m_percent = type == 0 ? 0 : Mathf.Clamp01((float)value / data.model.m_formation.Length);
             }
         }
         public int HP
         {
             get
             {
-                return Stack * data.m_hp;
+                return Stack * data.model.m_hp;
             }
         }
     }

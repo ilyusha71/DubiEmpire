@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.Mathematics;
 
 namespace Warfare.Unit
 {
@@ -10,6 +11,45 @@ namespace Warfare.Unit
     {
         public GameObject m_instance;
         public Sprite m_sprite;
+        [HeaderAttribute("Parameter")]
+        public Model model;
+
+        public void SetType()
+        {
+            if (m_instance)
+                model.m_type = (Type)int.Parse(m_instance.name.Split(new char[2] { '[', ']' })[1]);
+            else if (m_sprite)
+                model.m_type = (Type)int.Parse(m_sprite.name.Split(new char[2] { '[', ']' })[1]);
+        }
+        public void SetFormation()
+        {
+            if (model.m_formation.Length == 0)
+                model.m_formation = new float3[1] { Vector3.zero };
+            if (model.m_square == Square.None) return;
+            float height = 0;
+            int side = (int)model.m_square;
+            float offset = 12.0f / (side + 1.0f);
+            model.m_formation = new float3[side * side];
+            for (int i = 0; i < side; i++)
+            {
+                for (int j = 0; j < side; j++)
+                {
+                    model.m_formation[i * side + j] = new Vector3(-6 + (j + 1) * offset, height, 6 - (i + 1) * offset);
+                }
+            }
+        }
+        public GameObject GetWarfareUnit(int index, Vector3 cantre)
+        {
+            return Instantiate(m_instance, cantre + (Vector3)model.m_formation[index] * 1, Quaternion.identity);
+        }
+        public GameObject GetWarfareUnit(int index, Vector3 cantre, float degree)
+        {
+            return Instantiate(m_instance, cantre + (Vector3)model.m_formation[index] * 1, Quaternion.Euler(0, degree, 0));
+        }
+    }
+    [System.Serializable]
+    public class Model
+    {
         public Type m_type;
         public int m_price;
         public int m_Hour;
@@ -20,61 +60,24 @@ namespace Warfare.Unit
         public Anti m_anti;
         public Range m_range;
         public Square m_square;
-        public Vector3[] m_formation;
-
-        public void SetType()
-        {
-            if (m_instance)
-                m_type = (Type)int.Parse(m_instance.name.Split(new char[2] { '[', ']' })[1]);
-            else if (m_sprite)
-                m_type = (Type)int.Parse(m_sprite.name.Split(new char[2] { '[', ']' })[1]);
-        }
-        public void SetFormation()
-        {
-            if (m_formation.Length == 0)
-                m_formation = new Vector3[1] { Vector3.zero };
-            if (m_square == Square.None) return;
-            float height = 0;
-            int side = (int)m_square;
-            float offset = 12.0f / (side + 1.0f);
-            m_formation = new Vector3[side * side];
-            for (int i = 0; i < side; i++)
-            {
-                for (int j = 0; j < side; j++)
-                {
-                    m_formation[i * side + j] = new Vector3(-6 + (j + 1) * offset, height, 6 - (i + 1) * offset);
-                }
-            }
-        }
-        public int GetStackCount(float hp)
-        {
-            return Mathf.CeilToInt(hp / m_hp);
-        }
-        public GameObject GetWarfareUnit(int index, Vector3 cantre)
-        {
-            return Instantiate(m_instance, cantre + m_formation[index] * 1, Quaternion.identity);
-        }
-        public GameObject GetWarfareUnit(int index, Vector3 cantre, float degree)
-        {
-            return Instantiate(m_instance, cantre + m_formation[index] * 1, Quaternion.Euler(0, degree, 0));
-        }
+        public float3[] m_formation;
     }
     [System.Serializable]
-    public class Model
+    public class Squadron
     {
-        public Type type;
-        public int hp, stack, level, exp, fire, atk;
+        public Model model;
+        public int hp, level, exp;
 
-        public Model()
+        public int stack
         {
-
+            get { return Mathf.CeilToInt(hp / model.m_hp); }
         }
-
         public int TotalDamage
         {
-            get { return stack * atk; }
+            get { return stack * model.m_atk; }
         }
     }
+
     public enum Type
     {
         None = 0,

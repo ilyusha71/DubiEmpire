@@ -15,18 +15,52 @@ MonoBehaviour:
   m_instance: {fileID: 3661711400438135662, guid: 69e523e617a2bd346acb69bf7095311b,
     type: 3}
   m_sprite: {fileID: 21300000, guid: d3ffef2578d80e74b83130c616b79446, type: 3}
-  m_type: 2112
-  m_price: 8000
-  m_Hour: 72
-  m_hp: 193
-  m_square: 3
-  m_formation:
-  - {x: -3, y: 0, z: 3}
-  - {x: 0, y: 0, z: 3}
-  - {x: 3, y: 0, z: 3}
-  - {x: -3, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 3, y: 0, z: 0}
-  - {x: -3, y: 0, z: -3}
-  - {x: 0, y: 0, z: -3}
-  - {x: 3, y: 0, z: -3}
+  model:
+    m_type: 2112
+    m_price: 8000
+    m_Hour: 72
+    m_hp: 193
+    m_fire: 0
+    m_atk: 0
+    m_base: 0
+    m_anti: 0
+    m_range: 0
+    m_square: 3
+    m_formation:
+    - {x: -3, y: 0, z: 3}
+    - {x: 0, y: 0, z: 3}
+    - {x: 3, y: 0, z: 3}
+    - {x: -3, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 3, y: 0, z: 0}
+    - {x: -3, y: 0, z: -3}
+    - {x: 0, y: 0, z: -3}
+    - {x: 3, y: 0, z: -3}
+    mddd:
+    - x: -3
+      y: 0
+      z: 3
+    - x: 0
+      y: 0
+      z: 3
+    - x: 3
+      y: 0
+      z: 3
+    - x: -3
+      y: 0
+      z: 0
+    - x: 0
+      y: 0
+      z: 0
+    - x: 3
+      y: 0
+      z: 0
+    - x: -3
+      y: 0
+      z: -3
+    - x: 0
+      y: 0
+      z: -3
+    - x: 3
+      y: 0
+      z: -3

@@ -10,10 +10,12 @@ namespace Warfare
         public GridState state;
         [HeaderAttribute("Battle")]
         public GridManager target;
-        public Unit.Model attacker;
+        public List<Unit.Squadron> attackers = new List<Unit.Squadron>();
         [HeaderAttribute("Unit")]
-        public Unit.Model unit;
-        public Dictionary<int, GameObject> listStack = new Dictionary<int, GameObject>();
+        public Unit.Squadron unit;
+        public Dictionary<int, GameObject> stacks = new Dictionary<int, GameObject>();
+        public List<int> index = new List<int>(); // 無序
+        public List<int> order = new List<int>(); // 有序
 
         [HeaderAttribute("Base")]
         public Unit.Database database;
@@ -42,7 +44,7 @@ namespace Warfare
             gridSprite.color = exitColor;
         }
 
-        public bool Deploy(Unit.Model unit)
+        public bool Deploy(Unit.Squadron unit)
         {
             if (state != GridState.Deploy)
             {
@@ -50,27 +52,33 @@ namespace Warfare
                 exitColor = gray97;
                 gridSprite.color = exitColor;
             }
-            Unit.Data data = database.units[unit.type];
             this.unit = unit;
-            if (unit.type == Unit.Type.None) return false;
+            if (unit.model.m_type == Unit.Type.None) return false;
             int[] array = new int[unit.stack];
-            int[] array2 = new int[data.m_formation.Length];
+            int[] array2 = new int[unit.model.m_formation.Length];
             for (int i = 0; i < array2.Length; i++)
             {
                 array2[i] = 1; // 取得權重
             }
             for (int j = 0; j < array.Length; j++)
             {
-                int lotteryIndex = ((int)unit.type < 2000) ? j : GetLotteryIndex(array2);
+                int lotteryIndex = unit.model.m_base == Unit.Base.Dubi ? GetLotteryIndex(array2) : j;
                 if (state == GridState.Foe)
-                    listStack.Add(lotteryIndex, data.GetWarfareUnit(lotteryIndex, transform.position, 180));
+                    stacks.Add(lotteryIndex, database.units[unit.model.m_type].GetWarfareUnit(lotteryIndex, transform.position, 180));
                 else
-                    listStack.Add(lotteryIndex, data.GetWarfareUnit(lotteryIndex, transform.position));
+                    stacks.Add(lotteryIndex, database.units[unit.model.m_type].GetWarfareUnit(lotteryIndex, transform.position));
                 array2[lotteryIndex] = 0; // 抽中後將權重改為0
             }
-            Dictionary<int, GameObject> dic1Asc = listStack.OrderBy(o => o.Key).ToDictionary(o => o.Key, p => p.Value);
-            listStack = dic1Asc;
+            UpdateList();
             return true;
+        }
+        void UpdateList()
+        {
+            index.Clear();
+            order.Clear();
+            Dictionary<int, GameObject> dic1Asc = stacks.OrderBy(o => o.Key).ToDictionary(o => o.Key, p => p.Value);
+            index = stacks.Keys.ToList();
+            order = dic1Asc.Keys.ToList();
         }
         public static int GetLotteryIndex(int[] rates)
         {
@@ -96,8 +104,8 @@ namespace Warfare
         }
         public void Disarmament()
         {
-            List<GameObject> list = listStack.Values.ToList();
-            listStack.Clear();
+            List<GameObject> list = stacks.Values.ToList();
+            stacks.Clear();
             for (int i = list.Count - 1; i >= 0; i--)
             {
                 GameObject go = list[i];
@@ -127,36 +135,77 @@ namespace Warfare
 
         public void Fire(int timer)
         {
-            if (listStack.Count == 0) return;
-            if (timer % unit.fire != 0) return;
-            target.attacker = unit;
-            List<GameObject> list = listStack.Values.ToList();
-            for (int i = 0; i < list.Count; i++)
+            if (stacks.Count == 0) return;
+            if (timer % unit.model.m_fire != 0) return;
+            UpdateList();
+            target.attackers.Add(unit);
+            for (int i = 0; i < stacks.Count; i++)
             {
-                if (listStack[i].GetComponentInChildren<EffectController>())
-                    listStack[i].GetComponentInChildren<EffectController>().Fire();
+                if (stacks[index[i]].GetComponentInChildren<EffectController>())
+                    stacks[index[i]].GetComponentInChildren<EffectController>().Fire();
             }
         }
         public void Hit()
         {
-            if (attacker == null) return;
-            List<GameObject> list = listStack.Values.ToList();
-
-
-            int countByDamge = Mathf.CeilToInt((float)attacker.TotalDamage / (unit.hp * unit.stack));
-            unit.hp -= attacker.TotalDamage;
-            // int countByStack = unit.
-
-
-
-            for (int i = 0; i < list.Count; i++)
+            if (attackers.Count == 0) return;
+            UpdateList();
+            int totalDamage = 0;
+            int totalAttackers = 0;
+            Unit.Range range = Unit.Range.Near;
+            for (int i = 0; i < attackers.Count; i++)
             {
-                if(i<countByDamge)
-                
-                if (listStack[i].GetComponentInChildren<EffectController>())
-                    listStack[i].GetComponentInChildren<EffectController>().Hit();
+                totalDamage += attackers[i].TotalDamage;
+                totalAttackers += attackers[i].stack;
+                if (attackers[i].model.m_range > range)
+                    range = attackers[i].model.m_range;
             }
-            attacker = null;
+            unit.hp -= totalDamage;
+            // 先記錄陣亡位置
+            int countByDamage = Mathf.Min(stacks.Count, Mathf.CeilToInt((float)totalDamage / (unit.model.m_hp)));
+            List<int> listDestroy = new List<int>();
+            for (int i = 0; i < countByDamage; i++)
+            {
+                if (range == Unit.Range.Far)
+                {
+                    listDestroy.Add(index[i]);
+                    index.Remove(i);
+                }
+                else
+                {
+                    listDestroy.Add(order[i]);
+                    order.Remove(i);
+                }
+            }
+            // 需要補Hit特效
+            if (totalAttackers > countByDamage)
+            {
+                if (range == Unit.Range.Far)
+                {
+                    int count = Mathf.Min(index.Count, totalAttackers - countByDamage);
+                    for (int i = 0; i < count; i++)
+                    {
+                        if (stacks[index[i]].GetComponentInChildren<EffectController>())
+                            stacks[index[i]].GetComponentInChildren<EffectController>().Hit();
+                    }
+                }
+                else
+                {
+                    int count = Mathf.Min(order.Count, totalAttackers - countByDamage);
+                    for (int i = 0; i < count; i++)
+                    {
+                        if (stacks[order[i]].GetComponentInChildren<EffectController>())
+                            stacks[order[i]].GetComponentInChildren<EffectController>().Hit();
+                    }
+                }
+            }
+            // 陣亡
+            for (int i = 0; i < listDestroy.Count; i++)
+            {
+                GameObject go = stacks[listDestroy[i]];
+                stacks.Remove(listDestroy[i]);
+                Destroy(go);
+            }
+            attackers.Clear();
         }
     }
     public enum GridState

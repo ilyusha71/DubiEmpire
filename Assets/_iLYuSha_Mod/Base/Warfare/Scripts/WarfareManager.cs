@@ -15,9 +15,9 @@ namespace Warfare
     public class PlayerData
     {
         // 各軍團小隊單位
-        public Dictionary<int, Warfare.Unit.Model> squadrons = new Dictionary<int, Warfare.Unit.Model>();
+        public Dictionary<int, Warfare.Unit.Squadron> squadrons = new Dictionary<int, Warfare.Unit.Squadron>();
         // 尚未編制單位
-        public List<Unit.Model> units = new List<Unit.Model>();
+        public List<Unit.Squadron> units = new List<Unit.Squadron>();
         public int[] battlefield = new int[2];
     }
 

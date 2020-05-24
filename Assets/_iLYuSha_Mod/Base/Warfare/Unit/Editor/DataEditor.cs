@@ -23,22 +23,22 @@ namespace Warfare.Unit
                         script.m_sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/_iLYuSha_Mod/Base/Warfare/Icon/" + script.m_instance.name + ".png");
                     else if (script.m_sprite)
                     {
-                        string path = (int)script.m_type < 2000 ? "Assets/_iLYuSha_Mod/Wakaka Kocmocraft/Prefabs/Design/" : "Assets/_iLYuSha_Mod/Wakaka Character/Prefabs/Design/";
+                        string path = script.model.m_base == Base.Dubi ? "Assets/_iLYuSha_Mod/Wakaka Character/Prefabs/Design/" : "Assets/_iLYuSha_Mod/Wakaka Kocmocraft/Prefabs/Design/";
                         script.m_instance = AssetDatabase.LoadAssetAtPath<GameObject>(path + script.m_sprite.name + ".prefab");
                     }
                     Database database = AssetDatabase.LoadAssetAtPath<Database>("Assets/_iLYuSha_Mod/Base/Warfare/Unit/Database.asset");
-                    if (!database.units.ContainsKey(script.m_type))
+                    if (!database.units.ContainsKey(script.model.m_type))
                     {
-                        database.units.Add(script.m_type, script);
-                        Debug.Log("<color=yellow>" + script.m_type.ToString() + "</color> has been <color=lime>Joined</color>.");
+                        database.units.Add(script.model.m_type, script);
+                        Debug.Log("<color=yellow>" + script.model.m_type.ToString() + "</color> has been <color=lime>Joined</color>.");
                         AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(script), script.m_instance.name);
                     }
                     else
                     {
-                        if (database.units[script.m_type].name != script.m_instance.name)
+                        if (database.units[script.model.m_type].name != script.m_instance.name)
                         {
-                            database.units[script.m_type] = script;
-                            Debug.Log("<color=yellow>" + script.m_type.ToString() + "</color> has been <color=cyan>Updated</color>.");
+                            database.units[script.model.m_type] = script;
+                            Debug.Log("<color=yellow>" + script.model.m_type.ToString() + "</color> has been <color=cyan>Updated</color>.");
                             AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(script), script.m_instance.name);
                         }
                     }

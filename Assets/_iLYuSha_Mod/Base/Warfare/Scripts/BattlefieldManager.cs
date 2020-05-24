@@ -35,12 +35,10 @@ namespace Warfare
                     if (type == Unit.Type.None)
                         continue;
                     Unit.Data data = warfare.unitDB.units[type];
-                    Unit.Model unit = new Unit.Model();
-                    unit.type = type;
+                    Unit.Squadron unit = new Unit.Squadron();
+                    unit.model = data.model;
                     unit.hp = legion.m_squadron[j].HP;
-                    unit.stack = data.GetStackCount(unit.hp);
-                    unit.fire = data.m_fire;
-                    unit.atk = data.m_atk;
+
                     if (i == 0)
                     {
                         gridsFriend[j].state = GridState.Friend;

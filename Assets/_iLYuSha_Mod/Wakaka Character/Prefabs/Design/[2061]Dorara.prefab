@@ -147,6 +147,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[2061]Dorara'
       objectReference: {fileID: 0}
+    - target: {fileID: 9067276354030136231, guid: ff85affa42d4d614588085ce473dab77,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e387d1e8124742142b8253f2a2b4bdad, type: 3}
+    - target: {fileID: 9067276354030136231, guid: ff85affa42d4d614588085ce473dab77,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9081201834799150157, guid: ff85affa42d4d614588085ce473dab77,
         type: 3}
       propertyPath: m_RootOrder

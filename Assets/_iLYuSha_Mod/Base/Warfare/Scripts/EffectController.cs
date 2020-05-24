@@ -22,6 +22,7 @@ namespace Warfare
 
         public void Fire()
         {
+            fxFire.GetComponent<AudioSource>().Play();
             for (int i = 0; i < psFire.Length; i++)
             {
                 psFire[i].Play();
