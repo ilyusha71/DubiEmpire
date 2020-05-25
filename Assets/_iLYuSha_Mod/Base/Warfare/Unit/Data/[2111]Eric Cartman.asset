@@ -20,15 +20,13 @@ MonoBehaviour:
     m_price: 0
     m_Hour: 0
     m_hp: 10
-    m_fire: 0
     m_atk: 0
-    m_base: 0
+    m_fire: 0
+    m_base: 7
     m_anti: 0
     m_range: 0
     m_square: 0
     m_formation:
-    - {x: 0, y: 0, z: 0}
-    mddd:
     - x: 0
       y: 0
       z: 0

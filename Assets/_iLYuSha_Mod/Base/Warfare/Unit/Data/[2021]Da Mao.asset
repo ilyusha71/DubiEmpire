@@ -19,11 +19,12 @@ MonoBehaviour:
     m_type: 2021
     m_price: 0
     m_Hour: 0
-    m_hp: 59
+    m_hp: 120
+    m_atk: 45
+    m_power: 040000009d00000002000000
     m_fire: 6
-    m_atk: 17
     m_base: 7
-    m_anti: 0
+    m_anti: 206
     m_range: 2
     m_square: 5
     m_formation:

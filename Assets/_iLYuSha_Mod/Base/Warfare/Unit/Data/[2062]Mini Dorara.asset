@@ -18,12 +18,13 @@ MonoBehaviour:
   model:
     m_type: 2062
     m_price: 700
-    m_Hour: 16
-    m_hp: 33
+    m_Hour: 66
+    m_hp: 60
+    m_atk: 10
+    m_power: 0c0000000600000004000000
     m_fire: 3
-    m_atk: 3
     m_base: 7
-    m_anti: 0
+    m_anti: 102
     m_range: 0
     m_square: 7
     m_formation:

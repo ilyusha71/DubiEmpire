@@ -90,6 +90,51 @@ namespace Warfare.Unit
             GUILayout.Space(5);
             foreach (KeyValuePair<Unit.Type, Unit.Data> unit in database.units.ToList())
             {
+                if (unit.Key == Unit.Type.Dave)
+                {
+                    GUILayout.BeginHorizontal();
+                    {
+                        GUI.skin.label.fontStyle = FontStyle.Bold;
+                        GUI.skin.label.fontSize = 16;
+                        GUI.contentColor = Color.green;
+                        GUILayout.Label("Warfare Unit", GUILayout.Width(210));
+                        GUILayout.Label("N", GUILayout.Width(20));
+                        GUILayout.Space(5);
+                        GUI.contentColor = Color.white;
+                        GUILayout.Label("Hr", GUILayout.Width(37));
+                        GUILayout.Space(5);
+                        GUILayout.Label("Price", GUILayout.Width(63));
+                        GUILayout.Space(5);
+                        GUI.contentColor = Color.green;
+                        GUILayout.Label("Total", GUILayout.Width(52));
+                        GUILayout.Space(5);
+                        GUI.contentColor = Color.white;
+                        GUILayout.Label("HP", GUILayout.Width(45));
+                        GUILayout.Space(5);
+                        GUILayout.Label("", GUILayout.Width(45));
+                        GUILayout.Space(5);
+                        GUILayout.Label("F", GUILayout.Width(20));
+                        GUILayout.Space(5);
+                        GUILayout.Label("ATK", GUILayout.Width(40));
+                        GUILayout.Space(5);
+                        GUILayout.Label("", GUILayout.Width(45));
+                        GUILayout.Space(5);
+                        GUILayout.Label("Anti", GUILayout.Width(80));
+                        GUILayout.Space(5);
+                        GUILayout.Label("Dubi", GUILayout.Width(50));
+                        GUILayout.Space(5);
+                        GUILayout.Label("Mech", GUILayout.Width(50));
+                        GUILayout.Space(5);
+                        GUILayout.Label("Air", GUILayout.Width(50));
+                        GUILayout.Space(5);
+                        GUILayout.Label("Range", GUILayout.Width(70));
+                        GUILayout.Space(5);
+                        GUILayout.Label("Square", GUILayout.Width(70));
+                        GUILayout.Space(5);
+                        GUILayout.Label("Data", GUILayout.Width(100));
+                    }
+                    GUILayout.EndHorizontal();
+                }
                 EditorGUI.BeginChangeCheck();
                 Undo.RecordObject(unit.Value, "Modify Types");
 
@@ -116,10 +161,29 @@ namespace Warfare.Unit
                     GUILayout.Space(5);
                     GUILayout.Label((unit.Value.model.m_price * unit.Value.model.m_formation.Length).ToString(), GUILayout.Width(52));
                     GUILayout.Space(5);
-                    unit.Value.model.m_hp = EditorGUILayout.IntField(unit.Value.model.m_hp, GUILayout.Width(50));
-                    GUILayout.Space(10);
-                    GUILayout.Label((unit.Value.model.m_hp * unit.Value.model.m_formation.Length).ToString(), GUILayout.Width(35));
-                    GUILayout.Space(10);
+                    unit.Value.model.m_hp = EditorGUILayout.IntField(unit.Value.model.m_hp, GUILayout.Width(45));
+                    GUILayout.Space(5);
+                    GUILayout.Label((unit.Value.model.m_hp * unit.Value.model.m_formation.Length).ToString(), GUILayout.Width(45));
+                    GUILayout.Space(5);
+                    unit.Value.model.m_fire = EditorGUILayout.IntField(unit.Value.model.m_fire, GUILayout.Width(20));
+                    GUILayout.Space(5);
+                    unit.Value.model.m_atk = EditorGUILayout.IntField(unit.Value.model.m_atk, GUILayout.Width(40));
+                    GUILayout.Space(5);
+                    GUILayout.Label((unit.Value.model.m_atk * unit.Value.model.m_formation.Length * Mathf.FloorToInt(20.0f / unit.Value.model.m_fire)).ToString(), GUILayout.Width(45));
+                    GUILayout.Space(5);
+                    unit.Value.model.m_anti = (Anti)EditorGUILayout.EnumPopup(unit.Value.model.m_anti, GUILayout.Width(80));
+                    unit.Value.model.SetPower();
+                    GUILayout.Space(5);
+                    GUILayout.Label((unit.Value.model.m_power[0] * unit.Value.model.m_formation.Length * Mathf.FloorToInt(20.0f / unit.Value.model.m_fire)).ToString(), GUILayout.Width(50));
+                    GUILayout.Space(5);
+                    GUILayout.Label((unit.Value.model.m_power[1] * unit.Value.model.m_formation.Length * Mathf.FloorToInt(20.0f / unit.Value.model.m_fire)).ToString(), GUILayout.Width(50));
+                    GUILayout.Space(5);
+                    GUILayout.Label((unit.Value.model.m_power[2] * unit.Value.model.m_formation.Length * Mathf.FloorToInt(20.0f / unit.Value.model.m_fire)).ToString(), GUILayout.Width(50));
+                    GUILayout.Space(5);
+                    unit.Value.model.m_range = (Range)EditorGUILayout.EnumPopup(unit.Value.model.m_range, GUILayout.Width(70));
+                    GUILayout.Space(5);
+                    unit.Value.model.m_square = (Square)EditorGUILayout.EnumPopup(unit.Value.model.m_square, GUILayout.Width(70));
+                    GUILayout.Space(5);
                     source = EditorGUILayout.ObjectField(unit.Value, typeof(Unit.Data), true, GUILayout.Width(100)) as Unit.Data;
 
                     GUI.backgroundColor = Color.red;
