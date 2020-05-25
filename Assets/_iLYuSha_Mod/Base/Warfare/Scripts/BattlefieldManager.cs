@@ -12,7 +12,7 @@ namespace Warfare
         public GridManager[] gridsFoe;
         public GridManager wall;
 
-        [HeaderAttribute("Battle")]
+        [HeaderAttribute ("Battle")]
         public bool isFighting;
         public bool isFiring;
         public int wave;
@@ -22,7 +22,7 @@ namespace Warfare
         private float fireInterval;
         public Text tTime;
 
-        void Awake()
+        void Awake ()
         {
             warfare.playerData.battlefield[0] = 2;
             warfare.playerData.battlefield[1] = 3;
@@ -35,29 +35,28 @@ namespace Warfare
                     if (type == Unit.Type.None)
                         continue;
                     Unit.Data data = warfare.unitDB.units[type];
-                    Unit.Squadron unit = new Unit.Squadron();
+                    Unit.Squadron unit = new Unit.Squadron ();
                     unit.model = data.model;
                     unit.hp = legion.m_squadron[j].HP;
 
                     if (i == 0)
                     {
                         gridsFriend[j].state = GridState.Friend;
-                        gridsFriend[j].Deploy(unit);
+                        gridsFriend[j].Deploy (unit);
                     }
                     else
                     {
                         gridsFoe[j].state = GridState.Foe;
-                        gridsFoe[j].Deploy(unit);
+                        gridsFoe[j].Deploy (unit);
                     }
                 }
             }
 
-
-            dmgInterval = 0.2f;
-            fireInterval = 1 - dmgInterval;
+            dmgInterval = 0.01f;
+            fireInterval = 0.05f - dmgInterval;
         }
 
-        void Update()
+        void Update ()
         {
             if (isFighting)
             {
@@ -70,15 +69,15 @@ namespace Warfare
                     if (isFiring)
                     {
                         timer++;
-                        tTime.text = timer.ToString();
+                        tTime.text = timer.ToString ();
                         actionTime += dmgInterval;
 
                         for (int i = 0; i < 17; i++)
                         {
                             if (gridsFriend[i])
-                                gridsFriend[i].Fire(timer);
+                                gridsFriend[i].Fire (timer);
                             if (gridsFoe[i])
-                                gridsFoe[i].Fire(timer);
+                                gridsFoe[i].Fire (timer);
                         }
                     }
                     else
@@ -88,15 +87,15 @@ namespace Warfare
                         for (int i = 0; i < 17; i++)
                         {
                             if (gridsFriend[i])
-                                gridsFriend[i].Hit();
+                                gridsFriend[i].Hit ();
                             if (gridsFoe[i])
-                                gridsFoe[i].Hit();
+                                gridsFoe[i].Hit ();
                         }
                     }
                     isFiring = !isFiring;
                 }
             }
-            if (Input.GetKeyDown(KeyCode.B))
+            if (Input.GetKeyDown (KeyCode.B))
             {
                 isFighting = true;
                 wave++;
@@ -108,29 +107,26 @@ namespace Warfare
 
             }
 
-
-
-
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown (KeyCode.F))
             {
                 for (int i = 0; i < 13; i++)
                 {
-                    gridsFriend[i].Fire(0);
+                    gridsFriend[i].Fire (0);
                 }
                 for (int i = 0; i < 13; i++)
                 {
-                    gridsFoe[i].Fire(0);
+                    gridsFoe[i].Fire (0);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.H))
+            if (Input.GetKeyDown (KeyCode.H))
             {
                 for (int i = 0; i < 13; i++)
                 {
-                    gridsFriend[i].Hit();
+                    gridsFriend[i].Hit ();
                 }
                 for (int i = 0; i < 13; i++)
                 {
-                    gridsFoe[i].Hit();
+                    gridsFoe[i].Hit ();
                 }
             }
         }

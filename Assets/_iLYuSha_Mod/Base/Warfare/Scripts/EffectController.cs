@@ -14,26 +14,28 @@ namespace Warfare
         /// <summary>
         /// Awake is called when the script instance is being loaded.
         /// </summary>
-        void Awake()
+        void Awake ()
         {
-            psFire = fxFire.GetComponentsInChildren<ParticleSystem>();
-            psHit = fxHit.GetComponentsInChildren<ParticleSystem>();
+            psFire = fxFire.GetComponentsInChildren<ParticleSystem> ();
+            psHit = fxHit.GetComponentsInChildren<ParticleSystem> ();
         }
 
-        public void Fire()
+        public void Fire ()
         {
-            fxFire.GetComponent<AudioSource>().Play();
+            // AudioClip clip = fxFire.GetComponent<AudioSource> ().clip;
+            // fxFire.GetComponent<AudioSource> ().PlayOneShot (clip);
+            fxFire.GetComponent<AudioSource> ().Play ();
             for (int i = 0; i < psFire.Length; i++)
             {
-                psFire[i].Play();
+                psFire[i].Play ();
             }
         }
 
-        public void Hit()
+        public void Hit ()
         {
             for (int i = 0; i < psHit.Length; i++)
             {
-                psHit[i].Play();
+                psHit[i].Play ();
             }
         }
     }
