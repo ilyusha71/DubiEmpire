@@ -306,6 +306,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[2062]Mini Dorara'
       objectReference: {fileID: 0}
+    - target: {fileID: 9031488534370708551, guid: ff85affa42d4d614588085ce473dab77,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9067276354030136231, guid: ff85affa42d4d614588085ce473dab77,
         type: 3}
       propertyPath: m_audioClip

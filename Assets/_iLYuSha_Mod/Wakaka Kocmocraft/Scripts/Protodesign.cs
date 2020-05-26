@@ -23,7 +23,8 @@ namespace Kocmoca
             Vector3 now = transform.position;
             transform.position = Vector3.zero;
             // 若模型有子物件，生成一個合併的Mesh，並用於後續計算使用
-            model = transform.GetChild (0).GetChild(0); // 2 = Painting I
+            model = transform.GetChild (0).GetChild (0); // 2 = Painting I
+            model.localPosition = Vector3.zero;
             MeshFilter[] mfs = model.GetComponentsInChildren<MeshFilter> ();
             if (mfs.Length > 1)
             {
