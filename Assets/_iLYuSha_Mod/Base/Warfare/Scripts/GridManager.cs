@@ -215,6 +215,14 @@ namespace Warfare
             attackers.Clear();
         }
     }
+    public enum GridDefinition
+    {
+        Front = 0,
+        Middle = 1,
+        Back = 2,
+        Left = 100,
+        Right = 200
+    }
     public enum GridState
     {
         Deploy = 0,
