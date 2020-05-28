@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[1171]Boundy Hunter'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 6630774134176096188, guid: ad87f7e9e90a33445a7704eb19088c48,
+  m_instance: {fileID: 4592293718842300193, guid: 8da38ce6d2b370345b0bbe16b101ebcb,
     type: 3}
   m_sprite: {fileID: 21300000, guid: f74598c3f7f3c9942b06cfd962321ddd, type: 3}
   model:
@@ -20,15 +20,14 @@ MonoBehaviour:
     m_price: 0
     m_Hour: 0
     m_hp: 1800
-    m_fire: 0
     m_atk: 0
+    m_power: 000000000000000000000000
+    m_fire: 0
     m_base: 0
     m_anti: 0
     m_range: 0
     m_square: 0
     m_formation:
-    - {x: 0, y: 0, z: 0}
-    mddd:
     - x: 0
       y: 0
       z: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[1131]Polaris Express'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 1638985383404635736, guid: 53131a645fe5cb14f9a9ce8b1fd7294b,
+  m_instance: {fileID: 8972659650329141068, guid: f4256b25cac2f0c488d13e709ebf6723,
     type: 3}
   m_sprite: {fileID: 21300000, guid: 66faa5f88f9bd9741b83b8f6979b4bc9, type: 3}
   model:
@@ -20,15 +20,14 @@ MonoBehaviour:
     m_price: 0
     m_Hour: 0
     m_hp: 1770
-    m_fire: 0
     m_atk: 0
+    m_power: 000000000000000000000000
+    m_fire: 0
     m_base: 0
     m_anti: 0
     m_range: 0
     m_square: 0
     m_formation:
-    - {x: 0, y: 0, z: 0}
-    mddd:
     - x: 0
       y: 0
       z: 0

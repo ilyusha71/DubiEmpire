@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[1142]Fossil Fish'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 1270385940759697593, guid: 400a32ba4d24eb24cb9c8d1d9e24b208,
+  m_instance: {fileID: 7623535609859706337, guid: 0e8adc2e63cf6214cabea8bdb1211fea,
     type: 3}
   m_sprite: {fileID: 21300000, guid: 4b4f9d8c7e981ad43a81d887062bdfb0, type: 3}
   model:
@@ -20,15 +20,14 @@ MonoBehaviour:
     m_price: 0
     m_Hour: 0
     m_hp: 1390
-    m_fire: 0
     m_atk: 0
+    m_power: 000000000000000000000000
+    m_fire: 0
     m_base: 0
     m_anti: 0
     m_range: 0
     m_square: 0
     m_formation:
-    - {x: 0, y: 0, z: 0}
-    mddd:
     - x: 0
       y: 0
       z: 0

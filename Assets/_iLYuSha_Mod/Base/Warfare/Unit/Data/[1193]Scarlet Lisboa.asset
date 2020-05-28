@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[1193]Scarlet Lisboa'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 7467349607687674868, guid: ab1570e99d4c9d346a4329d45f1b4cbf,
+  m_instance: {fileID: 8323245581549692279, guid: 1dc421aca9f369048bd7e84cd0763671,
     type: 3}
   m_sprite: {fileID: 21300000, guid: ce804f6ac6ce55649af883d2a5c077f8, type: 3}
   model:
@@ -20,15 +20,14 @@ MonoBehaviour:
     m_price: 0
     m_Hour: 0
     m_hp: 1870
-    m_fire: 0
     m_atk: 0
+    m_power: 000000000000000000000000
+    m_fire: 0
     m_base: 0
     m_anti: 0
     m_range: 0
     m_square: 0
     m_formation:
-    - {x: 0, y: 0, z: 0}
-    mddd:
     - x: 0
       y: 0
       z: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[1001]Despicable Mech'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 6378813905033005612, guid: f957a36a1e36d70438fd86bf99663a4c,
+  m_instance: {fileID: 1395480737964303202, guid: c27ef4b60ed6bc74c8262fc028bb1238,
     type: 3}
   m_sprite: {fileID: 21300000, guid: 562866186b430aa42875073bdc81c03c, type: 3}
   model:
@@ -20,15 +20,14 @@ MonoBehaviour:
     m_price: 335000
     m_Hour: 297
     m_hp: 990
-    m_fire: 0
     m_atk: 0
+    m_power: 000000000000000000000000
+    m_fire: 0
     m_base: 0
     m_anti: 0
     m_range: 0
     m_square: 0
     m_formation:
-    - {x: 0, y: 0, z: 0}
-    mddd:
     - x: 0
       y: 0
       z: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[1181]Inuit Scout'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 1138306385910896083, guid: 2df00206a6e239d44acad857420b2e9e,
+  m_instance: {fileID: 3696655202518775167, guid: f2a234c260ce6b649ad0a9caaebd84e0,
     type: 3}
   m_sprite: {fileID: 21300000, guid: 1090fedb0e26c40418e432c03c9a7e1f, type: 3}
   model:
@@ -20,16 +20,14 @@ MonoBehaviour:
     m_price: 164000
     m_Hour: 250
     m_hp: 670
-    m_fire: 0
     m_atk: 0
+    m_power: 000000000000000000000000
+    m_fire: 0
     m_base: 0
     m_anti: 0
     m_range: 0
     m_square: 0
     m_formation:
-    - {x: -0.7, y: 0, z: 2.5}
-    - {x: 0.7, y: 0, z: -2.5}
-    mddd:
     - x: -0.7
       y: 0
       z: 2.5

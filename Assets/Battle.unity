@@ -5992,6 +5992,10 @@ MonoBehaviour:
   timer: 0
   actionTime: 0
   tTime: {fileID: 1038634556}
+  action: 0
+  grids: []
+  grids1: []
+  grids2: []
 --- !u!4 &1969523646
 Transform:
   m_ObjectHideFlags: 0

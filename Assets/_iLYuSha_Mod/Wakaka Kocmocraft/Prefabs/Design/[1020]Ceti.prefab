@@ -260,7 +260,7 @@ PrefabInstance:
     - target: {fileID: 2815334188209560099, guid: 20b6f1ca7d4da6c41be87687c6123b07,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.73
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2815334188209560099, guid: 20b6f1ca7d4da6c41be87687c6123b07,
         type: 3}
@@ -375,7 +375,7 @@ PrefabInstance:
     - target: {fileID: 7619702169421149269, guid: 20b6f1ca7d4da6c41be87687c6123b07,
         type: 3}
       propertyPath: m_Name
-      value: '[1020]Ceti (1)'
+      value: '[1020]Ceti'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b6f1ca7d4da6c41be87687c6123b07, type: 3}

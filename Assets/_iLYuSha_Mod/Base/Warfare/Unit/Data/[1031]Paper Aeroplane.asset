@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874cf457b92ebd4b9e3688fa3470e79, type: 3}
   m_Name: '[1031]Paper Aeroplane'
   m_EditorClassIdentifier: 
-  m_instance: {fileID: 894128289693973274, guid: 79798221c6e31914985732a657acbc9c,
+  m_instance: {fileID: 3748353041481686957, guid: f0bcd6baa77a3fb4e851a7f6e7e4fbb9,
     type: 3}
   m_sprite: {fileID: 21300000, guid: 0282c2232f3d45641813cbc71f399634, type: 3}
   model:
@@ -20,15 +20,14 @@ MonoBehaviour:
     m_price: 1201
     m_Hour: 60
     m_hp: 1010
-    m_fire: 0
     m_atk: 0
+    m_power: 000000000000000000000000
+    m_fire: 0
     m_base: 0
     m_anti: 0
     m_range: 0
     m_square: 0
     m_formation:
-    - {x: 0, y: 0, z: 0}
-    mddd:
     - x: 0
       y: 0
       z: 0
