@@ -37,7 +37,7 @@ namespace Warfare
 
         [HeaderAttribute("UI")]
         public Image avatar;
-        public TextMeshProUGUI textType, textHP, textCount, textDubi, textMech, textAir;
+        public TextMeshProUGUI textType, textLv, textExp, textHP, textFire, textRange, textCount, textDubi, textMech, textAir;
 
 
         void Awake()
@@ -80,6 +80,8 @@ namespace Warfare
             if (data == null || data.HP == 0) return;
             avatar.sprite = model.Sprite;
             textType.text = Property.Type(data.Type);
+            textFire.text = model.FireRate.ToString();
+            textRange.text = Property.Range(model.Range);
             textHP.text = data.HP.ToString();
             textCount.text = model.UnitCount(data.HP).ToString();
             textDubi.text = (model.UnitCount(data.HP) * model.ATK[0]).ToString();

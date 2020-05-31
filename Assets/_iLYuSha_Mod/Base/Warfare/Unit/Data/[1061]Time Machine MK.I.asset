@@ -37,11 +37,11 @@ MonoBehaviour:
   m_price: 70500
   m_Hour: 160
   m_hp: 1100
-  m_atk: 120
-  m_power: cc0000004800000024000000
+  m_atk: 35
+  m_power: 150000000a0000003b000000
   m_fire: 3
-  m_field: 0
-  m_anti: 103
+  m_field: 2
+  m_anti: 303
   m_range: 0
   m_square: 0
   m_formation:

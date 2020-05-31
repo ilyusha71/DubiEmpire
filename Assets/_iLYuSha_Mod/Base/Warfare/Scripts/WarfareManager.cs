@@ -238,7 +238,7 @@ namespace Warfare
                 case 2022: return "萌总";
                 case 2031: return "阿楞";
                 case 2061: return "哆啦啦";
-                case 2062: return "迷你哆啦了";
+                case 2062: return "迷你哆啦啦";
                 case 2091: return "无面人";
                 case 2101: return "熊猫人张学友";
                 case 2102: return "熊猫人金馆长";
@@ -252,6 +252,16 @@ namespace Warfare
                 case 2181: return "印第安屎蛋";
                 case 2182: return "屎蛋";
                 case 2191: return "安格瑞";
+            }
+            return "";
+        }
+        public static string Range(Unit.Range range)
+        {
+            switch (range)
+            {
+                case Unit.Range.Near: return "近程";
+                case Unit.Range.Medium: return "中程";
+                case Unit.Range.Far: return "远程";
             }
             return "";
         }

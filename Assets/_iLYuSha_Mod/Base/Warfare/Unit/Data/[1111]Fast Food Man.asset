@@ -32,13 +32,13 @@ MonoBehaviour:
   m_type: 1111
   m_price: 440000
   m_Hour: 290
-  m_hp: 1220
-  m_atk: 0
-  m_power: 000000000000000000000000
-  m_fire: 0
+  m_hp: 9900
+  m_atk: 550
+  m_power: 4a010000a7030000a5000000
+  m_fire: 6
   m_field: 0
-  m_anti: 0
-  m_range: 0
+  m_anti: 203
+  m_range: 1
   m_square: 0
   m_formation:
   - {x: 0, y: 0, z: 0}

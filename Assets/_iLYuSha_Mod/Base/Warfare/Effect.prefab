@@ -217,7 +217,7 @@ AudioSource:
   m_GameObject: {fileID: 5188152209417583238}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3940687152058327768, guid: e40af9728d3516047a55703880c34c79,
+  OutputAudioMixerGroup: {fileID: 422392924319774336, guid: b0f1e7c5f957c75408bfdb983a2d40e6,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 4dcc7eb9ecf348e44868a5f009598a17, type: 3}
   m_PlayOnAwake: 0
@@ -326,6 +326,21 @@ PrefabInstance:
         type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702703427358674449, guid: 67b113ad64e5c0a43bcf64919191deec,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702703427358674449, guid: 67b113ad64e5c0a43bcf64919191deec,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702703427358674449, guid: 67b113ad64e5c0a43bcf64919191deec,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6702703427378072401, guid: 67b113ad64e5c0a43bcf64919191deec,
         type: 3}
