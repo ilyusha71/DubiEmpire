@@ -4,38 +4,39 @@ using UnityEngine;
 
 namespace Warfare.Legion
 {
-    [CreateAssetMenu (fileName = "Warfare Legion Database", menuName = "Warfare/Legion/Create Warfare Legion Database")]
+    [CreateAssetMenu(fileName = "Warfare Legion Database", menuName = "Warfare/Legion/Create Warfare Legion Database")]
     public class Database : ScriptableObject, ISerializationCallbackReceiver
     {
+        public WarfareManager warfare;
         [HideInInspector]
-        public List<int> keyList = new List<int> ();
+        public List<int> keyList = new List<int>();
         [HideInInspector]
-        public List<Legion.Data> valueList = new List<Legion.Data> ();
-        public Dictionary<int, Legion.Data> legions = new Dictionary<int, Legion.Data> ();
+        public List<Legion.Data> valueList = new List<Legion.Data>();
+        public Dictionary<int, Legion.Data> legions = new Dictionary<int, Legion.Data>();
 
-        public void DeleteKey (int key)
+        public void DeleteKey(int key)
         {
-            legions.Remove (key);
+            legions.Remove(key);
         }
-        public void Sort ()
+        public void Sort()
         {
-            Dictionary<int, Legion.Data> dic1Asc = legions.OrderBy (o => o.Key).ToDictionary (o => o.Key, p => p.Value);
+            Dictionary<int, Legion.Data> dic1Asc = legions.OrderBy(o => o.Key).ToDictionary(o => o.Key, p => p.Value);
             legions = dic1Asc;
         }
-        public void OnBeforeSerialize ()
+        public void OnBeforeSerialize()
         {
-            keyList.Clear ();
-            valueList.Clear ();
+            keyList.Clear();
+            valueList.Clear();
 
             foreach (var pair in legions)
             {
-                keyList.Add (pair.Key);
-                valueList.Add (pair.Value);
+                keyList.Add(pair.Key);
+                valueList.Add(pair.Value);
             }
         }
-        public void OnAfterDeserialize ()
+        public void OnAfterDeserialize()
         {
-            legions.Clear ();
+            legions.Clear();
 
             for (int i = 0; i < keyList.Count; ++i)
             {
@@ -44,10 +45,10 @@ namespace Warfare.Legion
         }
 
 #if UNITY_EDITOR
-        public void SaveDatabase ()
+        public void SaveDatabase()
         {
-            Debug.Log ("<color=yellow>Database has been updated!</color>");
-            UnityEditor.AssetDatabase.SaveAssets ();
+            Debug.Log("<color=yellow>Database has been updated!</color>");
+            UnityEditor.AssetDatabase.SaveAssets();
         }
 #endif
     }

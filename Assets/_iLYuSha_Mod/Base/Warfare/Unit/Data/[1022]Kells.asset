@@ -23,14 +23,24 @@ MonoBehaviour:
     m_atk: 0
     m_power: 000000000000000000000000
     m_fire: 0
-    m_base: 0
+    m_field: 0
     m_anti: 0
     m_range: 0
     m_square: 0
     m_formation:
-    - x: 2.3
-      y: 0
-      z: -1.6
-    - x: -2.3
-      y: 0
-      z: 1.6
+    - {x: 2.3, y: 0, z: -1.6}
+    - {x: -2.3, y: 0, z: 1.6}
+  m_type: 1022
+  m_price: 295000
+  m_Hour: 385
+  m_hp: 730
+  m_atk: 0
+  m_power: 000000000000000000000000
+  m_fire: 0
+  m_field: 0
+  m_anti: 0
+  m_range: 0
+  m_square: 0
+  m_formation:
+  - {x: 2.3, y: 0, z: -1.6}
+  - {x: -2.3, y: 0, z: 1.6}

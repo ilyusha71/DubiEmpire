@@ -10,53 +10,53 @@ namespace Warfare
 {
     public class ArmyManager : MonoBehaviour
     {
-        public Legion.Database legionDatabase;
-        public Unit.Database unitDatabase;
-        public PlayerData playerData;
+        // public Legion.Database legionDatabase;
+        // public Unit.Database unitDatabase;
+        // public PlayerData playerData;
 
 
-        // public List<unit>
-        public ArmyData nowArmy;
-        public List<Button> listReadyUnit = new List<Button>();
+        // // public List<unit>
+        // public ArmyData nowArmy;
+        // public List<Button> listReadyUnit = new List<Button>();
 
-        [Header("Ready")]
-        public Transform readyListGroup;
-        public GameObject prefabUnitButton;
-        public Warfare.Unit.Squadron modelSelection;
+        // [Header("Ready")]
+        // public Transform readyListGroup;
+        // public GameObject prefabUnitButton;
+        // public Warfare.Legion.Squadron modelSelection;
 
-        // Start is called before the first frame update
-        void Start()
-        {
+        // // Start is called before the first frame update
+        // void Start()
+        // {
 
-            // Database 的資料 用於遊戲初始化或 模板生成
-            // foreach (KeyValuePair<int, Legion.Data> legion in legionDatabase.legions.ToList())
-            // {
-            //     Legion.Squadron[] squadrons = legion.Value.GetSquadrons();
-            //     for (int i = 0; i < 13; i++)
-            //     {
-            //         playerData.squadrons.Add(legion.Value.m_index * 100 + i, squadrons[i]);
-            //     }
-            // }
-            // 來自存檔的資料
+        //     // Database 的資料 用於遊戲初始化或 模板生成
+        //     // foreach (KeyValuePair<int, Legion.Data> legion in legionDatabase.legions.ToList())
+        //     // {
+        //     //     Legion.Squadron[] squadrons = legion.Value.GetSquadrons();
+        //     //     for (int i = 0; i < 13; i++)
+        //     //     {
+        //     //         playerData.squadrons.Add(legion.Value.m_index * 100 + i, squadrons[i]);
+        //     //     }
+        //     // }
+        //     // 來自存檔的資料
 
-        }
+        // }
         // public Legion.Squadron InitializeSquadron()
         // {
 
         //  }
 
         // Model to Button List
-        public void RegisterReserveUnit(Warfare.Unit.Squadron unit)
-        {
-            Button btn = Instantiate(prefabUnitButton, readyListGroup).GetComponent<Button>();
-            listReadyUnit.Add(btn);
-            btn.onClick.AddListener(() =>
-           {
-               modelSelection = unit;
-           });
-            btn.transform.localScale = Vector3.one;
-            // unit.squadron = 0;
-        }
+        // public void RegisterReserveUnit(Warfare.Legion.Squadron unit)
+        // {
+        //     Button btn = Instantiate(prefabUnitButton, readyListGroup).GetComponent<Button>();
+        //     listReadyUnit.Add(btn);
+        //     btn.onClick.AddListener(() =>
+        //    {
+        //        modelSelection = unit;
+        //    });
+        //     btn.transform.localScale = Vector3.one;
+        //     // unit.squadron = 0;
+        // }
 
         // Update is called once per frame
         // void Update()

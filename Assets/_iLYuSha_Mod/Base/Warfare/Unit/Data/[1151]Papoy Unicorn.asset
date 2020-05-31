@@ -19,15 +19,26 @@ MonoBehaviour:
     m_type: 1151
     m_price: 500000
     m_Hour: 480
-    m_hp: 1540
+    m_hp: 154000
     m_atk: 0
     m_power: 000000000000000000000000
     m_fire: 0
-    m_base: 0
+    m_field: 0
     m_anti: 0
     m_range: 0
     m_square: 0
     m_formation:
-    - x: 0
-      y: 0
-      z: 0
+    - {x: 0, y: 0, z: 0}
+  m_type: 1151
+  m_price: 500000
+  m_Hour: 480
+  m_hp: 15900
+  m_atk: 500
+  m_power: c40900000000000000000000
+  m_fire: 6
+  m_field: 0
+  m_anti: 107
+  m_range: 2
+  m_square: 0
+  m_formation:
+  - {x: 0, y: 0, z: 0}

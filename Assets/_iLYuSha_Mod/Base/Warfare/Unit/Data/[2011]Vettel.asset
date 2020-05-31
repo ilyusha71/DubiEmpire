@@ -23,11 +23,22 @@ MonoBehaviour:
     m_atk: 1
     m_power: 010000000100000001000000
     m_fire: 5
-    m_base: 7
+    m_field: 0
     m_anti: 0
     m_range: 0
     m_square: 0
     m_formation:
-    - x: 0
-      y: 0
-      z: 0
+    - {x: 0, y: 0, z: 0}
+  m_type: 2011
+  m_price: 0
+  m_Hour: 16
+  m_hp: 1
+  m_atk: 1
+  m_power: 010000000100000001000000
+  m_fire: 5
+  m_field: 0
+  m_anti: 0
+  m_range: 0
+  m_square: 0
+  m_formation:
+  - {x: 0, y: 0, z: 0}

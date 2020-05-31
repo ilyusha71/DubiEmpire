@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca0207c333b6ca84994e56ed0cb38faf, type: 3}
   m_Name: Database
   m_EditorClassIdentifier: 
+  warfare: {fileID: 0}
   keyList: 00000000010000000200000003000000e8030000e9030000eb030000ed030000b00400001405000016050000ac260000
   valueList:
   - {fileID: 11400000, guid: e92dd72e7c883b04683877a2e38f685d, type: 2}

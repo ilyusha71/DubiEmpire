@@ -7,6 +7,7 @@ namespace Warfare.Unit
 {
     public class DatabaseEditor : EditorWindow
     {
+        private WarfareManager warfare;
         private Unit.Data source;
         private Vector2 scrollPos;
         private Editor editor;
@@ -16,6 +17,7 @@ namespace Warfare.Unit
         public static void ShowDatabaseWindow()
         {
             var window = EditorWindow.GetWindow<DatabaseEditor>(false, "Unit Database", true);
+            window.warfare = UnityEditor.AssetDatabase.LoadAssetAtPath<WarfareManager>("Assets/_iLYuSha_Mod/Base/Warfare/Warfare Manager.asset");
             window.database = UnityEditor.AssetDatabase.LoadAssetAtPath<Database>("Assets/_iLYuSha_Mod/Base/Warfare/Unit/Database.asset");
             window.editor = Editor.CreateEditor(window.database);
         }
@@ -56,7 +58,11 @@ namespace Warfare.Unit
                 Undo.RecordObject(database, "Modify Types");
                 if (GUILayout.Button("Sort", GUILayout.Height(25), GUILayout.Width(66)))
                     database.Sort();
+                GUI.backgroundColor = Color.green;
+                if (GUILayout.Button("Update", GUILayout.Height(25), GUILayout.Width(66)))
+                    warfare.MasterModelCollector();
                 GUI.backgroundColor = Color.white;
+                warfare = EditorGUILayout.ObjectField(warfare, typeof(WarfareManager), true, GUILayout.Height(25), GUILayout.Width(300)) as WarfareManager;
                 if (EditorGUI.EndChangeCheck())
                     EditorUtility.SetDirty(database);
             }
@@ -153,36 +159,36 @@ namespace Warfare.Unit
                     GUI.skin.label.fontStyle = FontStyle.Normal;
                     GUI.contentColor = Color.white;
 
-                    GUILayout.Label(unit.Value.model.m_formation.Length.ToString(), GUILayout.Width(20));
+                    GUILayout.Label(unit.Value.m_formation.Length.ToString(), GUILayout.Width(20));
                     GUILayout.Space(5);
-                    unit.Value.model.m_Hour = EditorGUILayout.IntField(unit.Value.model.m_Hour, GUILayout.Width(37));
+                    unit.Value.m_Hour = EditorGUILayout.IntField(unit.Value.m_Hour, GUILayout.Width(37));
                     GUILayout.Space(5);
-                    unit.Value.model.m_price = EditorGUILayout.IntField(unit.Value.model.m_price, GUILayout.Width(63));
+                    unit.Value.m_price = EditorGUILayout.IntField(unit.Value.m_price, GUILayout.Width(63));
                     GUILayout.Space(5);
-                    GUILayout.Label((unit.Value.model.m_price * unit.Value.model.m_formation.Length).ToString(), GUILayout.Width(52));
+                    GUILayout.Label((unit.Value.m_price * unit.Value.m_formation.Length).ToString(), GUILayout.Width(52));
                     GUILayout.Space(5);
-                    unit.Value.model.m_hp = EditorGUILayout.IntField(unit.Value.model.m_hp, GUILayout.Width(45));
+                    unit.Value.m_hp = EditorGUILayout.IntField(unit.Value.m_hp, GUILayout.Width(45));
                     GUILayout.Space(5);
-                    GUILayout.Label((unit.Value.model.m_hp * unit.Value.model.m_formation.Length).ToString(), GUILayout.Width(45));
+                    GUILayout.Label((unit.Value.m_hp * unit.Value.m_formation.Length).ToString(), GUILayout.Width(45));
                     GUILayout.Space(5);
-                    unit.Value.model.m_fire = EditorGUILayout.IntField(unit.Value.model.m_fire, GUILayout.Width(20));
+                    unit.Value.m_fire = EditorGUILayout.IntField(unit.Value.m_fire, GUILayout.Width(20));
                     GUILayout.Space(5);
-                    unit.Value.model.m_atk = EditorGUILayout.IntField(unit.Value.model.m_atk, GUILayout.Width(40));
+                    unit.Value.m_atk = EditorGUILayout.IntField(unit.Value.m_atk, GUILayout.Width(40));
                     GUILayout.Space(5);
-                    GUILayout.Label((unit.Value.model.m_atk * unit.Value.model.m_formation.Length * Mathf.FloorToInt(20.0f / unit.Value.model.m_fire)).ToString(), GUILayout.Width(45));
+                    GUILayout.Label((unit.Value.m_atk * unit.Value.m_formation.Length * Mathf.FloorToInt(30.0f / unit.Value.m_fire)).ToString(), GUILayout.Width(45));
                     GUILayout.Space(5);
-                    unit.Value.model.m_anti = (Anti)EditorGUILayout.EnumPopup(unit.Value.model.m_anti, GUILayout.Width(80));
-                    unit.Value.model.SetPower();
+                    unit.Value.m_anti = (Anti)EditorGUILayout.EnumPopup(unit.Value.m_anti, GUILayout.Width(80));
+                    unit.Value.SetPower();
                     GUILayout.Space(5);
-                    GUILayout.Label((unit.Value.model.m_power[0] * unit.Value.model.m_formation.Length * Mathf.FloorToInt(20.0f / unit.Value.model.m_fire)).ToString(), GUILayout.Width(50));
+                    GUILayout.Label((unit.Value.m_power[0] * unit.Value.m_formation.Length * Mathf.FloorToInt(30.0f / unit.Value.m_fire)).ToString(), GUILayout.Width(50));
                     GUILayout.Space(5);
-                    GUILayout.Label((unit.Value.model.m_power[1] * unit.Value.model.m_formation.Length * Mathf.FloorToInt(20.0f / unit.Value.model.m_fire)).ToString(), GUILayout.Width(50));
+                    GUILayout.Label((unit.Value.m_power[1] * unit.Value.m_formation.Length * Mathf.FloorToInt(30.0f / unit.Value.m_fire)).ToString(), GUILayout.Width(50));
                     GUILayout.Space(5);
-                    GUILayout.Label((unit.Value.model.m_power[2] * unit.Value.model.m_formation.Length * Mathf.FloorToInt(20.0f / unit.Value.model.m_fire)).ToString(), GUILayout.Width(50));
+                    GUILayout.Label((unit.Value.m_power[2] * unit.Value.m_formation.Length * Mathf.FloorToInt(30.0f / unit.Value.m_fire)).ToString(), GUILayout.Width(50));
                     GUILayout.Space(5);
-                    unit.Value.model.m_range = (Range)EditorGUILayout.EnumPopup(unit.Value.model.m_range, GUILayout.Width(70));
+                    unit.Value.m_range = (Range)EditorGUILayout.EnumPopup(unit.Value.m_range, GUILayout.Width(70));
                     GUILayout.Space(5);
-                    unit.Value.model.m_square = (Square)EditorGUILayout.EnumPopup(unit.Value.model.m_square, GUILayout.Width(70));
+                    unit.Value.m_square = (Square)EditorGUILayout.EnumPopup(unit.Value.m_square, GUILayout.Width(70));
                     GUILayout.Space(5);
                     source = EditorGUILayout.ObjectField(unit.Value, typeof(Unit.Data), true, GUILayout.Width(100)) as Unit.Data;
 

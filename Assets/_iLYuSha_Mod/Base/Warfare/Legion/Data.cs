@@ -22,16 +22,16 @@ namespace Warfare.Legion
                 m_squadron[i].SetUnit();
             }
         }
-        public Squadron[] GetSquadrons()
-        {
-            Squadron[] squadrons = new Squadron[13];
-            for (int i = 0; i < squadrons.Length; i++)
-            {
-                squadrons[i].type = m_squadron[i].type;
-                squadrons[i].hp = m_squadron[i].Stack * m_squadron[i].data.model.m_hp;
-            }
-            return squadrons;
-        }
+        // public Squadron[] GetSquadrons()
+        // {
+        //     Squadron[] squadrons = new Squadron[13];
+        //     for (int i = 0; i < squadrons.Length; i++)
+        //     {
+        //         squadrons[i].model.Type = m_squadron[i].type;
+        //         squadrons[i].hp = m_squadron[i].Stack * m_squadron[i].data.model.m_hp;
+        //     }
+        //     return squadrons;
+        // }
     }
 
     [System.Serializable]
@@ -61,19 +61,118 @@ namespace Warfare.Legion
         {
             get
             {
-                return type == 0 ? 0 : Mathf.Max(1, Mathf.CeilToInt(data.model.m_formation.Length * m_percent));
+                return type == 0 ? 1 : Mathf.Max(1, Mathf.CeilToInt(data.m_formation.Length * m_percent));
             }
             set
             {
-                m_percent = type == 0 ? 0 : Mathf.Clamp01((float)value / data.model.m_formation.Length);
+                m_percent = type == 0 ? 0 : Mathf.Clamp01((float)value / data.m_formation.Length);
             }
         }
         public int HP
         {
             get
             {
-                return Stack * data.model.m_hp;
+                return Stack * data.m_hp;
             }
+        }
+    }
+    [System.Serializable]
+    public class DataModel
+    {
+        public int Id { get; private set; }
+        public Dictionary<int, Unit.DataModel> squadron = new Dictionary<int, Unit.DataModel>();
+
+        public DataModel(int id)
+        {
+            Id = id;
+        }
+    }
+    public class BattleModel
+    {
+        public Dictionary<int, Unit.BattleModel> squadron = new Dictionary<int, Unit.BattleModel>();
+        public List<Unit.BattleModel>[] rangeList = new List<Unit.BattleModel>[5];
+
+        public BattleModel(Dictionary<int, Unit.MasterModel> units, Dictionary<int, Unit.DataModel> data)
+        {
+            for (int order = 0; order < 13; order++)
+            {
+                if (data.ContainsKey(order))
+                {
+                    Unit.BattleModel unit = new Unit.BattleModel(order, units[data[order].Type], data[order]);
+                    this.squadron.Add(order, unit);
+                }
+            }
+        }
+
+        public void Rearrange(int wave)
+        {
+            for (int i = 0; i < rangeList.Length; i++)
+            {
+                rangeList[i] = new List<Unit.BattleModel>();
+                rangeList[i].Clear();
+            }
+            int range = 0;
+            for (int row = 0; row < 3; row++)
+            {
+                for (int column = 0; column < 3; column++)
+                {
+                    if (squadron.ContainsKey(row * 3 + column))
+                    {
+                        for (int order = 0; order < 3; order++)
+                        {
+                            int index = row * 3 + order;
+                            if (squadron.ContainsKey(index))
+                            {
+                                for (int i = 0; i < 3; i++)
+                                {
+                                    if (range <= i)
+                                        rangeList[i].Add(squadron[index]);
+                                }
+                            }
+                        }
+                        range++;
+                        break;
+                    }
+                }
+            }
+            for (int side = 0; side < 2; side++)
+            {
+                for (int order = 0; order < 2; order++)
+                {
+                    int index = 9 + side * 2 + order;
+                    if (squadron.ContainsKey(index))
+                        rangeList[side + 3].Add(squadron[index]);
+                }
+                if (wave > 1 && rangeList[side + 3].Count == 0)
+                    rangeList[side + 3] = rangeList[0];
+            }
+
+            // Debug.LogWarning(" ----------------------------");
+            // for (int i = 0; i < 5; i++)
+            // {
+            //     int c = rangeList[i].Count;
+            //     Debug.LogWarning("Range " + i);
+            //     for (int k = 0; k < c; k++)
+            //     {
+            //         Debug.Log(rangeList[i][k].order);
+
+            //     }
+            // }
+        }
+    }
+    [System.Serializable]
+    public class Squadron
+    {
+        public Unit.MasterModel model;
+        public int hp, level, exp;
+
+        public int UnitCount
+        {
+            get { return Mathf.CeilToInt((float)hp / model.HP); }
+        }
+        public int TotalDamage(Unit.Field field)
+        {
+            return UnitCount * model.ATK[(int)field];
         }
     }
 }

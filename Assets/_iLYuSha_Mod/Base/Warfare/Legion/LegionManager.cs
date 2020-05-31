@@ -13,14 +13,14 @@ namespace Warfare.Legion
     {
         public WarfareManager warfare;
         public GridManager[] grids;
-        public int index;
+        public int id = 1000;
 
         [HeaderAttribute("UI Setting")]
         public Transform reserveGroup;
         public GameObject prefabUnitButton;
-        public List<Toggle> listReadyUnit = new List<Toggle>();
+        public List<Toggle> listReserveUnits = new List<Toggle>();
         public Toggle btnSelected;
-        public Unit.Squadron unitSelected;
+        public Unit.DataModel dataSelected;
 
         RectTransform rectTransform;
         GridLayoutGroup gridLayout;
@@ -31,48 +31,24 @@ namespace Warfare.Legion
             gridLayout = reserveGroup.GetComponent<GridLayoutGroup>();
             rectTransform = reserveGroup.GetComponent<RectTransform>();
             scrollbar = reserveGroup.parent.GetComponentInChildren<Scrollbar>();
+
+            warfare.SynchronizeLegionsToPlayerData();
+            warfare.SynchronizeUnitsToPlayerData();
         }
 
         void Start()
         {
-            // Method 1:  Load legion database as legion model
-            int count = warfare.legionDB.legions.Count;
-            List<Data> listData = warfare.legionDB.legions.Values.ToList();
-            for (int j = 0; j < listData.Count; j++)
-            {
-                for (int i = 0; i < listData[j].m_squadron.Length; i++)
-                {
-                    Unit.Type type = listData[j].m_squadron[i].type;
-                    if (type == Unit.Type.None)
-                        continue;
-                    Unit.Data data = warfare.unitDB.units[type];
-                    Unit.Squadron unit = new Unit.Squadron();
-                    unit.model = data.model;
-                    unit.hp = listData[j].m_squadron[i].HP;
-
-                    if (listData[j].m_index < 9900)
-                        warfare.playerData.squadrons.Add(listData[j].m_index * 100 + i, unit);
-                    else
-                    {
-                        warfare.playerData.units.Add(unit);
-                        RegisterReserveUnit(unit);
-                    }
-                }
-            }
-            ResetReserveGroup();
-
-            // Method 2:  Load player data as legion
             CreateLegionUnit();
+            CreateReserveUnit();
         }
-        KeyCode currentKey;
+
         void Update()
         {
-
             for (int k = 0; k < 10; k++)
             {
                 if (Input.GetKeyDown((KeyCode)(k + 48)))
                 {
-                    index = k;
+                    id = 1000 + k;
                     CreateLegionUnit();
                 }
             }
@@ -86,16 +62,15 @@ namespace Warfare.Legion
                     Warfare.GridManager grid = hit.transform.GetComponent<Warfare.GridManager>();
                     if (grid)
                     {
-                        int key = 100000 + index * 100 + grid.Index;
-                        if (grid.unit == null)
+                        if (grid.data == null)
                         {
-                            if (btnSelected != null && unitSelected != null)
+                            if (btnSelected != null && dataSelected != null)
                             {
-                                if (grid.Deploy(unitSelected))
+                                if (grid.Deploy(dataSelected, warfare.units[dataSelected.Type]))
                                 {
-                                    warfare.playerData.squadrons[key] = unitSelected;
-                                    warfare.playerData.units.Remove(unitSelected);
-                                    listReadyUnit.Remove(btnSelected);
+                                    warfare.playerData.units.Remove(dataSelected);
+                                    warfare.playerData.legions[id].squadron.Add(grid.Order, dataSelected);
+                                    listReserveUnits.Remove(btnSelected);
                                     int index = btnSelected.transform.GetSiblingIndex();
                                     DestroyImmediate(btnSelected.gameObject);
                                     if (reserveGroup.GetComponentsInChildren<Toggle>().Length > 0)
@@ -109,7 +84,7 @@ namespace Warfare.Legion
                                     else
                                     {
                                         btnSelected = null;
-                                        unitSelected = null;
+                                        dataSelected = null;
                                     }
                                     ResetReserveGroup();
                                 }
@@ -117,16 +92,13 @@ namespace Warfare.Legion
                         }
                         else
                         {
-                            warfare.playerData.squadrons.Remove(key);
-                            warfare.playerData.units.Add(grid.unit);
-                            RegisterReserveUnit(grid.unit);
-                            grid.Disarmament();
+                            warfare.playerData.units.Add(grid.data);
+                            RegisterReserveUnit(grid.data);
                             ResetReserveGroup();
+                            warfare.playerData.legions[id].squadron.Remove(grid.Order);
+                            grid.Disarmament();
                         }
                     }
-                    // the object identified by hit.transform was clicked
-                    // do whatever you want
-                    // Debug.Log(hit.transform.name);
                 }
             }
 
@@ -141,73 +113,73 @@ namespace Warfare.Legion
             }
             if (Input.GetKeyDown(KeyCode.F4))
             {
+                if (!System.IO.File.Exists(Application.dataPath + "/Save.wak"))
+                {
+                    Debug.LogWarning("Bug");
+                    //System.IO.File.Create(filePath);
+                    System.IO.File.Create(Application.dataPath + "/Save.wak").Dispose();
+                }
                 BinaryFormatter bf = new BinaryFormatter();
                 Stream s = File.Open(Application.dataPath + "/Save.wak", FileMode.Open);
                 warfare.playerData = (PlayerData)bf.Deserialize(s);
-
+                s.Close();
+                Debug.Log("Load");
                 CreateLegionUnit();
                 CreateReserveUnit();
             }
         }
 
+        // Legion Unit Grid
         public void CreateLegionUnit()
         {
+            DataModel data;
+            if (warfare.playerData.legions.ContainsKey(id))
+                data = warfare.playerData.legions[id];
+            else
+            {
+                data = new DataModel(id);
+                warfare.playerData.legions.Add(id, data);
+            }
             for (int i = 0; i < 13; i++)
             {
                 grids[i].Disarmament();
-                grids[i].unit = null;
-                grids[i].Index = i;
-                int key = 100000 + index * 100 + i;
-                if (warfare.playerData.squadrons.ContainsKey(key))
-                {
-                    Unit.Squadron unit = warfare.playerData.squadrons[key];
-                    if (unit == null)
-                        continue;
-                    grids[i].Deploy(unit);
-                }
+                grids[i].Order = i;
+                if (data.squadron.ContainsKey(i))
+                    grids[i].Deploy(data.squadron[i], warfare.units[data.squadron[i].Type]);
             }
         }
+
+        // Reserve Unit Bar
         public void CreateReserveUnit()
         {
-            int count = listReadyUnit.Count;
-
+            int count = listReserveUnits.Count;
             for (int i = 0; i < count; i++)
             {
-                DestroyImmediate(listReadyUnit[i].gameObject);
+                Destroy(listReserveUnits[i].gameObject);
             }
-            listReadyUnit.Clear();
+            listReserveUnits.Clear();
 
             count = warfare.playerData.units.Count;
             for (int i = 0; i < count; i++)
             {
-                if (warfare.playerData.units[i].model.m_type == Unit.Type.None)
-                    Debug.LogWarning(i + " is Type None");
-                else
-                    RegisterReserveUnit(warfare.playerData.units[i]);
+                RegisterReserveUnit(warfare.playerData.units[i]);
             }
+            ResetReserveGroup();
         }
-
-        public void RegisterReserveUnit(Unit.Squadron unit)
+        public void RegisterReserveUnit(Unit.DataModel data)
         {
+            Unit.MasterModel model = warfare.units[data.Type];
             Toggle btn = Instantiate(prefabUnitButton, reserveGroup).GetComponent<Toggle>();
-            btn.gameObject.name = unit.model.m_type.ToString();
+            btn.gameObject.name = model.Type.ToString();
             btn.group = btn.GetComponentInParent<ToggleGroup>();
-            try
-            {
-                btn.GetComponent<Image>().sprite = warfare.unitDB.units[unit.model.m_type].m_sprite;
-
-            }
-            catch
-            {
-                Debug.Log(unit.model.m_type);
-            }
-            btn.GetComponentsInChildren<TextMeshProUGUI>()[0].text = unit.model.m_base == Unit.Base.Dubi ? "x " + unit.stack.ToString() : unit.hp.ToString();
-            listReadyUnit.Add(btn);
+            btn.GetComponent<Image>().sprite = model.Sprite;
+            btn.GetComponentsInChildren<TextMeshProUGUI>()[0].text = model.Field == Unit.Field.Dubi ? "x " + model.UnitCount(data.HP).ToString() : data.HP.ToString();
+            listReserveUnits.Add(btn);
             btn.onValueChanged.AddListener(isOn =>
            {
                if (isOn)
                {
-                   unitSelected = unit;
+                   dataSelected = data;
                    btnSelected = btn;
                }
            });
@@ -218,7 +190,7 @@ namespace Warfare.Legion
         }
         void ResetReserveGroup()
         {
-            int count = listReadyUnit.Count;
+            int count = listReserveUnits.Count;
             rectTransform.sizeDelta = new Vector2(gridLayout.cellSize.x * count + gridLayout.spacing.x * (count - 1), rectTransform.sizeDelta.y);
         }
     }
