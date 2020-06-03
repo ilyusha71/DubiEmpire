@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace Warfare.Legion
 {
     [CreateAssetMenu(fileName = "Data", menuName = "Warfare/Legion/Create Warfare Legion Data")]
-    public class Data : ScriptableObject
+    public class Model : ScriptableObject
     {
         public int m_index;
         public Faction m_faction;
@@ -77,33 +77,32 @@ namespace Warfare.Legion
         }
     }
     [System.Serializable]
-    public class DataModel
+    public class Data
     {
         public int Id { get; private set; }
         public Dictionary<int, Unit.Data> squadron = new Dictionary<int, Unit.Data>();
 
-        public DataModel(int id)
+        public Data(int id)
         {
             Id = id;
         }
     }
-    public class BattleModel
+    public class DataModel<T>
     {
-        public Dictionary<int, Unit.BattleModel> squadron = new Dictionary<int, Unit.BattleModel>();
-        public List<Unit.BattleModel>[] rangeList = new List<Unit.BattleModel>[5];
-
-        public BattleModel(Dictionary<int, Unit.MasterModel> units, Dictionary<int, Unit.Data> data)
+        public Dictionary<int, T> squadron;
+        public DataModel() { }
+        public DataModel(Dictionary<int, T> t)
         {
-            for (int order = 0; order < 13; order++)
-            {
-                if (data.ContainsKey(order))
-                {
-                    Unit.BattleModel unit = new Unit.BattleModel(order, units[data[order].Type], data[order]);
-                    this.squadron.Add(order, unit);
-                }
-            }
+            squadron = t;
         }
-
+    }
+    public class BattleModel : DataModel<Unit.BattleModel>
+    {
+        public List<Unit.BattleModel>[] rangeList = new List<Unit.BattleModel>[5];
+        public BattleModel(Dictionary<int, Unit.BattleModel> t)
+        {
+            this.squadron = t;
+        }
         public void Rearrange(int wave)
         {
             for (int i = 0; i < rangeList.Length; i++)
@@ -116,17 +115,17 @@ namespace Warfare.Legion
             {
                 for (int column = 0; column < 3; column++)
                 {
-                    if (squadron.ContainsKey(row * 3 + column))
+                    if (this.squadron.ContainsKey(row * 3 + column))
                     {
                         for (int order = 0; order < 3; order++)
                         {
                             int index = row * 3 + order;
-                            if (squadron.ContainsKey(index))
+                            if (this.squadron.ContainsKey(index))
                             {
                                 for (int i = 0; i < 3; i++)
                                 {
                                     if (range <= i)
-                                        rangeList[i].Add(squadron[index]);
+                                        rangeList[i].Add(this.squadron[index]);
                                 }
                             }
                         }
@@ -140,8 +139,8 @@ namespace Warfare.Legion
                 for (int order = 0; order < 2; order++)
                 {
                     int index = 9 + side * 2 + order;
-                    if (squadron.ContainsKey(index))
-                        rangeList[side + 3].Add(squadron[index]);
+                    if (this.squadron.ContainsKey(index))
+                        rangeList[side + 3].Add(this.squadron[index]);
                 }
                 if (wave > 1 && rangeList[side + 3].Count == 0)
                     rangeList[side + 3] = rangeList[0];
@@ -163,7 +162,7 @@ namespace Warfare.Legion
     [System.Serializable]
     public class Squadron
     {
-        public Unit.MasterModel model;
+        public Unit.Model model;
         public int hp, level, exp;
 
         public int UnitCount

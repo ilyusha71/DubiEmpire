@@ -3856,18 +3856,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 767130706}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &788292755 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -7783906079818320589, guid: 6f4b548e2048be84c840c78b6ec83587,
-    type: 3}
-  m_PrefabInstance: {fileID: 13037038}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25433cc6030527e4aac56bc7c3a3b91e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &789117797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10064,7 +10052,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1969523646}
   - component: {fileID: 1969523648}
-  - component: {fileID: 1969523645}
   - component: {fileID: 1969523647}
   m_Layer: 0
   m_Name: Battlefield Manager
@@ -10073,66 +10060,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1969523645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969523644}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67af7b6e259a74e42a7c1cad98f959e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  warfare: {fileID: 11400000, guid: 32eb04487b0f50543b28e3bd373cae9b, type: 2}
-  gridsFriend:
-  - {fileID: 882570600}
-  - {fileID: 432293040}
-  - {fileID: 1929340122}
-  - {fileID: 1681404593}
-  - {fileID: 302673273}
-  - {fileID: 853920300}
-  - {fileID: 395637961}
-  - {fileID: 504709712}
-  - {fileID: 1680265042}
-  - {fileID: 222937606}
-  - {fileID: 993484484}
-  - {fileID: 1127323113}
-  - {fileID: 939984076}
-  - {fileID: 1329489983}
-  - {fileID: 1612069460}
-  - {fileID: 821574274}
-  - {fileID: 2128036394}
-  gridsFoe:
-  - {fileID: 835746429}
-  - {fileID: 804333558}
-  - {fileID: 1651459292}
-  - {fileID: 1373217608}
-  - {fileID: 1196356740}
-  - {fileID: 1221165606}
-  - {fileID: 1679725988}
-  - {fileID: 1454953505}
-  - {fileID: 1171536973}
-  - {fileID: 1135171316}
-  - {fileID: 1606835966}
-  - {fileID: 1121182519}
-  - {fileID: 713445818}
-  - {fileID: 962567088}
-  - {fileID: 1149780919}
-  - {fileID: 178667277}
-  - {fileID: 387573772}
-  wall: {fileID: 788292755}
-  isFighting: 0
-  isFiring: 0
-  wave: 0
-  timer: 0
-  actionTime: 0
-  tTime: {fileID: 1038634556}
-  action: 0
-  grids: []
-  grids1: []
-  grids2: []
 --- !u!4 &1969523646
 Transform:
   m_ObjectHideFlags: 0

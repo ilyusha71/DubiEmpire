@@ -7,7 +7,7 @@ namespace Warfare.Legion
 {
     public class DatabaseEditor : EditorWindow
     {
-        private Legion.Data source;
+        private Legion.Model source;
         private Vector2 scrollPos;
         private Editor editor;
         private Database database;
@@ -64,7 +64,7 @@ namespace Warfare.Legion
 
             GUILayout.Space(10);
             EditorGUIUtility.labelWidth = 10;
-            foreach (KeyValuePair<int, Legion.Data> legion in database.legions.ToList())
+            foreach (KeyValuePair<int, Legion.Model> legion in database.legions.ToList())
             {
                 // Faction Title
                 if (legion.Key % 10 == 0)
@@ -105,7 +105,7 @@ namespace Warfare.Legion
                 Undo.RecordObject(legion.Value, "Modify Types");
                 GUILayout.BeginHorizontal();
                 {
-                    source = EditorGUILayout.ObjectField(legion.Value, typeof(Legion.Data), true, GUILayout.Width(200)) as Legion.Data;
+                    source = EditorGUILayout.ObjectField(legion.Value, typeof(Legion.Model), true, GUILayout.Width(200)) as Legion.Model;
 
                     GUI.backgroundColor = Color.red;
                     if (GUILayout.Button("Remove", GUILayout.Width(66)))

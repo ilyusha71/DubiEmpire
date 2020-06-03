@@ -11,8 +11,8 @@ namespace Warfare.Legion
         [HideInInspector]
         public List<int> keyList = new List<int>();
         [HideInInspector]
-        public List<Legion.Data> valueList = new List<Legion.Data>();
-        public Dictionary<int, Legion.Data> legions = new Dictionary<int, Legion.Data>();
+        public List<Legion.Model> valueList = new List<Legion.Model>();
+        public Dictionary<int, Legion.Model> legions = new Dictionary<int, Legion.Model>();
 
         public void DeleteKey(int key)
         {
@@ -20,7 +20,7 @@ namespace Warfare.Legion
         }
         public void Sort()
         {
-            Dictionary<int, Legion.Data> dic1Asc = legions.OrderBy(o => o.Key).ToDictionary(o => o.Key, p => p.Value);
+            Dictionary<int, Legion.Model> dic1Asc = legions.OrderBy(o => o.Key).ToDictionary(o => o.Key, p => p.Value);
             legions = dic1Asc;
         }
         public void OnBeforeSerialize()

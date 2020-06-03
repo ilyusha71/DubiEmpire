@@ -12,7 +12,7 @@ namespace Warfare
         public Legion.Database legionDB;
         public Unit.Database unitDB;
         public PlayerData playerData;
-        public Dictionary<int, Unit.MasterModel> units = new Dictionary<int, Unit.MasterModel> ();
+        public Dictionary<int, Unit.Model> units = new Dictionary<int, Unit.Model> ();
 
         public void MasterModelCollector ()
         {
@@ -20,20 +20,20 @@ namespace Warfare
             int count = unitDB.units.Count;
             for (int i = 0; i < count; i++)
             {
-                Unit.MasterModel model = new Unit.MasterModel (unitDB.valueList[i]);
+                Unit.Model model = new Unit.Model (unitDB.valueList[i]);
                 units.Add ((int) unitDB.keyList[i], model);
             }
             Debug.Log ("<color=yellow>" + units.Count + " MasterModel</color> has been <color=lime>Updated</color>.");
         }
         public void SynchronizeLegionsToPlayerData ()
         {
-            Dictionary<int, Legion.Data> legions = legionDB.legions;
+            Dictionary<int, Legion.Model> legions = legionDB.legions;
             List<int> keys = legions.Keys.ToList ();
             int dataCount = keys.Count;
             for (int index = 0; index < dataCount; index++)
             {
                 int id = keys[index];
-                Legion.DataModel legion = new Legion.DataModel (id);
+                Legion.Data legion = new Legion.Data (id);
                 if (playerData.legions.ContainsKey (id))
                     playerData.legions[id] = legion;
                 else
@@ -55,9 +55,9 @@ namespace Warfare
         }
         public void SynchronizeLegionToPlayerData (int index)
         {
-            Dictionary<int, Legion.Data> legions = legionDB.legions;
+            Dictionary<int, Legion.Model> legions = legionDB.legions;
             int id = index;
-            Legion.DataModel legion = new Legion.DataModel (id);
+            Legion.Data legion = new Legion.Data (id);
             if (playerData.legions.ContainsKey (id))
                 playerData.legions[id] = legion;
             else
@@ -78,9 +78,9 @@ namespace Warfare
         }
         public void SynchronizeLegionSquadronToPlayerData (int index, int order)
         {
-            Dictionary<int, Legion.Data> legions = legionDB.legions;
+            Dictionary<int, Legion.Model> legions = legionDB.legions;
             int id = index;
-            Legion.DataModel legion;
+            Legion.Data legion;
             if (playerData.legions.ContainsKey (id))
             {
                 legion = playerData.legions[id];
@@ -88,7 +88,7 @@ namespace Warfare
             }
             else
             {
-                legion = new Legion.DataModel (id);
+                legion = new Legion.Data (id);
                 playerData.legions.Add (index, legion);
             }
             int type = (int) legions[id].m_squadron[order].type;
@@ -101,7 +101,7 @@ namespace Warfare
         }
         public void SynchronizeUnitsToPlayerData ()
         {
-            Dictionary<int, Legion.Data> legions = legionDB.legions;
+            Dictionary<int, Legion.Model> legions = legionDB.legions;
             List<int> keys = legions.Keys.ToList ();
             int dataCount = keys.Count;
             for (int index = 0; index < dataCount; index++)
@@ -151,7 +151,7 @@ namespace Warfare
     [System.Serializable]
     public class PlayerData
     {
-        public Dictionary<int, Legion.DataModel> legions = new Dictionary<int, Legion.DataModel> ();
+        public Dictionary<int, Legion.Data> legions = new Dictionary<int, Legion.Data> ();
         public List<Unit.Data> units = new List<Unit.Data> ();
     }
 
