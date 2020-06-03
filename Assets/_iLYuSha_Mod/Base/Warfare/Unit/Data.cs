@@ -6,13 +6,12 @@ using UnityEngine.UI;
 
 namespace Warfare.Unit
 {
-    [CreateAssetMenu(fileName = "Data", menuName = "Warfare/Unit/Create Warfare Unit Data")]
+    [CreateAssetMenu (fileName = "Data", menuName = "Warfare/Unit/Create Warfare Unit Data")]
     public class Data : ScriptableObject
     {
         public GameObject m_instance;
         public Sprite m_sprite;
-        [HeaderAttribute("Parameter")]
-        public Model model;
+        [HeaderAttribute ("Parameter")]
         public Type m_type;
         public int m_price;
         public int m_Hour;
@@ -26,162 +25,151 @@ namespace Warfare.Unit
         public Square m_square;
         public Vector3[] m_formation;
 
-        public void SetType()
+        public void SetType ()
         {
             if (m_instance)
-                model.m_type = (Type)int.Parse(m_instance.name.Split(new char[2] { '[', ']' })[1]);
+                m_type = (Type) int.Parse (m_instance.name.Split (new char[2] { '[', ']' }) [1]);
             else if (m_sprite)
-                model.m_type = (Type)int.Parse(m_sprite.name.Split(new char[2] { '[', ']' })[1]);
+                m_type = (Type) int.Parse (m_sprite.name.Split (new char[2] { '[', ']' }) [1]);
         }
-        public void SetFormation()
+        public void SetFormation ()
         {
-            if (model.m_formation.Length == 0)
-                model.m_formation = new Vector3[1] { Vector3.zero };
-            if (model.m_square == Square.None) return;
+            if (m_formation.Length == 0)
+                m_formation = new Vector3[1] { Vector3.zero };
+            if (m_square == Square.None) return;
             float height = 0;
-            int side = (int)model.m_square;
+            int side = (int) m_square;
             float offset = 12f / (side + 1f);
-            model.m_formation = new Vector3[side * side];
+            m_formation = new Vector3[side * side];
             for (int i = 0; i < side; i++)
             {
                 for (int j = 0; j < side; j++)
                 {
-                    model.m_formation[i * side + j] = new Vector3(-6 + (j + 1) * offset, height, 6 - (i + 1) * offset);
+                    m_formation[i * side + j] = new Vector3 (-6 + (j + 1) * offset, height, 6 - (i + 1) * offset);
                 }
             }
         }
-        public void SetPower()
+        public void SetPower ()
         {
             switch (m_anti)
             {
                 case Anti.DubiLv1:
-                    m_power[0] = (int)(m_atk * 1f); // 兵
-                    m_power[1] = (int)(m_atk * 0.8f); // 甲
-                    m_power[2] = (int)(m_atk * 0.5f); // 空
+                    m_power[0] = (int) (m_atk * 1f); // 兵
+                    m_power[1] = (int) (m_atk * 0.8f); // 甲
+                    m_power[2] = (int) (m_atk * 0.5f); // 空
                     break;
                 case Anti.DubiLv2:
-                    m_power[0] = (int)(m_atk * 1.3f); // 兵
-                    m_power[1] = (int)(m_atk * 0.7f); // 甲
-                    m_power[2] = (int)(m_atk * 0.4f); // 空
+                    m_power[0] = (int) (m_atk * 1.3f); // 兵
+                    m_power[1] = (int) (m_atk * 0.7f); // 甲
+                    m_power[2] = (int) (m_atk * 0.4f); // 空
                     break;
                 case Anti.DubiLv3:
-                    m_power[0] = (int)(m_atk * 1.7f); // 兵
-                    m_power[1] = (int)(m_atk * 0.6f); // 甲
-                    m_power[2] = (int)(m_atk * 0.3f); // 空
+                    m_power[0] = (int) (m_atk * 1.7f); // 兵
+                    m_power[1] = (int) (m_atk * 0.6f); // 甲
+                    m_power[2] = (int) (m_atk * 0.3f); // 空
                     break;
                 case Anti.DubiLv4:
-                    m_power[0] = (int)(m_atk * 2.2f); // 兵
-                    m_power[1] = (int)(m_atk * 0.4f); // 甲
-                    m_power[2] = (int)(m_atk * 0.2f); // 空
+                    m_power[0] = (int) (m_atk * 2.2f); // 兵
+                    m_power[1] = (int) (m_atk * 0.4f); // 甲
+                    m_power[2] = (int) (m_atk * 0.2f); // 空
                     break;
                 case Anti.DubiLv5:
-                    m_power[0] = (int)(m_atk * 2.8f); // 兵
-                    m_power[1] = (int)(m_atk * 0.2f); // 甲
-                    m_power[2] = (int)(m_atk * 0.1f); // 空
+                    m_power[0] = (int) (m_atk * 2.8f); // 兵
+                    m_power[1] = (int) (m_atk * 0.2f); // 甲
+                    m_power[2] = (int) (m_atk * 0.1f); // 空
                     break;
                 case Anti.DubiLv6:
-                    m_power[0] = (int)(m_atk * 3.5f); // 兵
-                    m_power[1] = (int)(m_atk * 0.1f); // 甲
-                    m_power[2] = (int)(m_atk * 0.05f); // 空
+                    m_power[0] = (int) (m_atk * 3.5f); // 兵
+                    m_power[1] = (int) (m_atk * 0.1f); // 甲
+                    m_power[2] = (int) (m_atk * 0.05f); // 空
                     break;
                 case Anti.DubiLv7:
-                    m_power[0] = (int)(m_atk * 5f); // 兵
-                    m_power[1] = (int)(m_atk * 0f); // 甲
-                    m_power[2] = (int)(m_atk * 0f); // 空
+                    m_power[0] = (int) (m_atk * 5f); // 兵
+                    m_power[1] = (int) (m_atk * 0f); // 甲
+                    m_power[2] = (int) (m_atk * 0f); // 空
                     break;
                 case Anti.MechLv1:
-                    m_power[0] = (int)(m_atk * 0.8f); // 兵
-                    m_power[1] = (int)(m_atk * 1f); // 甲
-                    m_power[2] = (int)(m_atk * 0.5f); // 空
+                    m_power[0] = (int) (m_atk * 0.8f); // 兵
+                    m_power[1] = (int) (m_atk * 1f); // 甲
+                    m_power[2] = (int) (m_atk * 0.5f); // 空
                     break;
                 case Anti.MechLv2:
-                    m_power[0] = (int)(m_atk * 0.7f); // 兵
-                    m_power[1] = (int)(m_atk * 1.3f); // 甲
-                    m_power[2] = (int)(m_atk * 0.4f); // 空
+                    m_power[0] = (int) (m_atk * 0.7f); // 兵
+                    m_power[1] = (int) (m_atk * 1.3f); // 甲
+                    m_power[2] = (int) (m_atk * 0.4f); // 空
                     break;
                 case Anti.MechLv3:
-                    m_power[0] = (int)(m_atk * 0.6f); // 兵
-                    m_power[1] = (int)(m_atk * 1.7f); // 甲
-                    m_power[2] = (int)(m_atk * 0.3f); // 空
+                    m_power[0] = (int) (m_atk * 0.6f); // 兵
+                    m_power[1] = (int) (m_atk * 1.7f); // 甲
+                    m_power[2] = (int) (m_atk * 0.3f); // 空
                     break;
                 case Anti.MechLv4:
-                    m_power[0] = (int)(m_atk * 0.4f); // 兵
-                    m_power[1] = (int)(m_atk * 2.2f); // 甲
-                    m_power[2] = (int)(m_atk * 0.2f); // 空
+                    m_power[0] = (int) (m_atk * 0.4f); // 兵
+                    m_power[1] = (int) (m_atk * 2.2f); // 甲
+                    m_power[2] = (int) (m_atk * 0.2f); // 空
                     break;
                 case Anti.MechLv5:
-                    m_power[0] = (int)(m_atk * 0.2f); // 兵
-                    m_power[1] = (int)(m_atk * 2.8f); // 甲
-                    m_power[2] = (int)(m_atk * 0.1f); // 空
+                    m_power[0] = (int) (m_atk * 0.2f); // 兵
+                    m_power[1] = (int) (m_atk * 2.8f); // 甲
+                    m_power[2] = (int) (m_atk * 0.1f); // 空
                     break;
                 case Anti.MechLv6:
-                    m_power[0] = (int)(m_atk * 0.1f); // 兵
-                    m_power[1] = (int)(m_atk * 3.5f); // 甲
-                    m_power[2] = (int)(m_atk * 0.05f); // 空
+                    m_power[0] = (int) (m_atk * 0.1f); // 兵
+                    m_power[1] = (int) (m_atk * 3.5f); // 甲
+                    m_power[2] = (int) (m_atk * 0.05f); // 空
                     break;
                 case Anti.MechLv7:
-                    m_power[0] = (int)(m_atk * 0f); // 兵
-                    m_power[1] = (int)(m_atk * 5f); // 甲
-                    m_power[2] = (int)(m_atk * 0f); // 空
+                    m_power[0] = (int) (m_atk * 0f); // 兵
+                    m_power[1] = (int) (m_atk * 5f); // 甲
+                    m_power[2] = (int) (m_atk * 0f); // 空
                     break;
                 case Anti.AirLv1:
-                    m_power[0] = (int)(m_atk * 0.8f); // 兵
-                    m_power[1] = (int)(m_atk * 0.5f); // 甲
-                    m_power[2] = (int)(m_atk * 1f); // 空
+                    m_power[0] = (int) (m_atk * 0.8f); // 兵
+                    m_power[1] = (int) (m_atk * 0.5f); // 甲
+                    m_power[2] = (int) (m_atk * 1f); // 空
                     break;
                 case Anti.AirLv2:
-                    m_power[0] = (int)(m_atk * 0.7f); // 兵
-                    m_power[1] = (int)(m_atk * 0.4f); // 甲
-                    m_power[2] = (int)(m_atk * 1.3f); // 空
+                    m_power[0] = (int) (m_atk * 0.7f); // 兵
+                    m_power[1] = (int) (m_atk * 0.4f); // 甲
+                    m_power[2] = (int) (m_atk * 1.3f); // 空
                     break;
                 case Anti.AirLv3:
-                    m_power[0] = (int)(m_atk * 0.6f); // 兵
-                    m_power[1] = (int)(m_atk * 0.3f); // 甲
-                    m_power[2] = (int)(m_atk * 1.7f); // 空
+                    m_power[0] = (int) (m_atk * 0.6f); // 兵
+                    m_power[1] = (int) (m_atk * 0.3f); // 甲
+                    m_power[2] = (int) (m_atk * 1.7f); // 空
                     break;
                 case Anti.AirLv4:
-                    m_power[0] = (int)(m_atk * 0.4f); // 兵
-                    m_power[1] = (int)(m_atk * 0.2f); // 甲
-                    m_power[2] = (int)(m_atk * 2.2f); // 空
+                    m_power[0] = (int) (m_atk * 0.4f); // 兵
+                    m_power[1] = (int) (m_atk * 0.2f); // 甲
+                    m_power[2] = (int) (m_atk * 2.2f); // 空
                     break;
                 case Anti.AirLv5:
-                    m_power[0] = (int)(m_atk * 0.2f); // 兵
-                    m_power[1] = (int)(m_atk * 0.1f); // 甲
-                    m_power[2] = (int)(m_atk * 2.8f); // 空
+                    m_power[0] = (int) (m_atk * 0.2f); // 兵
+                    m_power[1] = (int) (m_atk * 0.1f); // 甲
+                    m_power[2] = (int) (m_atk * 2.8f); // 空
                     break;
                 case Anti.AirLv6:
-                    m_power[0] = (int)(m_atk * 0.1f); // 兵
-                    m_power[1] = (int)(m_atk * 0.05f); // 甲
-                    m_power[2] = (int)(m_atk * 3.5f); // 空
+                    m_power[0] = (int) (m_atk * 0.1f); // 兵
+                    m_power[1] = (int) (m_atk * 0.05f); // 甲
+                    m_power[2] = (int) (m_atk * 3.5f); // 空
                     break;
                 case Anti.AirLv7:
-                    m_power[0] = (int)(m_atk * 0f); // 兵
-                    m_power[1] = (int)(m_atk * 0f); // 甲
-                    m_power[2] = (int)(m_atk * 5f); // 空
+                    m_power[0] = (int) (m_atk * 0f); // 兵
+                    m_power[1] = (int) (m_atk * 0f); // 甲
+                    m_power[2] = (int) (m_atk * 5f); // 空
                     break;
                 default:
-                    m_power[0] = (int)(m_atk * 1f); // 兵
-                    m_power[1] = (int)(m_atk * 1f); // 甲
-                    m_power[2] = (int)(m_atk * 1f); // 空
+                    m_power[0] = (int) (m_atk * 1f); // 兵
+                    m_power[1] = (int) (m_atk * 1f); // 甲
+                    m_power[2] = (int) (m_atk * 1f); // 空
                     break;
             }
         }
-        public GameObject GetWarfareUnit(int index, Vector3 cantre)
-        {
-            return Instantiate(m_instance, cantre + (Vector3)model.m_formation[index] * 1, Quaternion.identity);
-        }
-        public GameObject GetWarfareUnit(int index, Vector3 cantre, float degree)
-        {
-            return Instantiate(m_instance, cantre + (Vector3)model.m_formation[index] * 1, Quaternion.Euler(0, degree, 0));
-        }
     }
-    [System.Serializable]
     public class MasterModel
     {
-        public int m_id;
-        public MasterModel(Data data)
+        public MasterModel (Data data)
         {
-            m_id = (int)data.m_type;
             Instance = data.m_instance;
             Sprite = data.m_sprite;
             Type = data.m_type;
@@ -209,11 +197,12 @@ namespace Warfare.Unit
         public Range Range { get; private set; }
         public Square Square { get; private set; }
         public Vector3[] Formation { get; private set; }
-        public int UnitCount(float hp)
+        public int UnitCount (float hp)
         {
-            return Mathf.CeilToInt(hp / HP);
+            return Mathf.CeilToInt (hp / HP);
         }
     }
+
     [System.Serializable]
     public class DataModel
     {
@@ -222,56 +211,63 @@ namespace Warfare.Unit
         public int Level { get; set; }
         public int Exp { get; set; }
     }
-    public class BattleModel
+
+    public abstract class Collection
     {
-        public int order;
         public MasterModel model;
         public DataModel data;
+    }
+    public class BattleModel : Collection
+    {
+        public int order;
+        // public MasterModel model;
+        // public DataModel data;
         public Unit.BattleModel target;
         public int totalFire;
         public int totalAttackers;
         public int totalDamage;
         public Range hitRange;
 
-        public BattleModel(int order, MasterModel model, DataModel data)
+        public BattleModel (int order, MasterModel model, DataModel data)
         {
             this.order = order;
             this.model = model;
             this.data = data;
         }
 
-        public bool Fire(int action, List<Unit.BattleModel>[] rangeList)
+        public bool Fire (int action, List<Unit.BattleModel>[] rangeList)
         {
             if (action % model.FireRate != 0) return false;
-            if (target != null) if (target.data.HP == 0) target = null;
+            if (target != null)
+                if (target.data.HP == 0) target = null;
             if (target == null)
             {
                 if (order > 10)
-                    target = rangeList[3][Random.Range(0, rangeList[3].Count)];
+                    target = rangeList[3][Random.Range (0, rangeList[3].Count)];
                 else if (order > 8)
-                    target = rangeList[4][Random.Range(0, rangeList[3].Count)];
+                    target = rangeList[4][Random.Range (0, rangeList[3].Count)];
                 else
                 {
-                    List<Unit.BattleModel> list = rangeList[(int)model.Range];
-                    target = list[Random.Range(0, list.Count)];
+                    List<Unit.BattleModel> list = rangeList[(int) model.Range];
+                    target = list[Random.Range (0, list.Count)];
                 }
             }
-            target.hitRange = (Range)Mathf.Max((int)target.hitRange, (int)model.Range);
+            target.hitRange = (Range) Mathf.Max ((int) target.hitRange, (int) model.Range);
             target.totalFire++;
-            target.totalAttackers += model.UnitCount(data.HP);
-            target.totalDamage += model.UnitCount(data.HP) * model.ATK[(int)target.model.Field];
+            target.totalAttackers += model.UnitCount (data.HP);
+            target.totalDamage += model.UnitCount (data.HP) * model.ATK[(int) target.model.Field];
             return true;
         }
 
-        public bool ActionResult(out Range maxRange, out int countDestroy, out int countHit)
+        public bool ActionResult (out Range maxRange, out int countDestroy, out int countHit)
         {
             maxRange = hitRange;
             countDestroy = 60;
             countHit = 0;
-            int unitCount = UnitCount();
-            data.HP = Mathf.Max(0, data.HP - totalDamage);
-            countDestroy = unitCount - UnitCount();
-            countHit = Mathf.Min(UnitCount(), totalAttackers - countDestroy);
+            int unitCount = UnitCount ();
+            data.HP = Mathf.Max (0, data.HP - totalDamage);
+            countDestroy = unitCount - UnitCount ();
+            countHit = Mathf.Min (UnitCount (), totalAttackers - countDestroy);
             // Debug.Log(totalFire + " / " + totalAttackers + " / " + totalDamage + " / " + data.HP);
             hitRange = Range.Near;
             totalFire = 0;
@@ -279,13 +275,13 @@ namespace Warfare.Unit
             totalDamage = 0;
             return true;
         }
-        public int UnitCount()
+        public int UnitCount ()
         {
-            return model.UnitCount(data.HP);
+            return model.UnitCount (data.HP);
         }
-        public int TotalDamage(Unit.Field field)
+        public int TotalDamage (Unit.Field field)
         {
-            return model.UnitCount(data.HP) * model.ATK[(int)field];
+            return model.UnitCount (data.HP) * model.ATK[(int) field];
         }
     }
 
@@ -434,119 +430,119 @@ namespace Warfare.Unit
         public Square m_square;
         public Vector3[] m_formation;
 
-        public void SetPower()
+        public void SetPower ()
         {
             switch (m_anti)
             {
                 case Anti.DubiLv1:
-                    m_power[0] = (int)(m_atk * 1f); // 兵
-                    m_power[1] = (int)(m_atk * 0.8f); // 甲
-                    m_power[2] = (int)(m_atk * 0.5f); // 空
+                    m_power[0] = (int) (m_atk * 1f); // 兵
+                    m_power[1] = (int) (m_atk * 0.8f); // 甲
+                    m_power[2] = (int) (m_atk * 0.5f); // 空
                     break;
                 case Anti.DubiLv2:
-                    m_power[0] = (int)(m_atk * 1.3f); // 兵
-                    m_power[1] = (int)(m_atk * 0.7f); // 甲
-                    m_power[2] = (int)(m_atk * 0.4f); // 空
+                    m_power[0] = (int) (m_atk * 1.3f); // 兵
+                    m_power[1] = (int) (m_atk * 0.7f); // 甲
+                    m_power[2] = (int) (m_atk * 0.4f); // 空
                     break;
                 case Anti.DubiLv3:
-                    m_power[0] = (int)(m_atk * 1.7f); // 兵
-                    m_power[1] = (int)(m_atk * 0.6f); // 甲
-                    m_power[2] = (int)(m_atk * 0.3f); // 空
+                    m_power[0] = (int) (m_atk * 1.7f); // 兵
+                    m_power[1] = (int) (m_atk * 0.6f); // 甲
+                    m_power[2] = (int) (m_atk * 0.3f); // 空
                     break;
                 case Anti.DubiLv4:
-                    m_power[0] = (int)(m_atk * 2.2f); // 兵
-                    m_power[1] = (int)(m_atk * 0.4f); // 甲
-                    m_power[2] = (int)(m_atk * 0.2f); // 空
+                    m_power[0] = (int) (m_atk * 2.2f); // 兵
+                    m_power[1] = (int) (m_atk * 0.4f); // 甲
+                    m_power[2] = (int) (m_atk * 0.2f); // 空
                     break;
                 case Anti.DubiLv5:
-                    m_power[0] = (int)(m_atk * 2.8f); // 兵
-                    m_power[1] = (int)(m_atk * 0.2f); // 甲
-                    m_power[2] = (int)(m_atk * 0.1f); // 空
+                    m_power[0] = (int) (m_atk * 2.8f); // 兵
+                    m_power[1] = (int) (m_atk * 0.2f); // 甲
+                    m_power[2] = (int) (m_atk * 0.1f); // 空
                     break;
                 case Anti.DubiLv6:
-                    m_power[0] = (int)(m_atk * 3.5f); // 兵
-                    m_power[1] = (int)(m_atk * 0.1f); // 甲
-                    m_power[2] = (int)(m_atk * 0.05f); // 空
+                    m_power[0] = (int) (m_atk * 3.5f); // 兵
+                    m_power[1] = (int) (m_atk * 0.1f); // 甲
+                    m_power[2] = (int) (m_atk * 0.05f); // 空
                     break;
                 case Anti.DubiLv7:
-                    m_power[0] = (int)(m_atk * 5f); // 兵
-                    m_power[1] = (int)(m_atk * 0f); // 甲
-                    m_power[2] = (int)(m_atk * 0f); // 空
+                    m_power[0] = (int) (m_atk * 5f); // 兵
+                    m_power[1] = (int) (m_atk * 0f); // 甲
+                    m_power[2] = (int) (m_atk * 0f); // 空
                     break;
                 case Anti.MechLv1:
-                    m_power[0] = (int)(m_atk * 0.8f); // 兵
-                    m_power[1] = (int)(m_atk * 1f); // 甲
-                    m_power[2] = (int)(m_atk * 0.5f); // 空
+                    m_power[0] = (int) (m_atk * 0.8f); // 兵
+                    m_power[1] = (int) (m_atk * 1f); // 甲
+                    m_power[2] = (int) (m_atk * 0.5f); // 空
                     break;
                 case Anti.MechLv2:
-                    m_power[0] = (int)(m_atk * 0.7f); // 兵
-                    m_power[1] = (int)(m_atk * 1.3f); // 甲
-                    m_power[2] = (int)(m_atk * 0.4f); // 空
+                    m_power[0] = (int) (m_atk * 0.7f); // 兵
+                    m_power[1] = (int) (m_atk * 1.3f); // 甲
+                    m_power[2] = (int) (m_atk * 0.4f); // 空
                     break;
                 case Anti.MechLv3:
-                    m_power[0] = (int)(m_atk * 0.6f); // 兵
-                    m_power[1] = (int)(m_atk * 1.7f); // 甲
-                    m_power[2] = (int)(m_atk * 0.3f); // 空
+                    m_power[0] = (int) (m_atk * 0.6f); // 兵
+                    m_power[1] = (int) (m_atk * 1.7f); // 甲
+                    m_power[2] = (int) (m_atk * 0.3f); // 空
                     break;
                 case Anti.MechLv4:
-                    m_power[0] = (int)(m_atk * 0.4f); // 兵
-                    m_power[1] = (int)(m_atk * 2.2f); // 甲
-                    m_power[2] = (int)(m_atk * 0.2f); // 空
+                    m_power[0] = (int) (m_atk * 0.4f); // 兵
+                    m_power[1] = (int) (m_atk * 2.2f); // 甲
+                    m_power[2] = (int) (m_atk * 0.2f); // 空
                     break;
                 case Anti.MechLv5:
-                    m_power[0] = (int)(m_atk * 0.2f); // 兵
-                    m_power[1] = (int)(m_atk * 2.8f); // 甲
-                    m_power[2] = (int)(m_atk * 0.1f); // 空
+                    m_power[0] = (int) (m_atk * 0.2f); // 兵
+                    m_power[1] = (int) (m_atk * 2.8f); // 甲
+                    m_power[2] = (int) (m_atk * 0.1f); // 空
                     break;
                 case Anti.MechLv6:
-                    m_power[0] = (int)(m_atk * 0.1f); // 兵
-                    m_power[1] = (int)(m_atk * 3.5f); // 甲
-                    m_power[2] = (int)(m_atk * 0.05f); // 空
+                    m_power[0] = (int) (m_atk * 0.1f); // 兵
+                    m_power[1] = (int) (m_atk * 3.5f); // 甲
+                    m_power[2] = (int) (m_atk * 0.05f); // 空
                     break;
                 case Anti.MechLv7:
-                    m_power[0] = (int)(m_atk * 0f); // 兵
-                    m_power[1] = (int)(m_atk * 5f); // 甲
-                    m_power[2] = (int)(m_atk * 0f); // 空
+                    m_power[0] = (int) (m_atk * 0f); // 兵
+                    m_power[1] = (int) (m_atk * 5f); // 甲
+                    m_power[2] = (int) (m_atk * 0f); // 空
                     break;
                 case Anti.AirLv1:
-                    m_power[0] = (int)(m_atk * 0.8f); // 兵
-                    m_power[1] = (int)(m_atk * 0.5f); // 甲
-                    m_power[2] = (int)(m_atk * 1f); // 空
+                    m_power[0] = (int) (m_atk * 0.8f); // 兵
+                    m_power[1] = (int) (m_atk * 0.5f); // 甲
+                    m_power[2] = (int) (m_atk * 1f); // 空
                     break;
                 case Anti.AirLv2:
-                    m_power[0] = (int)(m_atk * 0.7f); // 兵
-                    m_power[1] = (int)(m_atk * 0.4f); // 甲
-                    m_power[2] = (int)(m_atk * 1.3f); // 空
+                    m_power[0] = (int) (m_atk * 0.7f); // 兵
+                    m_power[1] = (int) (m_atk * 0.4f); // 甲
+                    m_power[2] = (int) (m_atk * 1.3f); // 空
                     break;
                 case Anti.AirLv3:
-                    m_power[0] = (int)(m_atk * 0.6f); // 兵
-                    m_power[1] = (int)(m_atk * 0.3f); // 甲
-                    m_power[2] = (int)(m_atk * 1.7f); // 空
+                    m_power[0] = (int) (m_atk * 0.6f); // 兵
+                    m_power[1] = (int) (m_atk * 0.3f); // 甲
+                    m_power[2] = (int) (m_atk * 1.7f); // 空
                     break;
                 case Anti.AirLv4:
-                    m_power[0] = (int)(m_atk * 0.4f); // 兵
-                    m_power[1] = (int)(m_atk * 0.2f); // 甲
-                    m_power[2] = (int)(m_atk * 2.2f); // 空
+                    m_power[0] = (int) (m_atk * 0.4f); // 兵
+                    m_power[1] = (int) (m_atk * 0.2f); // 甲
+                    m_power[2] = (int) (m_atk * 2.2f); // 空
                     break;
                 case Anti.AirLv5:
-                    m_power[0] = (int)(m_atk * 0.2f); // 兵
-                    m_power[1] = (int)(m_atk * 0.1f); // 甲
-                    m_power[2] = (int)(m_atk * 2.8f); // 空
+                    m_power[0] = (int) (m_atk * 0.2f); // 兵
+                    m_power[1] = (int) (m_atk * 0.1f); // 甲
+                    m_power[2] = (int) (m_atk * 2.8f); // 空
                     break;
                 case Anti.AirLv6:
-                    m_power[0] = (int)(m_atk * 0.1f); // 兵
-                    m_power[1] = (int)(m_atk * 0.05f); // 甲
-                    m_power[2] = (int)(m_atk * 3.5f); // 空
+                    m_power[0] = (int) (m_atk * 0.1f); // 兵
+                    m_power[1] = (int) (m_atk * 0.05f); // 甲
+                    m_power[2] = (int) (m_atk * 3.5f); // 空
                     break;
                 case Anti.AirLv7:
-                    m_power[0] = (int)(m_atk * 0f); // 兵
-                    m_power[1] = (int)(m_atk * 0f); // 甲
-                    m_power[2] = (int)(m_atk * 5f); // 空
+                    m_power[0] = (int) (m_atk * 0f); // 兵
+                    m_power[1] = (int) (m_atk * 0f); // 甲
+                    m_power[2] = (int) (m_atk * 5f); // 空
                     break;
                 default:
-                    m_power[0] = (int)(m_atk * 1f); // 兵
-                    m_power[1] = (int)(m_atk * 1f); // 甲
-                    m_power[2] = (int)(m_atk * 1f); // 空
+                    m_power[0] = (int) (m_atk * 1f); // 兵
+                    m_power[1] = (int) (m_atk * 1f); // 甲
+                    m_power[2] = (int) (m_atk * 1f); // 空
                     break;
             }
         }
