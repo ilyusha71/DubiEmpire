@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace Warfare.Unit
 {
     [CreateAssetMenu (fileName = "Data", menuName = "Warfare/Unit/Create Warfare Unit Data")]
-    public class Data : ScriptableObject
+    public class Property : ScriptableObject
     {
         public GameObject m_instance;
         public Sprite m_sprite;
@@ -168,7 +168,7 @@ namespace Warfare.Unit
     }
     public class MasterModel
     {
-        public MasterModel (Data data)
+        public MasterModel (Property data)
         {
             Instance = data.m_instance;
             Sprite = data.m_sprite;
@@ -204,7 +204,7 @@ namespace Warfare.Unit
     }
 
     [System.Serializable]
-    public class DataModel
+    public class Data
     {
         public int Type { get; set; }
         public int HP { get; set; }
@@ -212,12 +212,12 @@ namespace Warfare.Unit
         public int Exp { get; set; }
     }
 
-    public abstract class Collection
+    public abstract class DataModel
     {
         public MasterModel model;
-        public DataModel data;
+        public Data data;
     }
-    public class BattleModel : Collection
+    public class BattleModel : DataModel
     {
         public int order;
         // public MasterModel model;
@@ -228,7 +228,7 @@ namespace Warfare.Unit
         public int totalDamage;
         public Range hitRange;
 
-        public BattleModel (int order, MasterModel model, DataModel data)
+        public BattleModel (int order, MasterModel model, Data data)
         {
             this.order = order;
             this.model = model;

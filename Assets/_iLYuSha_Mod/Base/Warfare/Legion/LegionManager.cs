@@ -17,7 +17,7 @@ namespace Warfare.Legion
         public GameObject prefabUnitButton;
         public List<Toggle> listReserveUnits = new List<Toggle> ();
         public Toggle btnSelected;
-        public Unit.DataModel dataSelected;
+        public Unit.Data dataSelected;
 
         RectTransform rectTransform;
         GridLayoutGroup gridLayout;
@@ -149,7 +149,7 @@ namespace Warfare.Legion
             }
             ResetReserveGroup ();
         }
-        public void RegisterReserveUnit (Unit.DataModel data)
+        public void RegisterReserveUnit (Unit.Data data)
         {
             Unit.MasterModel model = warfare.units[data.Type];
             Toggle btn = Instantiate (prefabUnitButton, reserveGroup).GetComponent<Toggle> ();

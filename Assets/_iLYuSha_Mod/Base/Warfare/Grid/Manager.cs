@@ -21,7 +21,7 @@ namespace Warfare.Grid
         public List<int> index = new List<int> (); // 無序
         public List<int> order = new List<int> (); // 有序
         [HeaderAttribute ("Unit")]
-        public Unit.DataModel data;
+        public Unit.Data data;
         public Unit.MasterModel model;
         public Dictionary<int, GameObject> stacks = new Dictionary<int, GameObject> ();
 
@@ -157,7 +157,7 @@ namespace Warfare.Grid
             data = null;
             model = null;
         }
-        public bool Deploy (Unit.DataModel data, Unit.MasterModel model)
+        public bool Deploy (Unit.Data data, Unit.MasterModel model)
         {
             if (state != State.Deploy)
             {

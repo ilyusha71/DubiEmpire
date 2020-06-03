@@ -39,7 +39,7 @@ namespace Warfare.Legion
     {
         public Texture m_texture;
         public Unit.Type type;
-        public Unit.Data data;
+        public Unit.Property data;
         [Range(0f, 1f)]
         public float m_percent = 1.0f;
 
@@ -80,7 +80,7 @@ namespace Warfare.Legion
     public class DataModel
     {
         public int Id { get; private set; }
-        public Dictionary<int, Unit.DataModel> squadron = new Dictionary<int, Unit.DataModel>();
+        public Dictionary<int, Unit.Data> squadron = new Dictionary<int, Unit.Data>();
 
         public DataModel(int id)
         {
@@ -92,7 +92,7 @@ namespace Warfare.Legion
         public Dictionary<int, Unit.BattleModel> squadron = new Dictionary<int, Unit.BattleModel>();
         public List<Unit.BattleModel>[] rangeList = new List<Unit.BattleModel>[5];
 
-        public BattleModel(Dictionary<int, Unit.MasterModel> units, Dictionary<int, Unit.DataModel> data)
+        public BattleModel(Dictionary<int, Unit.MasterModel> units, Dictionary<int, Unit.Data> data)
         {
             for (int order = 0; order < 13; order++)
             {

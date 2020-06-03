@@ -8,7 +8,7 @@ namespace Warfare.Unit
     public class DatabaseEditor : EditorWindow
     {
         private WarfareManager warfare;
-        private Unit.Data source;
+        private Unit.Property source;
         private Vector2 scrollPos;
         private Editor editor;
         private Database database;
@@ -94,7 +94,7 @@ namespace Warfare.Unit
             GUILayout.EndHorizontal();
 
             GUILayout.Space(5);
-            foreach (KeyValuePair<Unit.Type, Unit.Data> unit in database.units.ToList())
+            foreach (KeyValuePair<Unit.Type, Unit.Property> unit in database.units.ToList())
             {
                 if (unit.Key == Unit.Type.Dave)
                 {
@@ -190,7 +190,7 @@ namespace Warfare.Unit
                     GUILayout.Space(5);
                     unit.Value.m_square = (Square)EditorGUILayout.EnumPopup(unit.Value.m_square, GUILayout.Width(70));
                     GUILayout.Space(5);
-                    source = EditorGUILayout.ObjectField(unit.Value, typeof(Unit.Data), true, GUILayout.Width(100)) as Unit.Data;
+                    source = EditorGUILayout.ObjectField(unit.Value, typeof(Unit.Property), true, GUILayout.Width(100)) as Unit.Property;
 
                     GUI.backgroundColor = Color.red;
                     if (GUILayout.Button("Remove", GUILayout.Width(66)))

@@ -44,7 +44,7 @@ namespace Warfare
                     int type = (int) legions[id].m_squadron[order].type;
                     if (type == 0)
                         continue;
-                    Unit.DataModel unit = new Unit.DataModel ();
+                    Unit.Data unit = new Unit.Data ();
                     unit.Type = type;
                     unit.HP = legions[id].m_squadron[order].HP;
                     // unit.Level = legions[id].m_squadron[order].HP;
@@ -68,7 +68,7 @@ namespace Warfare
                 int type = (int) legions[id].m_squadron[order].type;
                 if (type == 0)
                     continue;
-                Unit.DataModel unit = new Unit.DataModel ();
+                Unit.Data unit = new Unit.Data ();
                 unit.Type = type;
                 unit.HP = legions[id].m_squadron[order].HP;
                 // unit.Level = legions[id].m_squadron[order].HP;
@@ -92,7 +92,7 @@ namespace Warfare
                 playerData.legions.Add (index, legion);
             }
             int type = (int) legions[id].m_squadron[order].type;
-            Unit.DataModel unit = new Unit.DataModel ();
+            Unit.Data unit = new Unit.Data ();
             unit.Type = type;
             unit.HP = legions[id].m_squadron[order].HP;
             // unit.Level = legions[id].m_squadron[order].HP;
@@ -114,7 +114,7 @@ namespace Warfare
                     int type = (int) legions[id].m_squadron[order].type;
                     if (type == 0)
                         continue;
-                    Unit.DataModel unit = new Unit.DataModel ();
+                    Unit.Data unit = new Unit.Data ();
                     unit.Type = type;
                     unit.HP = legions[id].m_squadron[order].HP;
                     // unit.Level = legions[id].m_squadron[order].HP;
@@ -152,7 +152,7 @@ namespace Warfare
     public class PlayerData
     {
         public Dictionary<int, Legion.DataModel> legions = new Dictionary<int, Legion.DataModel> ();
-        public List<Unit.DataModel> units = new List<Unit.DataModel> ();
+        public List<Unit.Data> units = new List<Unit.Data> ();
     }
 
     public enum Faction

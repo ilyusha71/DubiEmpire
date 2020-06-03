@@ -11,8 +11,8 @@ namespace Warfare.Unit
         [HideInInspector]
         public List<Unit.Type> keyList = new List<Unit.Type> ();
         [HideInInspector]
-        public List<Unit.Data> valueList = new List<Unit.Data> ();
-        public Dictionary<Unit.Type, Unit.Data> units = new Dictionary<Unit.Type, Unit.Data> ();
+        public List<Unit.Property> valueList = new List<Unit.Property> ();
+        public Dictionary<Unit.Type, Unit.Property> units = new Dictionary<Unit.Type, Unit.Property> ();
 
         public void DeleteKey (Unit.Type key)
         {
@@ -20,7 +20,7 @@ namespace Warfare.Unit
         }
         public void Sort ()
         {
-            Dictionary<Unit.Type, Unit.Data> dic1Asc = units.OrderBy (o => o.Key).ToDictionary (o => o.Key, p => p.Value);
+            Dictionary<Unit.Type, Unit.Property> dic1Asc = units.OrderBy (o => o.Key).ToDictionary (o => o.Key, p => p.Value);
             units = dic1Asc;
         }
         public void OnBeforeSerialize ()
