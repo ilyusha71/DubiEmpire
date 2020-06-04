@@ -41,29 +41,12 @@ namespace Warfare
             warfare.SynchronizeUnitsToPlayerData ();
             warfare.ConverseLegionBattleModel ();
             warfare.ConverseUnitsBattleModel ();
-            warfare.Load (3);
+            // warfare.Load (3);
         }
 
         void Start ()
         {
-            // int[] index = new int[] { 2, 3 };
-            // Legion.BattleModel[] legions = new Legion.BattleModel[2];
-            // for (int side = 0; side < 2; side++)
-            // {
-            //     Dictionary<int, Unit.Data> data = warfare.playerData.legions[index[side]].squadron;;
-            //     Dictionary<int, Unit.BattleModel> squadron = new Dictionary<int, Unit.BattleModel> ();
-            //     for (int order = 0; order < 13; order++)
-            //     {
-            //         if (data.ContainsKey (order))
-            //         {
-            //             Unit.BattleModel unit = new Unit.BattleModel (order, warfare.unitModels[data[order].Type], data[order]);
-            //             squadron.Add (order, unit);
-            //         }
-            //     }
-            //     legions[side] = new Legion.BattleModel (squadron);
-            // }
             battle = new BattleModel (warfare.legions[2], warfare.legions[3], grids);
-            Debug.Log (warfare.legions[2].squadron.ContainsKey (0));
             FormUp ();
         }
 

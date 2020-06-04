@@ -228,40 +228,36 @@ namespace Warfare
             }
         }
 
-        public void Hit (Unit.Range range, int countDestroy, int countHit)
+        public void Hit ()
         {
             UpdateList ();
             List<int> listDestroy = new List<int> ();
-            for (int i = 0; i < countDestroy; i++)
+            for (int i = 0; i < unit.countDestroy; i++)
             {
-                if (range == Unit.Range.Far)
+                if (unit.hitRange == Unit.Range.Far)
                 {
-                    // Debug.LogWarning (unit.model.m_type.ToString () + " / " + i + " : " + index[i] + " : " + index.Count);
                     listDestroy.Add (index[0]);
                     index.RemoveAt (0);
                 }
                 else
                 {
-                    // Debug.LogWarning (unit.model.m_type.ToString () + " / " + i + " : " + order[0] + " : " + order.Count);
                     listDestroy.Add (order[0]);
                     order.RemoveAt (0);
                 }
             }
 
             // 需要補Hit特效
-            if (range == Unit.Range.Far)
+            if (unit.hitRange == Unit.Range.Far)
             {
-                for (int i = 0; i < countHit; i++)
+                for (int i = 0; i < unit.countHit; i++)
                 {
-                    // if (stacks[index[i]].GetComponentInChildren<EffectController>())
                     stacks[index[i]].GetComponentInChildren<EffectController> ().Hit ();
                 }
             }
             else
             {
-                for (int i = 0; i < countHit; i++)
+                for (int i = 0; i < unit.countHit; i++)
                 {
-                    // if (stacks[order[i]].GetComponentInChildren<EffectController>())
                     stacks[order[i]].GetComponentInChildren<EffectController> ().Hit ();
                 }
             }

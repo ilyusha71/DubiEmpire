@@ -231,10 +231,9 @@ namespace Warfare.Unit
     {
         public int order;
         public Unit.BattleModel target;
-        public int totalFire;
-        public int totalAttackers;
-        public int totalDamage;
+        public int totalFire, totalAttackers, totalDamage;
         public Range hitRange;
+        public int countDestroy, countHit;
 
         public BattleModel (int order, Model model, Data data)
         {
@@ -265,21 +264,23 @@ namespace Warfare.Unit
             target.totalDamage += model.UnitCount (data.HP) * model.ATK[(int) target.model.Field];
             return true;
         }
-        public bool ActionResult (out Range maxRange, out int countDestroy, out int countHit)
+        public bool ActionResult ()
         {
-            maxRange = hitRange;
-            countDestroy = 60;
-            countHit = 0;
             int unitCount = UnitCount ();
             data.HP = Mathf.Max (0, data.HP - totalDamage);
             countDestroy = unitCount - UnitCount ();
             countHit = Mathf.Min (UnitCount (), totalAttackers - countDestroy);
             // Debug.Log(totalFire + " / " + totalAttackers + " / " + totalDamage + " / " + data.HP);
-            hitRange = Range.Near;
+            return true;
+        }
+        public void Clear ()
+        {
             totalFire = 0;
             totalAttackers = 0;
             totalDamage = 0;
-            return true;
+            hitRange = Range.Near;
+            countDestroy = 0;
+            countHit = 0;
         }
     }
     public enum Type

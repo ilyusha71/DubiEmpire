@@ -63,15 +63,13 @@
                 {
                     if (legions[side].squadron.ContainsKey (order))
                     {
-                        int countDestroy = 0;
-                        int countHit = 0;
-                        Unit.Range maxRange = Unit.Range.Near;
                         Unit.BattleModel unit = legions[side].squadron[order];
                         // Debug.LogWarning(wave + " / " + action + " / " + side + " / " + order);
-                        if (unit.ActionResult (out maxRange, out countDestroy, out countHit))
+                        if (unit.ActionResult ())
                         {
                             if (!quickBattle)
-                                grids[side * 17 + order].Hit (maxRange, countDestroy, countHit);
+                                grids[side * 17 + order].Hit ();
+                            unit.Clear ();
                             if (unit.data.HP == 0)
                             {
                                 legions[side].squadron.Remove (order);
