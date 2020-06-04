@@ -12,18 +12,20 @@ namespace Warfare
         public Legion.Database legionDB;
         public Unit.Database unitDB;
         public PlayerData playerData;
-        public Dictionary<int, Unit.Model> units = new Dictionary<int, Unit.Model> ();
+        public Dictionary<int, Unit.Model> unitModels = new Dictionary<int, Unit.Model> ();
+        public Dictionary<int, Legion.DataModel<Unit.DataModel>> legions = new Dictionary<int, Legion.DataModel<Unit.DataModel>> ();
+        public List<Unit.DataModel> units = new List<Unit.DataModel> ();
 
         public void MasterModelCollector ()
         {
-            units.Clear ();
+            unitModels.Clear ();
             int count = unitDB.units.Count;
             for (int i = 0; i < count; i++)
             {
                 Unit.Model model = new Unit.Model (unitDB.valueList[i]);
-                units.Add ((int) unitDB.keyList[i], model);
+                unitModels.Add ((int) unitDB.keyList[i], model);
             }
-            Debug.Log ("<color=yellow>" + units.Count + " MasterModel</color> has been <color=lime>Updated</color>.");
+            Debug.Log ("<color=yellow>" + unitModels.Count + " MasterModel</color> has been <color=lime>Updated</color>.");
         }
         public void SynchronizeLegionsToPlayerData ()
         {
@@ -144,6 +146,66 @@ namespace Warfare
             playerData = (PlayerData) bf.Deserialize (s);
             s.Close ();
             Debug.Log ("Load");
+            return true;
+        }
+        public bool ConverseLegionDataModel ()
+        {
+            legions.Clear ();
+            List<int> keys = playerData.legions.Keys.ToList ();
+            for (int index = 0; index < keys.Count; index++)
+            {
+                if (keys[index] < 1000) continue;
+                if (keys[index] >= 1100) break;
+                Dictionary<int, Unit.Data> data = playerData.legions[keys[index]].squadron;;
+                Dictionary<int, Unit.DataModel> squadron = new Dictionary<int, Unit.DataModel> ();
+                for (int order = 0; order < 13; order++)
+                {
+                    if (data.ContainsKey (order))
+                    {
+                        Unit.DataModel unit = new Unit.DataModel (unitModels[data[order].Type], data[order]);
+                        squadron.Add (order, unit);
+                    }
+                }
+                legions.Add (keys[index], new Legion.DataModel<Unit.DataModel> (squadron));
+            }
+            return true;
+        }
+        public bool ConverseLegionData ()
+        {
+            playerData.legions.Clear ();
+            List<int> keys = legions.Keys.ToList ();
+            for (int index = 0; index < keys.Count; index++)
+            {
+                Legion.Data legion = new Legion.Data (keys[index]);
+                Dictionary<int, Unit.DataModel> data = legions[keys[index]].squadron;
+                for (int order = 0; order < 13; order++)
+                {
+                    if (data.ContainsKey (order))
+                        legion.squadron.Add (order, legions[keys[index]].squadron[order].data);
+                }
+                playerData.legions.Add (keys[index], legion);
+            }
+            return true;
+        }
+        public bool ConverseUnitsDataModel ()
+        {
+            units.Clear ();
+            List<Unit.Data> data = playerData.units;
+            int count = data.Count;
+            for (int index = 0; index < count; index++)
+            {
+                units.Add (new Unit.DataModel (unitModels[data[index].Type], data[index]));
+            }
+            return true;
+        }
+        public bool ConverseUnitsData ()
+        {
+            playerData.units.Clear ();
+            int count = units.Count;
+            for (int index = 0; index < count; index++)
+            {
+                playerData.units.Add (units[index].data);
+            }
             return true;
         }
     }
