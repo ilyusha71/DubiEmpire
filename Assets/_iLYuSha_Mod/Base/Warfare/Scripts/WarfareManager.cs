@@ -13,8 +13,8 @@ namespace Warfare
         public Unit.Database unitDB;
         public PlayerData playerData;
         public Dictionary<int, Unit.Model> unitModels = new Dictionary<int, Unit.Model> ();
-        public Dictionary<int, Legion.DataModel<Unit.DataModel>> legions = new Dictionary<int, Legion.DataModel<Unit.DataModel>> ();
-        public List<Unit.DataModel> units = new List<Unit.DataModel> ();
+        public Dictionary<int, Legion.BattleModel> legions = new Dictionary<int, Legion.BattleModel> ();
+        public List<Unit.BattleModel> units = new List<Unit.BattleModel> ();
 
         public void MasterModelCollector ()
         {
@@ -29,6 +29,7 @@ namespace Warfare
         }
         public void SynchronizeLegionsToPlayerData ()
         {
+            playerData.legions.Clear ();
             Dictionary<int, Legion.Model> legions = legionDB.legions;
             List<int> keys = legions.Keys.ToList ();
             int dataCount = keys.Count;
@@ -103,6 +104,7 @@ namespace Warfare
         }
         public void SynchronizeUnitsToPlayerData ()
         {
+            playerData.units.Clear ();
             Dictionary<int, Legion.Model> legions = legionDB.legions;
             List<int> keys = legions.Keys.ToList ();
             int dataCount = keys.Count;
@@ -127,46 +129,51 @@ namespace Warfare
         }
         public bool Save (int index)
         {
+            ConverseLegionData ();
+            ConverseUnitsData ();
+            string fileName = "Save" + index + ".wak";
             BinaryFormatter bf = new BinaryFormatter ();
-            Stream s = File.Open (Application.dataPath + "/Save" + index + ".wak", FileMode.Create);
+            Stream s = File.Open (Application.dataPath + "/" + fileName, FileMode.Create);
             bf.Serialize (s, playerData);
             s.Close ();
-            Debug.Log ("Save");
+            Debug.Log ("<color=cyan>Save</color> " + fileName + " <color=lime>completed</color>");
             return true;
         }
         public bool Load (int index)
         {
-            if (!System.IO.File.Exists (Application.dataPath + "/Save" + index + ".wak"))
+            string fileName = "Save" + index + ".wak";
+            if (!System.IO.File.Exists (Application.dataPath + "/" + fileName))
             {
                 Debug.LogWarning ("Bug");
-                System.IO.File.Create (Application.dataPath + "/Save" + index + ".wak").Dispose ();
+                return false;
+                // System.IO.File.Create (Application.dataPath + "/" + fileName).Dispose ();
             }
             BinaryFormatter bf = new BinaryFormatter ();
-            Stream s = File.Open (Application.dataPath + "/Save" + index + ".wak", FileMode.Open);
+            Stream s = File.Open (Application.dataPath + "/" + fileName, FileMode.Open);
             playerData = (PlayerData) bf.Deserialize (s);
             s.Close ();
-            Debug.Log ("Load");
+            Debug.Log ("<color=cyan>Load</color> " + fileName + " <color=lime>completed</color>");
+            ConverseLegionBattleModel ();
+            ConverseUnitsBattleModel ();
             return true;
         }
-        public bool ConverseLegionDataModel ()
+        public bool ConverseLegionBattleModel ()
         {
             legions.Clear ();
             List<int> keys = playerData.legions.Keys.ToList ();
             for (int index = 0; index < keys.Count; index++)
             {
-                if (keys[index] < 1000) continue;
-                if (keys[index] >= 1100) break;
                 Dictionary<int, Unit.Data> data = playerData.legions[keys[index]].squadron;;
-                Dictionary<int, Unit.DataModel> squadron = new Dictionary<int, Unit.DataModel> ();
+                Dictionary<int, Unit.BattleModel> squadron = new Dictionary<int, Unit.BattleModel> ();
                 for (int order = 0; order < 13; order++)
                 {
                     if (data.ContainsKey (order))
                     {
-                        Unit.DataModel unit = new Unit.DataModel (unitModels[data[order].Type], data[order]);
+                        Unit.BattleModel unit = new Unit.BattleModel (order, unitModels[data[order].Type], data[order]);
                         squadron.Add (order, unit);
                     }
                 }
-                legions.Add (keys[index], new Legion.DataModel<Unit.DataModel> (squadron));
+                legions.Add (keys[index], new Legion.BattleModel (squadron));
             }
             return true;
         }
@@ -177,7 +184,7 @@ namespace Warfare
             for (int index = 0; index < keys.Count; index++)
             {
                 Legion.Data legion = new Legion.Data (keys[index]);
-                Dictionary<int, Unit.DataModel> data = legions[keys[index]].squadron;
+                Dictionary<int, Unit.BattleModel> data = legions[keys[index]].squadron;
                 for (int order = 0; order < 13; order++)
                 {
                     if (data.ContainsKey (order))
@@ -187,14 +194,14 @@ namespace Warfare
             }
             return true;
         }
-        public bool ConverseUnitsDataModel ()
+        public bool ConverseUnitsBattleModel ()
         {
             units.Clear ();
             List<Unit.Data> data = playerData.units;
             int count = data.Count;
             for (int index = 0; index < count; index++)
             {
-                units.Add (new Unit.DataModel (unitModels[data[index].Type], data[index]));
+                units.Add (new Unit.BattleModel (-1, unitModels[data[index].Type], data[index]));
             }
             return true;
         }
@@ -206,6 +213,10 @@ namespace Warfare
             {
                 playerData.units.Add (units[index].data);
             }
+            return true;
+        }
+        public bool ConveseLegionModel<T, K> () where T : Unit.DataModel where K : Unit.DataModel
+        {
             return true;
         }
     }

@@ -11,26 +11,27 @@ namespace Warfare
     {
         public GridState state;
         public int Order { get; private set; }
-        [HeaderAttribute("Unit")]
-        public Unit.DataModel unit;
-        public Dictionary<int, GameObject> stacks = new Dictionary<int, GameObject>();
-        [HeaderAttribute("Battle")]
+
+        [HeaderAttribute ("Unit")]
+        public Unit.BattleModel unit;
+        public Dictionary<int, GameObject> stacks = new Dictionary<int, GameObject> ();
+        [HeaderAttribute ("Battle")]
         public bool isTarget;
-        public List<int> index = new List<int>(); // 無序
-        public List<int> order = new List<int>(); // 有序
-        [HeaderAttribute("Grid")]
-        public Color32 orange = new Color32(227, 79, 0, 255);
-        public Color32 gray97 = new Color32(97, 97, 97, 255);
+        public List<int> index = new List<int> (); // 無序
+        public List<int> order = new List<int> (); // 有序
+        [HeaderAttribute ("Grid")]
+        public Color32 orange = new Color32 (227, 79, 0, 255);
+        public Color32 gray97 = new Color32 (97, 97, 97, 255);
         private Color32 enterColor;
         private Color32 exitColor;
         private MeshRenderer gridRender;
         private SpriteRenderer gridSprite;
 
-        [HeaderAttribute("UI")]
+        [HeaderAttribute ("UI")]
         public Image avatar;
         public TextMeshProUGUI textType, textLv, textExp, textHP, textFire, textRange, textCount, textDubi, textMech, textAir;
 
-        void Awake()
+        void Awake ()
         {
             // avatar.sprite = null;
             textType.text = "";
@@ -40,8 +41,8 @@ namespace Warfare
             textMech.text = "";
             textAir.text = "";
 
-            gridRender = GetComponent<MeshRenderer>();
-            gridSprite = GetComponentInChildren<SpriteRenderer>();
+            gridRender = GetComponent<MeshRenderer> ();
+            gridSprite = GetComponentInChildren<SpriteRenderer> ();
             enterColor = orange;
             if (state == GridState.Deploy)
                 exitColor = gray97;
@@ -62,58 +63,59 @@ namespace Warfare
         //     // Debug.Log (transform.name + "--- up");
 
         // }
-        void OnMouseEnter()
+        void OnMouseEnter ()
         {
             if (state == GridState.Disable) return;
             gridSprite.color = enterColor;
             if (unit == null) return;
             if (unit.data.HP == 0)
-                Debug.LogError("QQ");
+                Debug.LogError ("QQ");
             avatar.sprite = unit.model.Sprite;
-            textType.text = Property.Type(unit.data.Type);
-            textFire.text = unit.model.FireRate.ToString();
-            textRange.text = Property.Range(unit.model.Range);
-            textHP.text = unit.data.HP.ToString();
-            textCount.text = unit.UnitCount().ToString();
-            textDubi.text = (unit.UnitCount() * unit.model.ATK[0]).ToString();
-            textMech.text = (unit.UnitCount() * unit.model.ATK[1]).ToString();
-            textAir.text = (unit.UnitCount() * unit.model.ATK[2]).ToString();
+            textType.text = Property.Type (unit.data.Type);
+            textFire.text = unit.model.FireRate.ToString ();
+            textRange.text = Property.Range (unit.model.Range);
+            textHP.text = unit.data.HP.ToString ();
+            textCount.text = unit.UnitCount ().ToString ();
+            textDubi.text = (unit.UnitCount () * unit.model.ATK[0]).ToString ();
+            textMech.text = (unit.UnitCount () * unit.model.ATK[1]).ToString ();
+            textAir.text = (unit.UnitCount () * unit.model.ATK[2]).ToString ();
         }
-        void OnMouseOver()
+        void OnMouseOver ()
         {
             if (unit == null) return;
             if (unit.data.HP == 0)
-                Debug.LogError("QQ");
-            textHP.text = unit.data.HP.ToString();
-            textCount.text = unit.UnitCount().ToString();
-            textDubi.text = (unit.UnitCount() * unit.model.ATK[0]).ToString();
-            textMech.text = (unit.UnitCount() * unit.model.ATK[1]).ToString();
-            textAir.text = (unit.UnitCount() * unit.model.ATK[2]).ToString();
+                Debug.LogError ("QQ");
+            textHP.text = unit.data.HP.ToString ();
+            textCount.text = unit.UnitCount ().ToString ();
+            textDubi.text = (unit.UnitCount () * unit.model.ATK[0]).ToString ();
+            textMech.text = (unit.UnitCount () * unit.model.ATK[1]).ToString ();
+            textAir.text = (unit.UnitCount () * unit.model.ATK[2]).ToString ();
         }
-        void OnMouseExit()
+        void OnMouseExit ()
         {
             if (state == GridState.Disable) return;
             gridSprite.color = exitColor;
         }
-        public void Manage(int order)
+        public void Manage (int order)
         {
             state = GridState.Deploy;
             Order = order;
             enterColor = orange;
             exitColor = gray97;
             gridRender.enabled = true;
+            gridSprite.enabled = true;
             gridSprite.color = exitColor;
         }
-        public void Ready(int side, int order)
+        public void Ready (int side, int order)
         {
-            state = (GridState)side;
+            state = (GridState) side;
             Order = order;
             enterColor = orange;
             exitColor = gray97;
             gridRender.enabled = true;
             gridSprite.color = exitColor;
         }
-        public void Disable(int order)
+        public void Disable (int order)
         {
             state = GridState.Disable;
             Order = order;
@@ -121,38 +123,38 @@ namespace Warfare
             gridSprite.enabled = false;
             unit = null;
         }
-        public void Aim()
+        public void Aim ()
         {
             isTarget = true;
             enterColor = Color.red;
             exitColor = Color.red;
             gridSprite.color = exitColor;
         }
-        public void Ready()
+        public void Ready ()
         {
             isTarget = false;
             enterColor = orange;
             exitColor = gray97;
             gridSprite.color = exitColor;
         }
-        public void Battle()
+        public void Battle ()
         {
             gridRender.enabled = false;
             exitColor = Color.clear;
             gridSprite.color = exitColor;
         }
-        public void Disarmament()
+        public void Disarmament ()
         {
-            List<GameObject> list = stacks.Values.ToList();
-            stacks.Clear();
+            List<GameObject> list = stacks.Values.ToList ();
+            stacks.Clear ();
             for (int i = list.Count - 1; i >= 0; i--)
             {
                 GameObject go = list[i];
-                Destroy(go);
+                Destroy (go);
             }
             unit = null;
         }
-        public bool Deploy(Unit.DataModel unit)
+        public bool Deploy (Unit.BattleModel unit)
         {
             if (state != GridState.Deploy)
             {
@@ -161,7 +163,8 @@ namespace Warfare
                 gridSprite.color = exitColor;
             }
             this.unit = unit;
-            int[] array = new int[unit.model.UnitCount(unit.data.HP)]; // 目前數量
+            unit.order = Order;
+            int[] array = new int[unit.model.UnitCount (unit.data.HP)]; // 目前數量
             int[] array2 = new int[unit.model.Formation.Length]; // 最大數量
             for (int i = 0; i < array2.Length; i++)
             {
@@ -169,19 +172,19 @@ namespace Warfare
             }
             for (int j = 0; j < array.Length; j++)
             {
-                int lotteryIndex = unit.model.Field == Unit.Field.Dubi ? GetLotteryIndex(array2) : j; // 只有Dubi要抽位置
+                int lotteryIndex = unit.model.Field == Unit.Field.Dubi ? GetLotteryIndex (array2) : j; // 只有Dubi要抽位置
 
                 if (state == GridState.Foe)
-                    stacks.Add(lotteryIndex, Instantiate(unit.model.Instance, transform.position + unit.model.Formation[unit.model.Formation.Length - 1 - lotteryIndex] * 1, Quaternion.Euler(0, 180, 0)));
+                    stacks.Add (lotteryIndex, Instantiate (unit.model.Instance, transform.position + unit.model.Formation[unit.model.Formation.Length - 1 - lotteryIndex] * 1, Quaternion.Euler (0, 180, 0)));
                 else
-                    stacks.Add(lotteryIndex, Instantiate(unit.model.Instance, transform.position + unit.model.Formation[lotteryIndex] * 1, Quaternion.identity));
+                    stacks.Add (lotteryIndex, Instantiate (unit.model.Instance, transform.position + unit.model.Formation[lotteryIndex] * 1, Quaternion.identity));
                 array2[lotteryIndex] = 0; // 抽中後將權重改為0
             }
             if (state != GridState.Deploy)
-                UpdateList();
+                UpdateList ();
             return true;
         }
-        public static int GetLotteryIndex(int[] rates)
+        public static int GetLotteryIndex (int[] rates)
         {
             if (rates == null)
             {
@@ -192,7 +195,7 @@ namespace Warfare
             {
                 num += rates[i];
             }
-            int num2 = Random.Range(1, num + 1);
+            int num2 = Random.Range (1, num + 1);
             for (int j = 0; j < rates.Length; j++)
             {
                 num2 -= rates[j];
@@ -203,45 +206,45 @@ namespace Warfare
             }
             return rates.Length - 1;
         }
-        void UpdateList()
+        void UpdateList ()
         {
-            index.Clear();
-            order.Clear();
-            Dictionary<int, GameObject> dic1Asc = stacks.OrderBy(o => o.Key).ToDictionary(o => o.Key, p => p.Value);
-            index = stacks.Keys.ToList();
-            order = dic1Asc.Keys.ToList();
+            index.Clear ();
+            order.Clear ();
+            Dictionary<int, GameObject> dic1Asc = stacks.OrderBy (o => o.Key).ToDictionary (o => o.Key, p => p.Value);
+            index = stacks.Keys.ToList ();
+            order = dic1Asc.Keys.ToList ();
         }
 
-        public void Fire()
+        public void Fire ()
         {
-            UpdateList();
+            UpdateList ();
             for (int i = 0; i < stacks.Count; i++)
             {
                 // if (stacks[index[i]].GetComponentInChildren<EffectController>())
-                stacks[index[i]].GetComponentInChildren<EffectController>().Fire();
+                stacks[index[i]].GetComponentInChildren<EffectController> ().Fire ();
                 if (i < 2)
-                    stacks[index[i]].GetComponentInChildren<EffectController>().FireSound();
+                    stacks[index[i]].GetComponentInChildren<EffectController> ().FireSound ();
 
             }
         }
 
-        public void Hit(Unit.Range range, int countDestroy, int countHit)
+        public void Hit (Unit.Range range, int countDestroy, int countHit)
         {
-            UpdateList();
-            List<int> listDestroy = new List<int>();
+            UpdateList ();
+            List<int> listDestroy = new List<int> ();
             for (int i = 0; i < countDestroy; i++)
             {
                 if (range == Unit.Range.Far)
                 {
                     // Debug.LogWarning (unit.model.m_type.ToString () + " / " + i + " : " + index[i] + " : " + index.Count);
-                    listDestroy.Add(index[0]);
-                    index.RemoveAt(0);
+                    listDestroy.Add (index[0]);
+                    index.RemoveAt (0);
                 }
                 else
                 {
                     // Debug.LogWarning (unit.model.m_type.ToString () + " / " + i + " : " + order[0] + " : " + order.Count);
-                    listDestroy.Add(order[0]);
-                    order.RemoveAt(0);
+                    listDestroy.Add (order[0]);
+                    order.RemoveAt (0);
                 }
             }
 
@@ -251,7 +254,7 @@ namespace Warfare
                 for (int i = 0; i < countHit; i++)
                 {
                     // if (stacks[index[i]].GetComponentInChildren<EffectController>())
-                    stacks[index[i]].GetComponentInChildren<EffectController>().Hit();
+                    stacks[index[i]].GetComponentInChildren<EffectController> ().Hit ();
                 }
             }
             else
@@ -259,15 +262,15 @@ namespace Warfare
                 for (int i = 0; i < countHit; i++)
                 {
                     // if (stacks[order[i]].GetComponentInChildren<EffectController>())
-                    stacks[order[i]].GetComponentInChildren<EffectController>().Hit();
+                    stacks[order[i]].GetComponentInChildren<EffectController> ().Hit ();
                 }
             }
             // 陣亡
             for (int i = 0; i < listDestroy.Count; i++)
             {
                 GameObject go = stacks[listDestroy[i]];
-                stacks.Remove(listDestroy[i]);
-                Destroy(go);
+                stacks.Remove (listDestroy[i]);
+                Destroy (go);
             }
         }
     }
