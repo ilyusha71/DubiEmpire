@@ -46,12 +46,12 @@ public class TestNew : MonoBehaviour
             //     cmFreeLook[i].m_Heading.m_Bias = 135.0f;
             // }
         }
-        crafts[index].GetComponent<Kocmoca.Protodesign> ().FreeLookSetting (FreeLook);
+        crafts[index].GetComponent<Warfare.Prototype> ().FreeLookSetting (FreeLook);
         FreeLook.m_YAxis.Value = 1.0f;
         FreeLook.m_XAxis.Value = 0.0f;
         FreeLook.m_Heading.m_Bias = six? 150.0f : 135.0f;
         crafts[index].transform.localPosition = Vector3.zero;
-        crafts[index].GetComponent<Kocmoca.Protodesign> ().AlignCentre ();
+        crafts[index].GetComponent<Warfare.Prototype> ().AlignCentre ();
         // GetComponent<Camera> ().orthographicSize = 7.0f / crafts[index].GetComponent<Kocmoca.Protodesign> ().GetScalePower ();
     }
     bool six;
