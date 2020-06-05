@@ -6,7 +6,7 @@ public class CombineMesh
 {
     private const string MESH_PATH = "Assets/_Dev/Save/";
 
-    [MenuItem("Examples/CombineMesh")]
+    [MenuItem("Dev/CombineMesh")]
     static void Combine()
     {
         GameObject obj = Selection.activeGameObject;

@@ -3,7 +3,7 @@ using UnityEditor;
 
 public class SaveRenderTextureToFile
 {
-    [MenuItem("Assets/Save RenderTexture to file")]
+    [MenuItem("Dev/Save RenderTexture to file")]
     public static void SaveRTToFile()
     {
         RenderTexture rt = Selection.activeObject as RenderTexture;
@@ -23,7 +23,7 @@ public class SaveRenderTextureToFile
         Debug.Log("Saved to " + path);
     }
 
-    [MenuItem("Assets/Save RenderTexture to file", true)]
+    [MenuItem("Dev/Save RenderTexture to file", true)]
     public static bool SaveRTToFileValidation()
     {
         return Selection.activeObject is RenderTexture;

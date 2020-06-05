@@ -58,7 +58,7 @@ namespace Warfare
         /* 網格合併 */
         public Mesh CombineMesh (GameObject obj)
         {
-            string MESH_PATH = "Assets/_iLYuSha_Mod/Wakaka Kocmocraft/Meshes/";
+            string MESH_PATH = "Assets/_iLYuSha_Mod/Design/Meshes/";
             string tempPath = MESH_PATH + obj.name + "_mesh.asset";
             if (obj.tag == "Dubi")
             {

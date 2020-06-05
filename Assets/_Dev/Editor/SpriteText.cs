@@ -20,7 +20,7 @@ public class SpriteText : EditorWindow
     private Sprite[] _sprites;           //Collection of sprites from source texture for faster referencing
     private string fileName; // 直接將Texture名稱拿來命名Anim
 
-    [MenuItem("Hangar/Sprite Text")]
+    [MenuItem("Dev/Sprite Text")]
     static void Init()
     {
         // Window Set-Up
