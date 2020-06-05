@@ -23,7 +23,7 @@ namespace Warfare.Unit
                         script.m_sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/_iLYuSha_Mod/Base/Warfare/Icon/" + script.m_instance.name + ".png");
                     else if (script.m_sprite)
                     {
-                        string path = script.m_field == Field.Dubi ? "Assets/_iLYuSha_Mod/Wakaka Character/Prefabs/Design/" : "Assets/_iLYuSha_Mod/Wakaka Kocmocraft/Prefabs/Design/";
+                        string path = script.m_field == Field.Dubi ? "Assets/_iLYuSha_Mod/Design/Dubi/Prefabs/Design/" : "Assets/_iLYuSha_Mod/Design/Kocmocraft/Prefabs/Design/";
                         script.m_instance = AssetDatabase.LoadAssetAtPath<GameObject>(path + script.m_sprite.name + ".prefab");
                     }
                     Database database = AssetDatabase.LoadAssetAtPath<Database>("Assets/_iLYuSha_Mod/Base/Warfare/Unit/Database.asset");
