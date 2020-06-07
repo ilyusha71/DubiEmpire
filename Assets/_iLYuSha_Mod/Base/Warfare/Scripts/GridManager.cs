@@ -31,7 +31,7 @@ namespace Warfare
 
         [HeaderAttribute("UI")]
         public Image avatar;
-        public TextMeshProUGUI textType, textLv, textExp, textHP, textFire, textRange, textCount, textDubi, textMech, textAir;
+        public TextMeshProUGUI textType, textLevel, textExp, textHP, textFire, textRange, textCount, textDubi, textMech, textAir;
 
         void Awake()
         {
